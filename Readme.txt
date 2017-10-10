@@ -19,7 +19,8 @@ CANHelperLibrary : Base library folder
     |            |
     |            |--- CSendStdDataFrame.h : A standard frame designed to be sent over CAN
     |            |
-    |            |--- CSendStdDataFrameEx.h : A standard frame designed to be sent over CAN with some parsing ability (for replies)
+    |            |--- CSendStdDataFrameEx.h : A standard frame designed to be sent over CAN 
+    |            |                              with some parsing ability (for replies)
     |            |
     |            |--- CStdDataFrameReader.h : A standard frame only designed to be read from our CAN bus
     |            
@@ -28,14 +29,16 @@ CANHelperLibrary : Base library folder
            |--- ICANConnector.h : CAN connector interface definition
            |
            |--- MCPCAN
-		           |
-				   |--- CMCPCANConnector.h : Specific MCP CAN library connector implementation (CAN BUS shield http://wiki.seeed.cc/CAN-BUS_Shield_V1.2/)
+                   |
+                   |--- CMCPCANConnector.h : Specific MCP CAN library connector implementation 
+                               (CAN BUS shield http://wiki.seeed.cc/CAN-BUS_Shield_V1.2/)
 
 ArduinoProjects : Base arduino projects folder
     | 
-    |--- AutoLockDoorsFRS : Project that you could use as a sample start. It shows how to add "auto doors lock" to a Scion FRS / Toyota GT86 / Subare BRZ
-    |      |
-    |      |--- AutoLockDoorsFRS.ino : Project code with the close / open logic (closes if speed reaches 18kph, opens on engine stop)
+    |--- AutoLockDoorsFRS : Project that you could use as a sample start. 
+           |                It shows how to add "auto doors lock" to a Scion FRS / Toyota GT86 / Subare BRZ
+           |
+           |--- AutoLockDoorsFRS.ino : Project code with the close / open logic (closes if speed reaches 18kph, opens on engine stop)
 
 
 If you need to use a different CAN BUS shield than the one I used, simply create your specific connector using the provided ICANConnector interface.
