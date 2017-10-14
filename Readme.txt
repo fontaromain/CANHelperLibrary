@@ -24,7 +24,7 @@ CANHelperLibrary : Base library folder
     |            |
     |            |--- CStdDataFrameReader.h : A standard frame only designed to be read from our CAN bus
     |            
-    |--- Connector ; Folder that contains our CAN connectors and that uses our specific frames classes
+    |--- Connector : Folder that contains our CAN connectors and that uses our specific frames classes
            |
            |--- ICANConnector.h : CAN connector interface definition
            |
@@ -38,7 +38,8 @@ ArduinoProjects : Base arduino projects folder
     |--- AutoLockDoorsFRS : Project that you could use as a sample start. 
            |                It shows how to add "auto doors lock" to a Scion FRS / Toyota GT86 / Subare BRZ
            |
-           |--- AutoLockDoorsFRS.ino : Project code with the close / open logic (closes if speed reaches 18kph, opens on engine stop)
+           |--- AutoLockDoorsFRS.ino : Project code with the close / open logic 
+                                       (closes if speed reaches 18kph, opens on engine stop)
 
 
 If you need to use a different CAN BUS shield than the one I used, simply create your specific connector using the provided ICANConnector interface.
