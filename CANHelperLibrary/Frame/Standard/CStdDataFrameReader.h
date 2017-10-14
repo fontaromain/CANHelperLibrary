@@ -24,7 +24,7 @@ public:
 			// Read succeed ?
 			if (pCAN.Read(this->mAddress, this->mLength, this->mData))
 			{
-#ifdef DEBUG_RECEIVE
+#if DEBUG_RECEIVE == 1
 				// Print that we've just received a message
 				Serial.print("Received : ") ;
 
@@ -34,7 +34,7 @@ public:
 				// Receive succeeded
 				return true ;
 			}
-#ifdef DEBUG_RECEIVE	
+#if DEBUG_RECEIVE == 1
 			// Print error
 			Serial.println("Receive failed") ;
 #endif

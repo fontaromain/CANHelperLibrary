@@ -48,16 +48,6 @@ public:
 		return this->mData ;
 	}
 	
-	/**
-	 *	Tests if the given frame seems to be the same as the current one (e.g. it shares the same "command")
-	 *	@param[in] pFrame Frame to test with
-	 *	@return True if similar, false otherwise
-	 */
-	bool IsSameAs(const CStdDataFrame& pFrame)
-	{
-		return this->GetData()[2] == pFrame.GetData()[2] ;
-	}
-	
 protected:
 	unsigned long mAddress ; 				/**< Frame address */
 	unsigned char mData[STD_FRAME_LENGHT] ;	/**< Data values */

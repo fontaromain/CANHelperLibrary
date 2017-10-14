@@ -1,4 +1,4 @@
-#pragma once 
+#pragma once
 
 // Includes
 #include "../ICANConnector.h"
@@ -37,7 +37,8 @@ public:
 	{
 		// Initialization ok ?
 		if (this->mCAN->begin(MCP_STDEXT, CAN_500KBPS, MCP_16MHZ) == CAN_OK)
-		{
+		{			
+			// Back to normal
 			this->mCAN->setMode(MCP_NORMAL) ;
 			
 			// Succeeded !

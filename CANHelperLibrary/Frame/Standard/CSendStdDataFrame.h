@@ -50,7 +50,7 @@ public:
 		// Send worked ?
 		if (pCAN.Send(this->GetAddress(), this->GetLength(), this->GetData()))
 		{
-#ifdef DEBUG_SEND
+#if DEBUG_SEND == 1
 			// Print that we've just sent a message
 			Serial.print("Sent : ") ;
 
@@ -61,7 +61,7 @@ public:
 			return true ;
 	}
 	
-#ifdef DEBUG_SEND	
+#if DEBUG_SEND == 1
 		// Print error
 		Serial.println("Send failed") ;
 #endif

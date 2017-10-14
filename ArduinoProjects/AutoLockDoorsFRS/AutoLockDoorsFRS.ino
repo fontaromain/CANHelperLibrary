@@ -6,9 +6,9 @@
 // Declare the specific connector we want to use
 CMCPCANConnector S_CAN ;
 
-// Generic OBD messages we want to use
-CSendStdDataFrameEx<unsigned int>	F_ENGINE_RPM(BROADCAST_ADDR, 0x02, OBD_MODE_1, 0x0C, 0x00, 0x00, 0x00, 0x00, 0x00, [](const AFrame& pData) { return (unsigned int)(256 * pData.GetData()[3] + pData.GetData()[4]) / 4 ; }) ;
-CSendStdDataFrameEx<unsigned char>	F_VEHICLE_SPEED(BROADCAST_ADDR, 0x02, OBD_MODE_1, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, [](const AFrame& pData) { return pData.GetData()[3] ; }) ;
+// OBD standard frames we want to use
+ENGINE_RPM_FRM(F_ENGINE_RPM) ;
+VEHICLE_SPEED_FRM(F_VEHICLE_SPEED) ;
 
 // Specific FRS/BRZ/GT86 OBD messages
 CSendStdDataFrame F_LOCK_DOORS(0x750, 0x40, 0x05, 0x30, 0x11, 0x00, 0x80) ;
@@ -39,6 +39,17 @@ void setup()
 	
 	// Ok, everything seems good	
     Serial.println("CAN initialization OK") ;
+	
+	// Define filters we want to use : we want to receive messages starting from 0x07D*, 0x07E* and 0x07F* (replies to our requests)
+	S_CAN.SetFilter(0, 0, 0x07D00000) ;
+	S_CAN.SetFilter(1, 0, 0x07E00000) ;
+	S_CAN.SetFilter(2, 0, 0x07F00000) ;
+	S_CAN.SetMask(0, 0, 0x07F00000) ;
+	S_CAN.SetMask(1, 0, 0x07F00000) ;
+	S_CAN.SetMask(2, 0, 0x07F00000) ;
+	
+	// Filters set !	
+    Serial.println("CAN filters initialization OK") ;
 }
 
 /*****************************************************************/
@@ -48,29 +59,17 @@ void loop()
 	// Send messages we want to have updates for
 	F_ENGINE_RPM.SendTo(S_CAN) ;
 	F_VEHICLE_SPEED.SendTo(S_CAN) ;
-	
+  
 	// While there are some received messages
 	while (S_CAN.HasMessages())
 	{
 		// Read current
 		F_READ_DATA.ReadFrom(S_CAN) ;
 		
-		// A reply to one of our request ?
-		if (F_READ_DATA.GetAddress() == REPLY_ADDR)
-		{
-			// Engine RPM ?
-			if (F_ENGINE_RPM.IsSameAs(F_READ_DATA))
-			{
-				// Update message state
-				F_ENGINE_RPM(F_READ_DATA) ;
-			}
-			// Vehicle speed ?
-			else if (F_VEHICLE_SPEED.IsSameAs(F_READ_DATA))
-			{
-				// Update message state
-				F_VEHICLE_SPEED(F_READ_DATA) ;
-			}
-		}
+		// And give it to the messages we want to update. 
+		// They will update themselves if correct data is received
+		F_ENGINE_RPM(F_READ_DATA) ;
+		F_VEHICLE_SPEED(F_READ_DATA) ;
 	}
 	
 	//////////////////////////////////////
