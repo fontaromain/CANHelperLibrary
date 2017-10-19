@@ -81,7 +81,8 @@ public:
 	{
 		return this->mCAN->checkReceive() == CAN_MSGAVAIL ;
 	}
-	
+
+protected:	
 	/**
 	 *	Reads a message. Should be called after HasMesasge to be sure there is something to read
 	 *	@param[out] pCANId 		Message CAN Id
@@ -89,9 +90,9 @@ public:
 	 *	@param[out] pReadData	Read data
 	 *	@return True on success, false otherwise
 	 */
-	virtual bool Read(unsigned long& pCANId, unsigned char& pDataLength, unsigned char* pReadData) override
+	virtual bool ReadImpl(unsigned long& pCANId, unsigned char& pDataLength, unsigned char* pReadData) override
 	{
-		return this->mCAN->readMsgBuf(&pCANId, &pDataLength, pReadData) == CAN_OK ;
+		return this->mCAN->readMsgBuf(&pCANId, 1, &pDataLength, pReadData) == CAN_OK ;
 	}
 
 	/**
@@ -101,7 +102,7 @@ public:
 	 *	@param[in] pData	Data to send
 	 *	@return True on success, false otherwise
 	 */
-	virtual bool Send(unsigned long pCANId, unsigned char pLength, const unsigned char* const pData) override
+	virtual bool SendImpl(unsigned long pCANId, unsigned char pLength, const unsigned char* const pData) override
 	{
 		return this->mCAN->sendMsgBuf(pCANId, pLength, pData) == CAN_OK ;
 	}

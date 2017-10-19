@@ -1,22 +1,23 @@
-#pragma once 
+#pragma once
 
 // Includes
-#include "../CGlobals.h"
+#include "../../CGlobals.h"
+#include "./CCANDefines.h"
 
 /**
- *	@class AFrame
- *	Base data frame class
+ *	@class ACANFrame
+ *	Base CAN frame class
  */
-class AFrame
+class ACANFrame
 {
 public:
 	/**
 	 *	Destructor
 	 */
-	virtual ~AFrame()
+	virtual ~ACANFrame()
 	{
 	}
-	
+
 	/**
 	 *	Gets data length
 	 *	@return Current data length
@@ -34,22 +35,25 @@ public:
 	 *	@return Current data
 	 */
 	virtual const unsigned char* const GetData() const = 0 ;
-	
+
 	/**
-	 *	Prints the class content to the serial output
+	 *	Prints the class content
 	 */
 	void Print() const
 	{
-		Serial.print("0x") ;
-		Serial.print(this->GetAddress(), HEX) ;
-		Serial.print("\t") ;
-		
+		// Print address first
+		PRINT("0x") ;
+		PRINTHEX(this->GetAddress()) ;
+		PRINT("\t") ;
+
+		// Then each data
 		for (int lDataIndex = 0 ; lDataIndex < this->GetLength() ; lDataIndex++)
 		{
-			Serial.print(this->GetData()[lDataIndex] <= 0xF ? " 0x0" : " 0x") ;			
-			Serial.print(this->GetData()[lDataIndex], HEX) ;
+			PRINT(this->GetData()[lDataIndex] <= 0xF ? " 0x0" : " 0x") ;
+			PRINTHEX(this->GetData()[lDataIndex]) ;
 		}
-		
-		Serial.println() ;
+
+		// And go next line
+		PRINTLN() ;
 	}
 } ;
