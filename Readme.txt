@@ -6,7 +6,8 @@ You could use the Arduino projects as a good start :
 
 ArduinoProjects : Base arduino projects folder
     | 
-    |--- AutoLockDoorsFRS : Project that shows how to add "auto doors lock" to a Scion FRS / Toyota GT86 / Subaru BRZ
+    |--- AutoLockDoorsFRS : Project that shows how to add "auto doors lock" 
+	       |                  to a Scion FRS / Toyota GT86 / Subaru BRZ
            |
            |--- AutoLockDoorsFRS.ino : Project code with the close / open logic 
                                        (closes if speed reaches 15kph, opens on engine stop)
