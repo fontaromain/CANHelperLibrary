@@ -15,7 +15,7 @@ CSendCANFrame   F_LOCK_DOORS(0x750, 0x40, 0x05, 0x30, 0x11, 0x00, 0x80) ;
 CSendCANFrame   F_UNLOCK_DOORS(0x750, 0x40, 0x05, 0x30, 0x11, 0x00, 0x40) ;
 
 // A generic message used for read
-CReadCANFrame* F_READ_DATA = new CReadCANFrame() ; // Dynamic allocation to resolve memory issues on Arduino ...
+CReadCANFrame F_READ_DATA ;
 
 // Current door lock status
 bool S_DOORS_LOCKED = false ;
@@ -54,21 +54,9 @@ void setup()
 /*****************************************************************************/
 void loop()
 {
-	// Send messages we want to have updates for
-	F_ENGINE_RPM.SendTo(S_CAN) ;
-	F_VEHICLE_SPEED.SendTo(S_CAN) ;
-
-	// While there are some received messages
-	while (S_CAN.HasMessages())
-	{
-		// Read current
-		F_READ_DATA->ReadFrom(S_CAN) ;
-
-		// And give it to the messages we want to update.
-		// They will update themselves if correct data is received
-		F_ENGINE_RPM(*F_READ_DATA) ;
-		F_VEHICLE_SPEED(*F_READ_DATA) ;
-	}
+	// Send messages we want updates for
+	F_ENGINE_RPM.SendAndUpdate(S_CAN, F_READ_DATA) ;
+	F_VEHICLE_SPEED.SendAndUpdate(S_CAN, F_READ_DATA) ;
 
 	//////////////////////////////////////
 	// Close door logic
@@ -102,7 +90,7 @@ void loop()
 			}
 		}
 	}
-	
+
 	// Wait some time before trying again
 	DELAY(100) ;
 }

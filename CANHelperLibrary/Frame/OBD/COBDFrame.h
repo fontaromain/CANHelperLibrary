@@ -2,11 +2,12 @@
 
 // Includes
 #include "../CAN/CSendCANFrame.h"
+#include "../CAN/CReadCANFrame.h"
 #include "./COBDDefines.h"
 
 /**
- *	@class CSendCANFrameEx
- *	CAN frame class extended (allows parsing of a reply)
+ *	@class CSendOBDFrame
+ *	OBD frame (allows parsing of a reply)
  *	Used to simplify data creation / usage
  */
 template<typename TValueType>
@@ -56,16 +57,52 @@ public:
 	}
 
 	/**
-	 *	Functor to parse received data
-	 *	@param[in] pFrame Frame to use
+	 *	Sends data to the given CAN connector and wait for the reply. If you don't want this behavior but have a better control over the send / receive,
+	 *	use Send method from CSendCANFrame and the IsCompatibleReply / Parse methods provided in this class
+	 *	@param[in] pCAN			CAN connector to use
+	 *	@param[in] pReadFrame	Read frame to use (to avoid recreating one each time in each OBD frame ...)
+	 *	@return True on success, false otherwise
 	 */
-	void operator()(const ACANFrame& pFrame)
+	bool SendAndUpdate(ICANConnector& pCAN, CReadCANFrame& pReadFrame)
+	{
+		// While the message isn't sent correctly, repeat send
+		while (!CSendCANFrame::SendTo(pCAN)) {}
+
+		// Now wait for the reply
+		while (!pCAN.HasMessages()) {}
+
+		// And read the reply !
+		if (pReadFrame.ReadFrom(pCAN))
+		{
+			// Try to parse !
+			return this->Parse(pReadFrame) ;
+		}
+		else
+		{
+			// Error !
+			return false ;
+		}
+	}
+
+	/**
+	 *	Try to parse some received data
+	 *	@param[in] pFrame Frame to use
+	 *	@return True on success, false otherwise
+	 */
+	bool Parse(const ACANFrame& pFrame)
 	{
 		// Valid function ? and given frame seems to be what we want ?
 		if (this->mReadFunction && this->IsCompatibleReply(pFrame))
 		{
 			// Parse and get value !
 			this->mCurrentValue = this->mReadFunction(pFrame) ;
+
+			// Succeeded
+			return true ;
+		}
+		else
+		{
+			return false ;
 		}
 	}
 

@@ -15,7 +15,7 @@
 #define CAN_FLOW_FRAME_ID           0x3	// Flow frame ID
 
 // Useful defines
-#define CAN_MULTI_FRAME_MAX_LENGHT      4096	// CAN multiframe max length in bytes
+#define CAN_MULTI_FRAME_MAX_LENGHT      192		// CAN multiframe max length in bytes (4096 is the max length defined by the ISO, use your own according to your applications)
 #define CAN_FLOW_CONTROL_ADDRESS_VALUE  0x08	// CAN flow control address to substract from the first frame message address
 
 /**
