@@ -4,6 +4,9 @@
 #include "./ACANFrame.h"
 #include "../../Connector/ICANConnector.h"
 
+// Class debug defines
+#define CREADCANFRAME_DEBUG_RECEIVE
+
 /**
  *	@class CReadCANFrame
  *	A frame used to read CAN data
@@ -101,7 +104,7 @@ public:
 						unsigned short  lTotalReceived  = 7 ;	// First frame is 7 data
 
 						// While we haven't read all the data
-						while (lTotalReceived != this->mLength)
+						while (lTotalReceived < this->mLength)
 						{
 							// Make and send flow control
 							this->MakeAndSendFlowControlTempFrame(this->mAddress, pCAN) ;
@@ -140,7 +143,10 @@ public:
 							}
 						}
 					}
-
+					
+#ifdef CREADCANFRAME_DEBUG_RECEIVE			
+					this->Print() ;
+#endif
 					// Seems ok
 					return true ;
 				}
