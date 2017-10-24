@@ -57,8 +57,8 @@ public:
 	 */
 	bool ReadFrom(ICANConnector& pCAN)
 	{
-		// A message available ? And read with success ?
-		if (pCAN.HasMessages())
+		// A message available ?
+		if (pCAN.WaitHasMessages())
 		{
 			// Read succeed ?
 			if (pCAN.Read(this->mTempAddress, this->mTempLength, this->mTempData))
@@ -98,23 +98,19 @@ public:
 					}
 
 					// We now have to ask CAN bus to send us the remaining data
+					// Store current index position to append correctly next replies
+					unsigned short lCurrentIndex = 4 ;	// First frame is 4 data (8 - 2 (First frame / lenght ID) - 2 (Mode and Pid))
+
+					// While we haven't read all the data
+					while (lCurrentIndex < this->mLength)
 					{
-						// Store current index position to append correctly next replies
-						unsigned short  lCurrentIndex   = 7 ;	// First frame is 7 data because we skip first frame ID
-						unsigned short  lTotalReceived  = 7 ;	// First frame is 7 data
-
-						// While we haven't read all the data
-						while (lTotalReceived < this->mLength)
+						// Make and send flow control succeeded ?
+						if (this->MakeAndSendFlowControlTempFrame(this->mAddress, pCAN))
 						{
-							// Make and send flow control
-							this->MakeAndSendFlowControlTempFrame(this->mAddress, pCAN) ;
-
 							// Wait for at least a reply
-							while (!pCAN.HasMessages()) {}
-
-							// And now, parse the consecutive frames we might have received
+							if (pCAN.WaitHasMessages())
 							{
-								// Read current
+								// And now, parse the consecutive frames we might have received
 								pCAN.Read(this->mTempAddress, this->mTempLength, this->mTempData) ;
 
 								// A consecutive frame ?
@@ -128,10 +124,9 @@ public:
 									}
 
 									// Increment current index with read data
-									lCurrentIndex   += 7 ;	// Consecutive frame is 8 data because we skip consecutive frame ID
-									lTotalReceived  += 8 ;	// Consecutive frame is 8 data
+									lCurrentIndex += 7 ;	// Consecutive frame is 7 data (8 - consecutive frame ID)
 								}
-								// Error !
+								// Error : not a consecutive frame !
 								else
 								{
 									// Clean
@@ -141,12 +136,24 @@ public:
 									return false ;
 								}
 							}
+							// Reply timeout
+							else
+							{
+								return false ;
+							}
+						}
+						// Send timeout
+						else
+						{
+							return false ;
 						}
 					}
-					
-#ifdef CREADCANFRAME_DEBUG_RECEIVE			
-					this->Print() ;
-#endif
+
+					#ifdef CREADCANFRAME_DEBUG_RECEIVE
+						// Print debug
+						this->Print() ;
+					#endif
+
 					// Seems ok
 					return true ;
 				}
@@ -156,14 +163,16 @@ public:
 					// Clean
 					this->Clean() ;
 
-					// Should not happen but as I'm not a CAN expert ;)
+					// Should not happen but as I'm not a CAN expert ... ;)
 					return false ;
 				}
 			}
 		}
-
-		// Error
-		return false ;
+		else
+		{
+			// No messages
+			return false ;
+		}
 	}
 
 protected:
@@ -180,8 +189,9 @@ protected:
 	 *	Makes a flow control frame and sends it
 	 *	@param[in] pOriginalAddress First frame original address
 	 *	@param[in] pCAN				CAN connector to use
+	 *	@return True on sucess, false otherwise
 	 */
-	void MakeAndSendFlowControlTempFrame(unsigned long pOriginalAddress, ICANConnector& pCAN)
+	bool MakeAndSendFlowControlTempFrame(unsigned long pOriginalAddress, ICANConnector& pCAN)
 	{
 		// Define address and length
 		this->mTempAddress  = pOriginalAddress - CAN_FLOW_CONTROL_ADDRESS_VALUE ;
@@ -197,11 +207,8 @@ protected:
 		this->mTempData[6]  = CAN_NO_DATA ;
 		this->mTempData[7]  = CAN_NO_DATA ;
 
-		// Send our flow request using the correct address
-		while (!pCAN.Send(this->mAddress - CAN_FLOW_CONTROL_ADDRESS_VALUE, CAN_FRAME_LENGHT, this->mTempData))
-		{
-			// Wait until send works
-		}
+		// Send our flow request using the correct address and wait until send works or time out
+		return pCAN.WaitSend(this->mAddress - CAN_FLOW_CONTROL_ADDRESS_VALUE, CAN_FRAME_LENGHT, this->mTempData) ;
 	}
 
 protected:

@@ -6,7 +6,7 @@
 #include "./COBDDefines.h"
 
 /**
- *	@class CSendOBDFrame
+ *	@class COBDFrame
  *	OBD frame (allows parsing of a reply)
  *	Used to simplify data creation / usage
  */
@@ -65,23 +65,23 @@ public:
 	 */
 	bool SendAndUpdate(ICANConnector& pCAN, CReadCANFrame& pReadFrame)
 	{
-		// While the message isn't sent correctly, repeat send
-		while (!CSendCANFrame::SendTo(pCAN)) {}
-
-		// Now wait for the reply
-		while (!pCAN.HasMessages()) {}
-
-		// And read the reply !
-		if (pReadFrame.ReadFrom(pCAN))
+		// Send succeeded ?
+		if (this->SendTo(pCAN))
 		{
-			// Try to parse !
-			return this->Parse(pReadFrame) ;
+			// Some messages received ?
+			if (pCAN.WaitHasMessages())
+			{
+				// And read the reply !
+				if (pReadFrame.ReadFrom(pCAN))
+				{
+					// Try to parse !
+					return this->Parse(pReadFrame) ;
+				}
+			}
 		}
-		else
-		{
-			// Error !
-			return false ;
-		}
+		
+		// Error !
+		return false ;
 	}
 
 	/**

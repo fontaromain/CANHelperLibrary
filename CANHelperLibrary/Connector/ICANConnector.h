@@ -2,6 +2,7 @@
 
 // Includes
 #include "../CGlobals.h"
+#include "../Frame/CAN/CCANDefines.h"
 
 // Class debug defines
 #define ICANCONNECTOR_DEBUG_SEND
@@ -47,13 +48,71 @@ public:
 	virtual bool SetFilter(unsigned char pId, unsigned char pFrameType, unsigned long pFilter) = 0 ;
 
 	/**
+	 *	Tests if there is something to read or not until time out
+	 *	@param[in] pTimeout Time out to use in milliseconds
+	 *	@return True if something, false otherwise
+	 */
+	bool WaitHasMessages(unsigned long pTimeout = CAN_TIMEOUT) 
+	{
+		// Get current time
+		unsigned long lWaitStartTime = MILLIS() ;
+
+		// Wait for messages
+		while (!this->HasMessages())
+		{
+			// Reached time out ?
+			if ((MILLIS() - lWaitStartTime) > pTimeout)
+			{
+				// Time out ! Still no messages :
+				return false ;
+			}
+		}
+		
+		// Succeeded : some messages !
+		return true ;
+	}
+	
+	/**
 	 *	Tests if there is something to read or not
 	 *	@return True if something, false otherwise
 	 */
 	virtual bool HasMessages() = 0 ;
 
 	/**
-	 *	Reads a frame
+	 *	Try to read a frame. If fails, try again until time out 
+	 *	@param[out] pCANId		Read CAN Id
+	 *	@param[out] pLength		Read data length
+	 *	@param[out] pData		Read data
+	 *	@param[in]  pTimeout	Time out to use in milliseconds
+	 *	@return True on success, false otherwise
+	 */
+	bool WaitRead(unsigned long& pCANId, unsigned char& pLength, unsigned char* pData, unsigned long pTimeout = CAN_TIMEOUT)
+	{
+		// Get current time
+		unsigned long lWaitStartTime = MILLIS() ;
+
+		// Wait for read to succeed
+		while (!this->Read(pCANId, pLength, pData))
+		{
+			// Reached time out ?
+			if ((MILLIS() - lWaitStartTime) > pTimeout)
+			{
+			#ifdef ICANCONNECTOR_DEBUG_RECEIVE
+				// Print that we've just failed :(
+				PRINT("Receive time out !") ;
+			#endif
+			
+				// Time out !
+				return false ;
+			}
+		}
+		
+		// Succeeded
+		return true ;
+	}
+	
+	/**
+	 *	Reads a frame directly without trying again if fails
 	 *	@param[out] pCANId	Read CAN Id
 	 *	@param[out] pLength	Read data length
 	 *	@param[out] pData	Read data
@@ -86,9 +145,42 @@ public:
 			return false ;
 		}
 	}
+	
+	/**
+	 *	Try to send a frame. If fails, try again until timeout
+	 *	@param[in] pCANId	CAN Id to use
+	 *	@param[in] pLength	Data length
+	 *	@param[in] pData	Data to send
+	 *	@param[in] pTimeout	Time out to use in milliseconds
+	 *	@return True on success, false otherwise
+	 */
+	bool WaitSend(unsigned long pCANId, unsigned char pLength, const unsigned char* const pData, unsigned long pTimeout = CAN_TIMEOUT)
+	{
+		// Get current time
+		unsigned long lWaitStartTime = MILLIS() ;
+
+		// Wait for send to succeed
+		while (!this->Send(pCANId, pLength, pData))
+		{
+			// Reached time out ?
+			if ((MILLIS() - lWaitStartTime) > pTimeout)
+			{
+			#ifdef ICANCONNECTOR_DEBUG_SEND
+				// Print that we've just failed :(
+				PRINT("Send time out !") ;
+			#endif
+			
+				// Time out !
+				return false ;
+			}
+		}
+		
+		// Succeeded
+		return true ;
+	}
 
 	/**
-	 *	Sends a frame
+	 *	Sends a frame directly without trying again if fails
 	 *	@param[in] pCANId	CAN Id to use
 	 *	@param[in] pLength	Data length
 	 *	@param[in] pData	Data to send
@@ -126,11 +218,11 @@ protected:
 	/**
 	 *	Reads a frame implementation
 	 *	@param[out] pCANId      Message CAN Id
-	 *	@param[out] pDataLenght	Read data length
+	 *	@param[out] pLength		Read data length
 	 *	@param[out] pReadData	Read data
 	 *	@return True on success, false otherwise
 	 */
-	virtual bool ReadImpl(unsigned long& pCANId, unsigned char& pDataLength, unsigned char* pReadData) = 0 ;
+	virtual bool ReadImpl(unsigned long& pCANId, unsigned char& pLength, unsigned char* pReadData) = 0 ;
 
 	/**
 	 *	Sends a frame implementation
@@ -163,6 +255,6 @@ protected:
 		}
 
 		// And go next line
-		PRINTLN() ;
+		PRINTLN("") ;
 	}
 } ;

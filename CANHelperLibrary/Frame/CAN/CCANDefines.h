@@ -4,6 +4,7 @@
 // Standard CAN
 #define CAN_FRAME_LENGHT    8	// CAN frame length in bytes
 #define CAN_NO_DATA         0x0	// No data
+#define CAN_TIMEOUT         500	// In ms
 
 ///////////////////////////////////////////////////////////////////////////////
 // ISO 15765-2

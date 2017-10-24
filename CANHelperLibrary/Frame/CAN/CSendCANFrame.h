@@ -82,7 +82,7 @@ public:
 	 */
 	bool SendTo(ICANConnector& pCAN) const
 	{
-		return pCAN.Send(this->GetAddress(), this->GetLength(), this->GetData()) ;
+		return pCAN.WaitSend(this->GetAddress(), this->GetLength(), this->GetData()) ;
 	}
 
 protected:

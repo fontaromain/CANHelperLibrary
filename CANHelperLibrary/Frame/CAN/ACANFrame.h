@@ -54,6 +54,6 @@ public:
 		}
 
 		// And go next line
-		PRINTLN() ;
+		PRINTLN("") ;
 	}
 } ;
