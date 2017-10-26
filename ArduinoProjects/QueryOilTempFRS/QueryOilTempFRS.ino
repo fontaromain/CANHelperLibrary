@@ -9,15 +9,10 @@ CMCPCANConnector S_CAN ;
 
 // OBD frames we want to use
 OBD_ENGINE_RPM_FRM(F_ENGINE_RPM) ;
-OBD_VEHICLE_SPEED_FRM(F_VEHICLE_SPEED) ;
-OBD_TOYOTA_FRS_LOCK_DOORS(F_LOCK_DOORS) ;
-OBD_TOYOTA_FRS_UNLOCK_DOORS(F_UNLOCK_DOORS) ;
+OBD_TOYOTA_FRS_OIL_TEMP(F_OIL_TEMP) ;
 
 // A generic message used for read
 CReadCANFrame F_READ_DATA ;
-
-// Current door lock status
-bool S_DOORS_LOCKED = false ;
 
 /*****************************************************************************/
 void setup()
@@ -53,41 +48,41 @@ void setup()
 /*****************************************************************************/
 void loop()
 {
-	// Send messages we want updates for
+	// Send messages we want to have updates for
 	F_ENGINE_RPM.SendAndUpdate(S_CAN, F_READ_DATA) ;
-	F_VEHICLE_SPEED.SendAndUpdate(S_CAN, F_READ_DATA) ;
+	F_OIL_TEMP.SendAndUpdate(S_CAN, F_READ_DATA) ;
 
 	//////////////////////////////////////
-	// Close door logic
+	// Warn oil temperature logic
 	//////////////////////////////////////
 
-	// Doors are currently locked ?
-	if (S_DOORS_LOCKED)
+	// Oil too cold ?
+	if (F_OIL_TEMP.GetCurrentValue() <= 85)
 	{
-		// Engine stopped ?
-		if (F_ENGINE_RPM.GetCurrentValue() == 0)
+		// Above 4k rpm ?
+		if (F_ENGINE_RPM.GetCurrentValue() > 4500)
 		{
-			// Try to unlock doors. Succeeded ?
-			if (F_UNLOCK_DOORS.SendTo(S_CAN))
-			{
-				// Doors are now unlocked
-				S_DOORS_LOCKED = false ;
-			}
+			// Warn user
+		}
+		else
+		{
+			// Todo
 		}
 	}
-	// Doors currently not locked
+	// Oil normal condition ?
+	else if (F_OIL_TEMP.GetCurrentValue() <= 110)
+	{
+		// Todo !
+	}
+	// Oil almost too hot ?
+	else if (F_OIL_TEMP.GetCurrentValue() <= 120)
+	{
+		// Warn user
+	}
+	// Oil too hot
 	else
 	{
-		// Vehicle speed reached the close limit ?
-		if (F_VEHICLE_SPEED.GetCurrentValue() > 15)
-		{
-			// Try to lock doors. Succeeded ?
-			if (F_LOCK_DOORS.SendTo(S_CAN))
-			{
-				// Doors are now locked
-				S_DOORS_LOCKED = true ;
-			}
-		}
+		// Warn user
 	}
 
 	// Wait some time before trying again
