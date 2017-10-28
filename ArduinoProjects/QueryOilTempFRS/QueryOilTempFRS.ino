@@ -34,12 +34,14 @@ void setup()
 	PRINTLN("CAN initialization OK") ;
 
 	// Define filters we want to use : we want to receive messages starting from 0x07D*, 0x07E* and 0x07F* (replies to our requests)
-	S_CAN.SetFilter(0, 0, 0x07D00000) ;
-	S_CAN.SetFilter(1, 0, 0x07E00000) ;
-	S_CAN.SetFilter(2, 0, 0x07F00000) ;
+	S_CAN.SetFilter(0, 0, 0x07C00000) ;
+	S_CAN.SetFilter(1, 0, 0x07D00000) ;
+	S_CAN.SetFilter(2, 0, 0x07E00000) ;
+	S_CAN.SetFilter(3, 0, 0x07F00000) ;
 	S_CAN.SetMask(0, 0, 0x07F00000) ;
 	S_CAN.SetMask(1, 0, 0x07F00000) ;
 	S_CAN.SetMask(2, 0, 0x07F00000) ;
+	S_CAN.SetMask(3, 0, 0x07F00000) ;
 
 	// Filters set !
 	PRINTLN("CAN filters initialization OK") ;
