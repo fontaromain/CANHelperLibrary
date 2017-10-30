@@ -2,7 +2,7 @@
 
 #ifdef ARDUINO_AVR_UNO
 	// Use Arduino IDE Serial
-	#define OPEN_SERIAL(pBauds) Serial.begin(pBauds)
+	#define OPEN_LOG() 			Serial.begin(115200)
 	#define PRINT(pArg)         Serial.print(pArg)
 	#define PRINTLN(pArg)       Serial.println(pArg)
 	#define PRINTHEX(pArg)      Serial.print(pArg, HEX)
@@ -14,7 +14,7 @@
 	#include <chrono>
 
 	// Define yout specific logging methods
-	#define OPEN_SERIAL(pBauds)
+	#define OPEN_LOG()
 	#define PRINT(pArg)
 	#define PRINTLN(pArg)
 	#define PRINTHEX(pArg)

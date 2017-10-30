@@ -1,4 +1,3 @@
 
-ArduinoProjects/AutoLockDoorsFRS/CANHelperLibrary
-ArduinoProjects/QueryOilTempFRS/CANHelperLibrary
-ArduinoProjects/Tests/CANHelperLibrary
+ArduinoProjects/FRS/AutoLockDoors/CANHelperLibrary
+ArduinoProjects/FRS/EnhancementProject/CANHelperLibrary

@@ -9,16 +9,21 @@ CMCPCANConnector S_CAN ;
 
 // OBD frames we want to use
 OBD_ENGINE_RPM_FRM(F_ENGINE_RPM) ;
-OBD_TOYOTA_FRS_OIL_TEMP(F_OIL_TEMP) ;
+OBD_VEHICLE_SPEED_FRM(F_VEHICLE_SPEED) ;
+OBD_TOYOTA_FRS_LOCK_DOORS(F_LOCK_DOORS) ;
+OBD_TOYOTA_FRS_UNLOCK_DOORS(F_UNLOCK_DOORS) ;
 
 // A generic message used for read
 CReadCANFrame F_READ_DATA ;
 
+// Global status variables
+bool S_DOORS_LOCKED = false ; // Current door lock status
+
 /*****************************************************************************/
 void setup()
 {
-	// Open serial port
-	OPEN_SERIAL(115200) ;
+	// Open log
+	OPEN_LOG() ;
 
 	// While CAN initialization fails
 	while (!S_CAN.Initialize())
@@ -34,14 +39,16 @@ void setup()
 	PRINTLN("CAN initialization OK") ;
 
 	// Define filters we want to use : we want to receive messages starting from 0x07D*, 0x07E* and 0x07F* (replies to our requests)
-	S_CAN.SetFilter(0, 0, 0x07C00000) ;
-	S_CAN.SetFilter(1, 0, 0x07D00000) ;
-	S_CAN.SetFilter(2, 0, 0x07E00000) ;
-	S_CAN.SetFilter(3, 0, 0x07F00000) ;
+	S_CAN.SetFilter(0, 0, 0x07500000) ;
+	S_CAN.SetFilter(1, 0, 0x07C00000) ;
+	S_CAN.SetFilter(2, 0, 0x07D00000) ;
+	S_CAN.SetFilter(3, 0, 0x07E00000) ;
+	S_CAN.SetFilter(4, 0, 0x07F00000) ;
 	S_CAN.SetMask(0, 0, 0x07F00000) ;
 	S_CAN.SetMask(1, 0, 0x07F00000) ;
 	S_CAN.SetMask(2, 0, 0x07F00000) ;
 	S_CAN.SetMask(3, 0, 0x07F00000) ;
+	S_CAN.SetMask(4, 0, 0x07F00000) ;
 
 	// Filters set !
 	PRINTLN("CAN filters initialization OK") ;
@@ -50,41 +57,41 @@ void setup()
 /*****************************************************************************/
 void loop()
 {
-	// Send messages we want to have updates for
+	// Send messages we want updates for
 	F_ENGINE_RPM.SendAndUpdate(S_CAN, F_READ_DATA) ;
-	F_OIL_TEMP.SendAndUpdate(S_CAN, F_READ_DATA) ;
+	F_VEHICLE_SPEED.SendAndUpdate(S_CAN, F_READ_DATA) ;
 
 	//////////////////////////////////////
-	// Warn oil temperature logic
+	// Close door logic
 	//////////////////////////////////////
 
-	// Oil too cold ?
-	if (F_OIL_TEMP.GetCurrentValue() <= 85)
+	// Doors are currently locked ?
+	if (S_DOORS_LOCKED)
 	{
-		// Above 4k rpm ?
-		if (F_ENGINE_RPM.GetCurrentValue() > 4500)
+		// Engine stopped ?
+		if (F_ENGINE_RPM.GetCurrentValue() == 0)
 		{
-			// Warn user
+			// Try to unlock doors. Succeeded ?
+			if (F_UNLOCK_DOORS.SendTo(S_CAN))
+			{
+				// Doors are now unlocked
+				S_DOORS_LOCKED = false ;
+			}
 		}
-		else
-		{
-			// Todo
-		}
 	}
-	// Oil normal condition ?
-	else if (F_OIL_TEMP.GetCurrentValue() <= 110)
-	{
-		// Todo !
-	}
-	// Oil almost too hot ?
-	else if (F_OIL_TEMP.GetCurrentValue() <= 120)
-	{
-		// Warn user
-	}
-	// Oil too hot
+	// Doors currently not locked
 	else
 	{
-		// Warn user
+		// Vehicle speed reached the close limit ?
+		if (F_VEHICLE_SPEED.GetCurrentValue() > 15)
+		{
+			// Try to lock doors. Succeeded ?
+			if (F_LOCK_DOORS.SendTo(S_CAN))
+			{
+				// Doors are now locked
+				S_DOORS_LOCKED = true ;
+			}
+		}
 	}
 
 	// Wait some time before trying again
