@@ -1,16 +1,20 @@
 // Includes
 #include <avr/wdt.h> // Watchdog security
 #include "./CANHelperLibrary/Connector/MCPCAN/CMCPCANConnector.h"
-#include "./CANHelperLibrary/Modules/TOYOTA/FRS/CCloseDoors.h"
+#include "./CANHelperLibrary/Modules/TOYOTA/FRS/COilDisplay.h"
 
 // Declare the specific connector we want to use
 CAN::CMCPCANConnector S_CAN ;
 
 // Modules to use
-FRS::CCloseDoors S_DOORS_LOCK ;
+FRS::COilDisplay S_OIL_DISPLAY ;
 
 // A generic message used for read
 CAN::CReadCANFrame F_READ_DATA ;
+
+// Global status variables
+unsigned long                   S_DISPLAY_BUTTON_PRESS_START = 0 ;	// Time when the user started to press the cluster display button
+FRS::CQueryCombiButtonsFrame	S_COMBI_BTNS ;						// Frame to query combi buttons status
 
 /*****************************************************************************/
 void setup()
@@ -49,13 +53,35 @@ void setup()
 
 /*****************************************************************************/
 void loop()
-{	
-	// Setup the watchdog
-	wdt_enable(WDTO_1S) ;
-	
-	// Update close door module (~30ms IGN ON on an Arduino UNO)
-	S_DOORS_LOCK.Update(S_CAN, F_READ_DATA) ;
+{
+	// Update oil show module
+	S_OIL_DISPLAY.Update(S_CAN, F_READ_DATA) ;
 
-	// Reset watchdog
-	wdt_reset() ;
+	// Look for activation / desactivation of the oil temperature display
+	if (S_COMBI_BTNS.SendAndUpdate(S_CAN, F_READ_DATA))
+	{
+		// The display button is pressed ?
+		if (S_COMBI_BTNS.GetCurrentValue() == FRS::ECombiBtnStatus::S_DISPLAY_PRESSED)
+		{
+			// Check if elapsed time is enough to activate the oil display. Enough ?
+			if (MILLIS() - S_DISPLAY_BUTTON_PRESS_START > 3000)
+			{
+				// Activate or desactivate oil display module
+				S_OIL_DISPLAY.ToggleActivation(S_CAN, F_READ_DATA) ;
+
+				// Reset time counter
+				S_DISPLAY_BUTTON_PRESS_START = MILLIS() ;
+			}
+		}
+		else
+		{
+			// Reset time counter
+			S_DISPLAY_BUTTON_PRESS_START = MILLIS() ;
+		}
+	}
+	else
+	{
+		// Reset time counter
+		S_DISPLAY_BUTTON_PRESS_START = MILLIS() ;
+	}
 }
