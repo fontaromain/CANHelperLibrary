@@ -135,7 +135,7 @@ namespace FRS
 			if (this->SendTo(pCAN))
 			{
 				// For the system to react
-				DELAY(200) ;
+				DELAY(100) ;
 				
 				// Succeeded
 				return true ;
@@ -161,7 +161,7 @@ namespace FRS
 			if (this->SendTo(pCAN))
 			{
 				// For the system to react
-				DELAY(200) ;
+				DELAY(100) ;
 				
 				// Succeeded
 				return true ;

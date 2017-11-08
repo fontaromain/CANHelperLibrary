@@ -4,8 +4,10 @@
 #include "./ACANFrame.h"
 #include "../../Connector/ICANConnector.h"
 
-// Class debug defines
-//#define CREADCANFRAME_DEBUG_RECEIVE
+#ifdef DEBUG_CAN
+	// Class debug defines
+	#define CREADCANFRAME_DEBUG_RECEIVE
+#endif
 
 /**
  *	@namespace CAN

@@ -4,9 +4,11 @@
 #include "../CGlobals.h"
 #include "../Frame/CAN/CCANDefines.h"
 
-// Class debug defines
-#define ICANCONNECTOR_DEBUG_SEND
-#define ICANCONNECTOR_DEBUG_RECEIVE
+#ifdef DEBUG_CAN
+	// Class debug defines
+	#define ICANCONNECTOR_DEBUG_SEND
+	#define ICANCONNECTOR_DEBUG_RECEIVE
+#endif
 
 /**
  *	@namespace CAN
@@ -130,8 +132,11 @@ namespace CAN
 			if (this->ReadImpl(pCANId, pLength, pData))
 			{
 				#ifdef ICANCONNECTOR_DEBUG_RECEIVE
+					// Print current time
+					PRINT(MILLIS()) ;
+					
 					// Print that we've just received a frame
-					PRINT("Received : ") ;
+					PRINT(" Received: ") ;
 
 					// Print frame
 					this->Print(pCANId, pLength, pData) ;
@@ -198,8 +203,11 @@ namespace CAN
 			if (this->SendImpl(pCANId, pLength, pData))
 			{
 				#ifdef ICANCONNECTOR_DEBUG_SEND
+					// Print current time
+					PRINT(MILLIS()) ;
+					
 					// Print that we've just sent a frame
-					PRINT("Sent : ") ;
+					PRINT(" Sent: ") ;
 
 					// Print frame
 					this->Print(pCANId, pLength, pData) ;
@@ -211,8 +219,11 @@ namespace CAN
 			else
 			{
 				#ifdef ICANCONNECTOR_DEBUG_SEND
+					// Print current time
+					PRINT(MILLIS()) ;
+					
 					// Print error
-					PRINT("Send failed : ") ;
+					PRINT(" Send failed: ") ;
 
 					// Print frame
 					this->Print(pCANId, pLength, pData) ;
