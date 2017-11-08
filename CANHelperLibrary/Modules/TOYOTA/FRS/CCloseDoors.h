@@ -15,8 +15,10 @@ namespace FRS
 	public:
 		/**
 		 *	Constructor
+		 *	@param[in] pCAN			CAN connector to use
+		 *	@param[in] pReadFrame	Read frame to use
 		 */
-		CCloseDoors() : IModule(true, 250)
+		CCloseDoors(CAN::ICANConnector& pCAN, CAN::CReadCANFrame& pReadFrame) : IModule(pCAN, pReadFrame, true, 250)
 		{
 			// Init members
 			this->mCloseSpeed   = 15 ;
@@ -27,11 +29,9 @@ namespace FRS
 	protected:
 		/**
 		 *	Update method implementation
-		 *	@param[in] pTime		Current time in ms
-		 *	@param[in] pCAN			CAN connector to use
-		 *	@param[in] pReadFrame	Read frame to use
+		 *	@param[in] pTime Current time in ms
 		 */
-		virtual void UpdateImpl(unsigned long pTime, CAN::ICANConnector& pCAN, CAN::CReadCANFrame& pReadFrame) override
+		virtual void UpdateImpl(unsigned long pTime) override
 		{
 		#ifdef DEBUG_MODULES
 			// Print that we are updating the module
@@ -39,10 +39,10 @@ namespace FRS
 		#endif
 		
 			// Needed informations queries succeeded ?
-			if (this->mElectricalPower.SendAndUpdate(pCAN, pReadFrame)
-				&& this->mDriverDoorStatus.SendAndUpdate(pCAN, pReadFrame)
-				&& this->mPassengerDoorStatus.SendAndUpdate(pCAN, pReadFrame)
-				&& this->mVehicleSpeed.SendAndUpdate(pCAN, pReadFrame))
+			if (this->mElectricalPower.SendAndUpdate(this->mCAN, this->mReadFrame)
+				&& this->mDriverDoorStatus.SendAndUpdate(this->mCAN, this->mReadFrame)
+				&& this->mPassengerDoorStatus.SendAndUpdate(this->mCAN, this->mReadFrame)
+				&& this->mVehicleSpeed.SendAndUpdate(this->mCAN, this->mReadFrame))
 			{
 				// Above close speed limit ?
 				if (this->mVehicleSpeed.GetCurrentValue() >= this->mCloseSpeed)
@@ -57,7 +57,7 @@ namespace FRS
 						if (this->mShouldClose)
 						{
 							// Try to close the doors. Succeeded ?
-							if (this->mDoorsLock.CloseDoors(pCAN))
+							if (this->mDoorsLock.CloseDoors(this->mCAN))
 							{
 								// Don't need to close again
 								this->mShouldClose = false ;
@@ -86,7 +86,7 @@ namespace FRS
 							if (this->mElectricalPower.GetCurrentValue() == FRS::EElecPowerStatus::EPS_OFF)
 							{
 								// Open the doors succeeded ?
-								if (this->mDoorsLock.OpenDoors(pCAN))
+								if (this->mDoorsLock.OpenDoors(this->mCAN))
 								{
 									// Don't need to open again
 									this->mShouldOpen = false ;

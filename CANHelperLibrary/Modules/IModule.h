@@ -15,10 +15,13 @@ namespace MOD
 	public:
 		/**
 		 *	Constructor
+		 *	@param[in] pCAN					CAN connector to use
+		 *	@param[in] pReadFrame			Read frame to use
 		 *	@param[in] pEnabledByDefault	If the module is enabled by default
 		 *	@param[in] pUpdateRate			Wanted update rate
 		 */
-		IModule(bool pEnabledByDefault, unsigned long pUpdateRate)
+		IModule(CAN::ICANConnector& pCAN, CAN::CReadCANFrame& pReadFrame, bool pEnabledByDefault, unsigned long pUpdateRate)
+		 : mCAN(pCAN), mReadFrame(pReadFrame)
 		{
 			// Init members
 			this->mLastUpdateTime	= 0 ;
@@ -28,42 +31,39 @@ namespace MOD
 		
 		/**
 		 *	Enable the module
-		 *	@param[in] pTime		Current time in ms
-		 *	@param[in] pCAN			CAN connector to use
-		 *	@param[in] pReadFrame	Read frame to use
+		 *	@param[in] pTime Current time in ms
 		 */
-		void Enable(unsigned long pTime, CAN::ICANConnector& pCAN, CAN::CReadCANFrame& pReadFrame)
+		void Enable(unsigned long pTime)
 		{
 			// Now enabled
 			this->mEnabled = true ;
 			
 			// Call event
-			this->OnEnabled(pTime, pCAN, pReadFrame) ;
+			this->OnEnabled(pTime) ;
 		}
 		
 		/**
 		 *	Disable the module
-		 *	@param[in] pTime		Current time in ms
-		 *	@param[in] pCAN			CAN connector to use
-		 *	@param[in] pReadFrame	Read frame to use
+		 *	@param[in] pTime Current time in ms
 		 */
-		void Disable(unsigned long pTime, CAN::ICANConnector& pCAN, CAN::CReadCANFrame& pReadFrame)
+		void Disable(unsigned long pTime)
 		{
 			// Now disabled
 			this->mEnabled = false ;
 			
 			// Call event
-			this->OnDisabled(pTime, pCAN, pReadFrame) ;
+			this->OnDisabled(pTime) ;
 		}
 
 		/**
 		 *	Update method (to call each frame)
-		 *	@param[in] pTime		Current time in ms
-		 *	@param[in] pCAN			CAN connector to use
-		 *	@param[in] pReadFrame	Read frame to use
+		 *	@param[in] pTime Current time in ms
 		 */
-		void Update(unsigned long pTime, CAN::ICANConnector& pCAN, CAN::CReadCANFrame& pReadFrame)
+		void Update(unsigned long pTime)
 		{
+			// Method called even if not enabled
+			this->OnPreUpdate(pTime) ;
+			
 			// Enabled ?
 			if (this->IsEnabled())
 			{
@@ -74,7 +74,7 @@ namespace MOD
 					this->mLastUpdateTime = pTime ;
 					
 					// Call implementation
-					this->UpdateImpl(pTime, pCAN, pReadFrame) ;
+					this->UpdateImpl(pTime) ;
 				}
 			}
 		}
@@ -100,32 +100,38 @@ namespace MOD
 	protected:
 		/**
 		 *	Event called when the module is enabled
-		 *	@param[in] pTime		Current time in ms
-		 *	@param[in] pCAN			CAN connector to use
-		 *	@param[in] pReadFrame	Read frame to use
+		 *	@param[in] pTime Current time in ms
 		 */
-		virtual void OnEnabled(unsigned long pTime, CAN::ICANConnector& pCAN, CAN::CReadCANFrame& pReadFrame) 
+		virtual void OnEnabled(unsigned long pTime) 
 		{
 		}
 		
 		/**
 		 *	Event called when the module is disabled
-		 *	@param[in] pTime		Current time in ms
-		 *	@param[in] pCAN			CAN connector to use
-		 *	@param[in] pReadFrame	Read frame to use
+		 *	@param[in] pTime Current time in ms
 		 */
-		virtual void OnDisabled(unsigned long pTime, CAN::ICANConnector& pCAN, CAN::CReadCANFrame& pReadFrame) 
+		virtual void OnDisabled(unsigned long pTime) 
+		{
+		}
+	
+		/**
+		 *	Pre-update method. Called even if not enabled
+		 *	@param[in] pTime Current time in ms
+		 */
+		virtual void OnPreUpdate(unsigned long pTime) 
 		{
 		}
 	
 		/**
 		 *	Update method implementation
-		 *	@param[in] pTime		Current time in ms
-		 *	@param[in] pCAN			CAN connector to use
-		 *	@param[in] pReadFrame	Read frame to use
+		 *	@param[in] pTime Current time in ms
 		 */
-		virtual void UpdateImpl(unsigned long pTime, CAN::ICANConnector& pCAN, CAN::CReadCANFrame& pReadFrame) = 0 ;
+		virtual void UpdateImpl(unsigned long pTime) = 0 ;
 
+	protected:
+		CAN::ICANConnector& mCAN ;			/**< Current connector */
+		CAN::CReadCANFrame& mReadFrame ;	/**< Current read frame */
+		
 	private:
 		bool 			mEnabled ;			/**< If the module is enabled or not */
 		unsigned long	mUpdateRate ;		/**< Current update rate */

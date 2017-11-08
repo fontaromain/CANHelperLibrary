@@ -6,15 +6,11 @@
 // Declare the specific connector we want to use
 CAN::CMCPCANConnector S_CAN ;
 
-// Modules to use
-FRS::COilDisplay S_OIL_DISPLAY ;
-
 // A generic message used for read
 CAN::CReadCANFrame F_READ_DATA ;
 
-// Global status variables
-unsigned long                   S_DISPLAY_BUTTON_PRESS_START = 0 ;	// Time when the user started to press the cluster display button
-FRS::CQueryCombiButtonsFrame	S_COMBI_BTNS ;						// Frame to query combi buttons status
+// Modules to use
+FRS::COilDisplay S_OIL_DISPLAY(S_CAN, F_READ_DATA) ;
 
 /*****************************************************************************/
 void setup()
@@ -57,46 +53,8 @@ void loop()
 	// Setup the watchdog
 	wdt_enable(WDTO_8S) ;
 	
-	// Query current time only once
-	unsigned long lCurrentTime = MILLIS() ;
-	
 	// Update oil show module
-	S_OIL_DISPLAY.Update(lCurrentTime, S_CAN, F_READ_DATA) ;
-
-	// Look for activation / desactivation of the oil temperature display
-	if (S_COMBI_BTNS.SendAndUpdate(S_CAN, F_READ_DATA))
-	{
-		// The display button is pressed ?
-		if (S_COMBI_BTNS.GetCurrentValue() == FRS::ECombiBtnStatus::S_DISPLAY_PRESSED)
-		{
-			// Check if elapsed time is enough to activate the oil display. Enough ?
-			if (lCurrentTime - S_DISPLAY_BUTTON_PRESS_START > 2000)
-			{
-				// Activate or desactivate oil display module
-				if (S_OIL_DISPLAY.IsEnabled())
-				{
-					S_OIL_DISPLAY.Disable(lCurrentTime, S_CAN, F_READ_DATA) ;
-				}
-				else
-				{
-					S_OIL_DISPLAY.Enable(lCurrentTime, S_CAN, F_READ_DATA) ;
-				}
-
-				// Reset time counter
-				S_DISPLAY_BUTTON_PRESS_START = lCurrentTime ;
-			}
-		}
-		else
-		{
-			// Reset time counter
-			S_DISPLAY_BUTTON_PRESS_START = MILLIS() ;
-		}
-	}
-	else
-	{
-		// Reset time counter
-		S_DISPLAY_BUTTON_PRESS_START = MILLIS() ;
-	}
+	S_OIL_DISPLAY.Update(MILLIS()) ;
 	
 	// Reset watchdog
 	wdt_reset() ;

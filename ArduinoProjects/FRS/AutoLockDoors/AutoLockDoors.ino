@@ -6,11 +6,11 @@
 // Declare the specific connector we want to use
 CAN::CMCPCANConnector S_CAN ;
 
-// Modules to use
-FRS::CCloseDoors S_DOORS_LOCK ;
-
 // A generic message used for read
 CAN::CReadCANFrame F_READ_DATA ;
+
+// Modules to use
+FRS::CCloseDoors S_DOORS_LOCK(S_CAN, F_READ_DATA) ;
 
 /*****************************************************************************/
 void setup()
@@ -54,7 +54,7 @@ void loop()
 	wdt_enable(WDTO_8S) ;
 	
 	// Update close door module (~30ms IGN ON on an Arduino UNO)
-	S_DOORS_LOCK.Update(MILLIS(), S_CAN, F_READ_DATA) ;
+	S_DOORS_LOCK.Update(MILLIS()) ;
 
 	// Reset watchdog
 	wdt_reset() ;
