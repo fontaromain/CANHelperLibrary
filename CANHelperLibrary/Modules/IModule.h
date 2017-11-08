@@ -68,7 +68,7 @@ namespace MOD
 			if (this->IsEnabled())
 			{
 				// Update rate reached ?
-				if (pTime - this->mLastUpdateTime > this->GetUpdateRate())
+				if (pTime - this->mLastUpdateTime >= this->GetUpdateRate())
 				{
 					// Now updated
 					this->mLastUpdateTime = pTime ;
