@@ -1,7 +1,7 @@
 #pragma once
 
 // Includes
-#include "../../../Connector/ICANConnector.h"
+#include "../../IModule.h"
 #include "../../../Frame/OBD/TOYOTA/COBDTOYOTADefines.h"
 
 namespace FRS
@@ -10,13 +10,13 @@ namespace FRS
 	 *	@class CCloseDoors
 	 *	Manages the doors automatic lock
 	 */
-	class CCloseDoors
+	class CCloseDoors : public MOD::IModule
 	{
 	public:
 		/**
 		 *	Constructor
 		 */
-		CCloseDoors()
+		CCloseDoors() : IModule(true, 250)
 		{
 			// Init members
 			this->mCloseSpeed   = 15 ;
@@ -24,13 +24,20 @@ namespace FRS
 			this->mShouldOpen   = false ;
 		}
 
+	protected:
 		/**
-		 *	Update method (to call each frame)
+		 *	Update method implementation
+		 *	@param[in] pTime		Current time in ms
 		 *	@param[in] pCAN			CAN connector to use
 		 *	@param[in] pReadFrame	Read frame to use
 		 */
-		void Update(CAN::ICANConnector& pCAN, CAN::CReadCANFrame& pReadFrame)
+		virtual void UpdateImpl(unsigned long pTime, CAN::ICANConnector& pCAN, CAN::CReadCANFrame& pReadFrame) override
 		{
+		#ifdef DEBUG_MODULES
+			// Print that we are updating the module
+			PRINTLN("Updating doors lock module") ;
+		#endif
+		
 			// Needed informations queries succeeded ?
 			if (this->mElectricalPower.SendAndUpdate(pCAN, pReadFrame)
 				&& this->mDriverDoorStatus.SendAndUpdate(pCAN, pReadFrame)

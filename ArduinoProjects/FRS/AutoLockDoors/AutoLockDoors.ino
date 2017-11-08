@@ -49,12 +49,12 @@ void setup()
 
 /*****************************************************************************/
 void loop()
-{	
+{
 	// Setup the watchdog
-	wdt_enable(WDTO_1S) ;
+	wdt_enable(WDTO_8S) ;
 	
 	// Update close door module (~30ms IGN ON on an Arduino UNO)
-	S_DOORS_LOCK.Update(S_CAN, F_READ_DATA) ;
+	S_DOORS_LOCK.Update(MILLIS(), S_CAN, F_READ_DATA) ;
 
 	// Reset watchdog
 	wdt_reset() ;

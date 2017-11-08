@@ -1,7 +1,7 @@
 #pragma once
 
 // Includes
-#include "../../../Connector/ICANConnector.h"
+#include "../../IModule.h"
 #include "../../../Frame/OBD/TOYOTA/COBDTOYOTADefines.h"
 
 namespace FRS
@@ -10,69 +10,79 @@ namespace FRS
 	 *	@class COilDisplay
 	 *	Manages the display of the oil temperature
 	 */
-	class COilDisplay
+	class COilDisplay : public MOD::IModule
 	{
 	public:
 		/**
 		 *	Constructor
 		 */
-		COilDisplay()
+		COilDisplay() : IModule(false, 400)
 		{
 			// Init members
-			this->mActivated                        	= false ;
 			this->mNormalOilTemperatureThreshold 		= 85 ;
 			this->mWarningOilTemperatureThreshold   	= 110 ;
 			this->mCriticalOilTemperatureThreshold  	= 120 ;
 			this->mCriticalWaterTemperatureThreshold 	= 120 ;
 		}
 
+	protected:
 		/**
-		 *	Toggle module activation
-		 *	@param[in] pCAN CAN connector to use
+		 *	Event called when the module is enabled
+		 *	@param[in] pTime		Current time in ms
+		 *	@param[in] pCAN			CAN connector to use
+		 *	@param[in] pReadFrame	Read frame to use
 		 */
-		void ToggleActivation(CAN::ICANConnector& pCAN, CAN::CReadCANFrame& pReadFrame)
+		virtual void OnEnabled(unsigned long pTime, CAN::ICANConnector& pCAN, CAN::CReadCANFrame& pReadFrame) override
 		{
-			// Activate or desactivate the oil show
-			this->mActivated = !this->mActivated ;
-
-			// And tell user by moving the temp gauge from cold to hot to cold again
+			// Tell user by moving the temp gauge
 			this->mGaugeDriver.SetPosition(FRS::EGaugeType::GT_WATER, FRS::EGaugePosition::GP_POS_1, pCAN, pReadFrame) ;
 			DELAY(600) ;
 			this->mGaugeDriver.SetPosition(FRS::EGaugeType::GT_WATER, FRS::EGaugePosition::GP_POS_8, pCAN, pReadFrame) ;
 			DELAY(600) ;
 			this->mGaugeDriver.SetPosition(FRS::EGaugeType::GT_WATER, FRS::EGaugePosition::GP_POS_1, pCAN, pReadFrame) ;
 			DELAY(600) ;
-
-			// Activated ?
-			if (this->mActivated)
-			{
-				// Do more gauges moves
-				this->mGaugeDriver.SetPosition(FRS::EGaugeType::GT_WATER, FRS::EGaugePosition::GP_POS_8, pCAN, pReadFrame) ;
-				DELAY(600) ;
-				this->mGaugeDriver.SetPosition(FRS::EGaugeType::GT_WATER, FRS::EGaugePosition::GP_POS_1, pCAN, pReadFrame) ;
-				DELAY(600) ;
-			}
+			this->mGaugeDriver.SetPosition(FRS::EGaugeType::GT_WATER, FRS::EGaugePosition::GP_POS_8, pCAN, pReadFrame) ;
+			DELAY(600) ;
+			this->mGaugeDriver.SetPosition(FRS::EGaugeType::GT_WATER, FRS::EGaugePosition::GP_POS_1, pCAN, pReadFrame) ;
+			DELAY(600) ;
 		}
-
+		
 		/**
-		 *	Update method (to call each frame)
+		 *	Event called when the module is disabled
+		 *	@param[in] pTime		Current time in ms
 		 *	@param[in] pCAN			CAN connector to use
 		 *	@param[in] pReadFrame	Read frame to use
 		 */
-		void Update(CAN::ICANConnector& pCAN, CAN::CReadCANFrame& pReadFrame)
+		virtual void OnDisabled(unsigned long pTime, CAN::ICANConnector& pCAN, CAN::CReadCANFrame& pReadFrame) override 
 		{
-			// The users wants the oil temperature ?
-			if (this->mActivated)
-			{
-				// Query water temprature
-				this->mWaterTemperature.SendAndUpdate(pCAN, pReadFrame) ;
-				
+			// Tell user by moving the temp gauge
+			this->mGaugeDriver.SetPosition(FRS::EGaugeType::GT_WATER, FRS::EGaugePosition::GP_POS_1, pCAN, pReadFrame) ;
+			DELAY(600) ;
+			this->mGaugeDriver.SetPosition(FRS::EGaugeType::GT_WATER, FRS::EGaugePosition::GP_POS_8, pCAN, pReadFrame) ;
+			DELAY(600) ;
+			this->mGaugeDriver.SetPosition(FRS::EGaugeType::GT_WATER, FRS::EGaugePosition::GP_POS_1, pCAN, pReadFrame) ;
+			DELAY(600) ;
+		}
+		
+		/**
+		 *	Update method implementation
+		 *	@param[in] pTime		Current time in ms
+		 *	@param[in] pCAN			CAN connector to use
+		 *	@param[in] pReadFrame	Read frame to use
+		 */
+		virtual void UpdateImpl(unsigned long pTime, CAN::ICANConnector& pCAN, CAN::CReadCANFrame& pReadFrame) override
+		{
+		#ifdef DEBUG_MODULES
+			// Print that we are updating the module
+			PRINTLN("Updating oil display module") ;
+		#endif
+		
+			// Query water / oil temperatures succeeded ?
+			if (this->mWaterTemperature.SendAndUpdate(pCAN, pReadFrame) && this->mOilTemperature.SendAndUpdate(pCAN, pReadFrame))
+			{				
 				// Water temperature is correct ?
 				if (this->mWaterTemperature.GetCurrentValue() < mCriticalWaterTemperatureThreshold)
 				{
-					// Query oil temperature
-					this->mOilTemperature.SendAndUpdate(pCAN, pReadFrame) ;
-
 					// Oil too hot ?
 					if (this->mOilTemperature.GetCurrentValue() >= this->mCriticalOilTemperatureThreshold)
 					{
@@ -106,7 +116,6 @@ namespace FRS
 		char                                mNormalOilTemperatureThreshold ;		/**< Above this value oil is in normal temperature range (in degrees) */
 		char                                mWarningOilTemperatureThreshold ;		/**< Above this value oil is in warning temperature range (in degrees) */
 		char                                mCriticalOilTemperatureThreshold ;		/**< Above this value oil is in critical temperature range (in degrees) */
-		bool                                mActivated ;							/**< If the module is activated or not */
 		FRS::CSetGaugePositionFrame         mGaugeDriver ;							/**< Frame to drive the cluster gauges */
 		FRS::CQueryOilTempFrame             mOilTemperature ;						/**< Query the current oil temperature */
 		OBD::CVehicleWaterTemperatureFrame  mWaterTemperature ;						/**< Query the current water temperature */

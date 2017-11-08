@@ -54,8 +54,14 @@ void setup()
 /*****************************************************************************/
 void loop()
 {
+	// Setup the watchdog
+	wdt_enable(WDTO_8S) ;
+	
+	// Query current time only once
+	unsigned long lCurrentTime = MILLIS() ;
+	
 	// Update oil show module
-	S_OIL_DISPLAY.Update(S_CAN, F_READ_DATA) ;
+	S_OIL_DISPLAY.Update(lCurrentTime, S_CAN, F_READ_DATA) ;
 
 	// Look for activation / desactivation of the oil temperature display
 	if (S_COMBI_BTNS.SendAndUpdate(S_CAN, F_READ_DATA))
@@ -64,13 +70,20 @@ void loop()
 		if (S_COMBI_BTNS.GetCurrentValue() == FRS::ECombiBtnStatus::S_DISPLAY_PRESSED)
 		{
 			// Check if elapsed time is enough to activate the oil display. Enough ?
-			if (MILLIS() - S_DISPLAY_BUTTON_PRESS_START > 3000)
+			if (lCurrentTime - S_DISPLAY_BUTTON_PRESS_START > 2000)
 			{
 				// Activate or desactivate oil display module
-				S_OIL_DISPLAY.ToggleActivation(S_CAN, F_READ_DATA) ;
+				if (S_OIL_DISPLAY.IsEnabled())
+				{
+					S_OIL_DISPLAY.Disable(lCurrentTime, S_CAN, F_READ_DATA) ;
+				}
+				else
+				{
+					S_OIL_DISPLAY.Enable(lCurrentTime, S_CAN, F_READ_DATA) ;
+				}
 
 				// Reset time counter
-				S_DISPLAY_BUTTON_PRESS_START = MILLIS() ;
+				S_DISPLAY_BUTTON_PRESS_START = lCurrentTime ;
 			}
 		}
 		else
@@ -84,4 +97,7 @@ void loop()
 		// Reset time counter
 		S_DISPLAY_BUTTON_PRESS_START = MILLIS() ;
 	}
+	
+	// Reset watchdog
+	wdt_reset() ;
 }
