@@ -1,0 +1,6 @@
+<map id="FRS::CAutoDoorsLock::Update" name="FRS::CAutoDoorsLock::Update">
+<area shape="rect" id="node2" href="$class_f_r_s_1_1_c_f_r_s_change_doors_lock_frame.html#ad439daa05660cff75a7b93b4b793c951" title="FRS::CFRSChangeDoorsLock\lFrame::CloseDoors" alt="" coords="209,5,407,47"/>
+<area shape="rect" id="node3" href="$class_c_o_b_d_frame.html#ad66d04d31aba7a120cf48a4ec859f935" title="COBDFrame::GetCurrentValue" alt="" coords="208,71,408,98"/>
+<area shape="rect" id="node4" href="$class_f_r_s_1_1_c_f_r_s_change_doors_lock_frame.html#a81b11aee11dbeede8f0b2a4b34f801ab" title="FRS::CFRSChangeDoorsLock\lFrame::OpenDoors" alt="" coords="209,123,407,164"/>
+<area shape="rect" id="node5" href="$class_c_o_b_d_frame.html#a80b8891601628711c6e6f377342a48e7" title="COBDFrame::SendAndUpdate" alt="" coords="209,189,407,215"/>
+</map>

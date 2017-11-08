@@ -1,0 +1,23 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_c_a_n_1_1_a_c_a_n_frame.html" title="CAN::ACANFrame" alt="" coords="5,345,136,371"/>
+<area shape="rect" id="node2" href="$class_c_a_n_1_1_c_read_c_a_n_frame.html" title="CAN::CReadCANFrame" alt="" coords="184,319,344,346"/>
+<area shape="rect" id="node3" href="$class_c_a_n_1_1_c_send_c_a_n_frame.html" title="CAN::CSendCANFrame" alt="" coords="184,370,344,397"/>
+<area shape="rect" id="node4" href="$class_o_b_d_1_1_c_o_b_d_frame.html" title="OBD::COBDFrame\&lt; bool \&gt;" alt="" coords="427,78,607,105"/>
+<area shape="rect" id="node7" href="$class_o_b_d_1_1_c_o_b_d_frame.html" title="OBD::COBDFrame\&lt; char \&gt;" alt="" coords="427,187,608,214"/>
+<area shape="rect" id="node10" href="$class_o_b_d_1_1_c_o_b_d_frame.html" title="OBD::COBDFrame\&lt; ECombiBtn\lStatus \&gt;" alt="" coords="412,239,623,280"/>
+<area shape="rect" id="node12" href="$class_o_b_d_1_1_c_o_b_d_frame.html" title="OBD::COBDFrame\&lt; EElecPower\lStatus \&gt;" alt="" coords="410,304,625,345"/>
+<area shape="rect" id="node14" href="$class_o_b_d_1_1_c_o_b_d_frame.html" title="OBD::COBDFrame\&lt; EGaugePosition \&gt;" alt="" coords="392,370,643,397"/>
+<area shape="rect" id="node16" href="$class_o_b_d_1_1_c_o_b_d_frame.html" title="OBD::COBDFrame\&lt; unsigned\l char \&gt;" alt="" coords="419,421,615,463"/>
+<area shape="rect" id="node18" href="$class_o_b_d_1_1_c_o_b_d_frame.html" title="OBD::COBDFrame\&lt; unsigned\l int \&gt;" alt="" coords="419,487,615,528"/>
+<area shape="rect" id="node20" href="$class_f_r_s_1_1_c_change_doors_lock_frame.html" title="FRS::CChangeDoorsLockFrame" alt="" coords="413,553,621,579"/>
+<area shape="rect" id="node21" href="$class_o_b_d_1_1_c_o_b_d_frame.html" title="OBD::COBDFrame\&lt; TValueType \&gt;" alt="" coords="405,603,629,630"/>
+<area shape="rect" id="node5" href="$class_f_r_s_1_1_c_query_driver_doors_lock_frame.html" title="FRS::CQueryDriverDoorsLock\lFrame" alt="" coords="703,5,897,47"/>
+<area shape="rect" id="node6" href="$class_f_r_s_1_1_c_query_passenger_doors_lock_frame.html" title="FRS::CQueryPassengerDoors\lLockFrame" alt="" coords="702,71,898,112"/>
+<area shape="rect" id="node8" href="$class_f_r_s_1_1_c_query_oil_temp_frame.html" title="FRS::CQueryOilTempFrame" alt="" coords="707,137,893,163"/>
+<area shape="rect" id="node9" href="$class_o_b_d_1_1_c_vehicle_water_temperature_frame.html" title="OBD::CVehicleWaterTemperature\lFrame" alt="" coords="691,188,909,229"/>
+<area shape="rect" id="node11" href="$class_f_r_s_1_1_c_query_combi_buttons_frame.html" title="FRS::CQueryCombiButtonsFrame" alt="" coords="691,254,909,281"/>
+<area shape="rect" id="node13" href="$class_f_r_s_1_1_c_query_elec_power_frame.html" title="FRS::CQueryElecPowerFrame" alt="" coords="701,311,899,338"/>
+<area shape="rect" id="node15" href="$class_f_r_s_1_1_c_set_gauge_position_frame.html" title="FRS::CSetGaugePositionFrame" alt="" coords="697,370,903,397"/>
+<area shape="rect" id="node17" href="$class_o_b_d_1_1_c_vehicle_speed_frame.html" title="OBD::CVehicleSpeedFrame" alt="" coords="708,429,892,455"/>
+<area shape="rect" id="node19" href="$class_o_b_d_1_1_c_engine_r_p_m_frame.html" title="OBD::CEngineRPMFrame" alt="" coords="713,494,887,521"/>
+</map>

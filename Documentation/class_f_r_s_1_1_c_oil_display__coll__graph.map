@@ -1,0 +1,11 @@
+<map id="FRS::COilDisplay" name="FRS::COilDisplay">
+<area shape="rect" id="node2" href="$class_m_o_d_1_1_i_module.html" title="MOD::IModule" alt="" coords="1240,5,1345,32"/>
+<area shape="rect" id="node3" href="$class_f_r_s_1_1_c_set_gauge_position_frame.html" title="FRS::CSetGaugePositionFrame" alt="" coords="1189,56,1396,83"/>
+<area shape="rect" id="node4" href="$class_o_b_d_1_1_c_o_b_d_frame.html" title="OBD::COBDFrame\&lt; EGaugePosition \&gt;" alt="" coords="884,48,1135,75"/>
+<area shape="rect" id="node5" href="$class_c_a_n_1_1_c_send_c_a_n_frame.html" title="CAN::CSendCANFrame" alt="" coords="185,101,345,128"/>
+<area shape="rect" id="node7" href="$class_o_b_d_1_1_c_o_b_d_frame.html" title="OBD::COBDFrame\&lt; TValueType \&gt;" alt="" coords="489,163,713,189"/>
+<area shape="rect" id="node10" href="$class_o_b_d_1_1_c_o_b_d_frame.html" title="OBD::COBDFrame\&lt; char \&gt;" alt="" coords="919,173,1100,200"/>
+<area shape="rect" id="node6" href="$class_c_a_n_1_1_a_c_a_n_frame.html" title="CAN::ACANFrame" alt="" coords="5,139,136,165"/>
+<area shape="rect" id="node9" href="$class_f_r_s_1_1_c_query_oil_temp_frame.html" title="FRS::CQueryOilTempFrame" alt="" coords="1200,173,1385,200"/>
+<area shape="rect" id="node11" href="$class_o_b_d_1_1_c_vehicle_water_temperature_frame.html" title="OBD::CVehicleWaterTemperature\lFrame" alt="" coords="1184,107,1401,149"/>
+</map>

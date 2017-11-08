@@ -1,0 +1,10 @@
+<map id="ICANConnector::ReadImpl" name="ICANConnector::ReadImpl">
+<area shape="rect" id="node2" href="$class_i_c_a_n_connector.html#abb856dba4b1560ed3e37bcbd85f4a64d" title="ICANConnector::Read" alt="" coords="227,20,376,47"/>
+<area shape="rect" id="node6" href="$class_i_c_a_n_connector.html#a6673f5ee09682d4b729cc01b1d28962e" title="ICANConnector::Send" alt="" coords="227,71,376,98"/>
+<area shape="rect" id="node3" href="$class_c_read_c_a_n_frame.html#a316d8c8906f3bdf61926b95202f450a7" title="CReadCANFrame::ReadFrom" alt="" coords="915,28,1108,55"/>
+<area shape="rect" id="node5" href="$class_i_c_a_n_connector.html#a14bf0704b2452d05d6eaa9038d792ac6" title="ICANConnector::WaitRead" alt="" coords="424,20,600,47"/>
+<area shape="rect" id="node4" href="$class_c_o_b_d_frame.html#a80b8891601628711c6e6f377342a48e7" title="COBDFrame\&lt; ECombiBtnStatus\l \&gt;::SendAndUpdate" alt="" coords="1156,49,1368,90"/>
+<area shape="rect" id="node7" href="$class_i_c_a_n_connector.html#a951425c76b56f0973467e7f915fe2f81" title="ICANConnector::WaitSend" alt="" coords="424,71,600,98"/>
+<area shape="rect" id="node8" href="$class_c_read_c_a_n_frame.html#ab38043e9d8a6ebbc64c463102e5e3628" title="CReadCANFrame::MakeAndSend\lFlowControlTempFrame" alt="" coords="648,21,867,62"/>
+<area shape="rect" id="node9" href="$class_c_send_c_a_n_frame.html#af938ca9855a6342705706e1ef87111e2" title="CSendCANFrame::SendTo" alt="" coords="923,83,1100,110"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="FRS::CFRSQueryPassengerDoorsLockFrame" name="FRS::CFRSQueryPassengerDoorsLockFrame">
+<area shape="rect" id="node2" href="$class_o_b_d_1_1_c_o_b_d_frame.html" title="OBD::COBDFrame\&lt; bool \&gt;" alt="" coords="27,275,207,301"/>
+<area shape="rect" id="node3" href="$class_c_a_n_1_1_c_send_c_a_n_frame.html" title="CAN::CSendCANFrame" alt="" coords="39,81,199,108"/>
+<area shape="rect" id="node5" href="$class_o_b_d_1_1_c_o_b_d_frame.html" title="OBD::COBDFrame\&lt; TValueType \&gt;" alt="" coords="154,185,378,212"/>
+<area shape="rect" id="node4" href="$class_c_a_n_1_1_a_c_a_n_frame.html" title="CAN::ACANFrame" alt="" coords="54,5,185,32"/>
+</map>

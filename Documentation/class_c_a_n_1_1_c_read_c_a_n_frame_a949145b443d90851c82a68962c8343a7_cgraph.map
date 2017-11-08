@@ -1,0 +1,16 @@
+<map id="CAN::CReadCANFrame::ReadFrom" name="CAN::CReadCANFrame::ReadFrom">
+<area shape="rect" id="node2" href="$class_c_a_n_1_1_c_read_c_a_n_frame.html#aa9f16b97a0b674b9302eda2152520007" title="CAN::CReadCANFrame\l::Clean" alt="" coords="241,5,401,47"/>
+<area shape="rect" id="node3" href="$class_c_a_n_1_1_c_read_c_a_n_frame.html#a4129982e038d26c96661bb1edae60c6a" title="CAN::CReadCANFrame\l::MakeAndSendFlowControlTemp\lFrame" alt="" coords="213,71,428,127"/>
+<area shape="rect" id="node9" href="$class_c_a_n_1_1_a_c_a_n_frame.html#a6753203e374d214fd25fbbd6a9f80b7a" title="CAN::ACANFrame::Print" alt="" coords="238,227,403,254"/>
+<area shape="rect" id="node13" href="$class_c_a_n_1_1_i_c_a_n_connector.html#a3f2c2e96a2bbc7bbae31c9cd71a1dedc" title="CAN::ICANConnector\l::Read" alt="" coords="731,144,877,185"/>
+<area shape="rect" id="node14" href="$class_c_a_n_1_1_i_c_a_n_connector.html#a2263e2dee417e3a21dbc29bbed2d4dc7" title="CAN::ICANConnector\l::WaitHasMessages" alt="" coords="247,329,394,371"/>
+<area shape="rect" id="node4" href="$class_c_a_n_1_1_i_c_a_n_connector.html#adc8f0179749c20b67d4300bebaa33bcb" title="CAN::ICANConnector\l::WaitSend" alt="" coords="506,79,653,120"/>
+<area shape="rect" id="node5" href="$class_c_a_n_1_1_i_c_a_n_connector.html#a91574eaf97381d1dbe9e314196467b93" title="CAN::ICANConnector\l::Send" alt="" coords="731,79,877,120"/>
+<area shape="rect" id="node6" href="$class_c_a_n_1_1_i_c_a_n_connector.html#a93b126398f559a9c8cd8dd581c52bdbe" title="CAN::ICANConnector\l::SendImpl" alt="" coords="925,13,1072,55"/>
+<area shape="rect" id="node7" href="$class_c_a_n_1_1_i_c_a_n_connector.html#a18c4d5976ee67237fade9c6058e33a0b" title="CAN::ICANConnector\l::Print" alt="" coords="925,144,1072,185"/>
+<area shape="rect" id="node8" href="$class_c_a_n_1_1_i_c_a_n_connector.html#ab5eb8b3aa24ac8a6d377b6a526016be3" title="CAN::ICANConnector\l::ReadImpl" alt="" coords="925,79,1072,120"/>
+<area shape="rect" id="node10" href="$class_c_a_n_1_1_a_c_a_n_frame.html#ac485081d84285179eea7a3fe805b5561" title="CAN::ACANFrame::GetAddress" alt="" coords="476,202,683,229"/>
+<area shape="rect" id="node11" href="$class_c_a_n_1_1_a_c_a_n_frame.html#aed835e04aed49bd73c8529d670c14702" title="CAN::ACANFrame::GetData" alt="" coords="486,253,673,279"/>
+<area shape="rect" id="node12" href="$class_c_a_n_1_1_a_c_a_n_frame.html#aa2a79b60ce92cb8b876bea9ef0a6862d" title="CAN::ACANFrame::GetLength" alt="" coords="480,303,679,330"/>
+<area shape="rect" id="node15" href="$class_c_a_n_1_1_i_c_a_n_connector.html#a058664bcead662753c50ef00e8d014a5" title="CAN::ICANConnector\l::HasMessages" alt="" coords="506,355,653,396"/>
+</map>

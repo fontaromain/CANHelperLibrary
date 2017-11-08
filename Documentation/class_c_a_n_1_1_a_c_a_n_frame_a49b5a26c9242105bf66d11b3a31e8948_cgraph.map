@@ -1,0 +1,5 @@
+<map id="CAN::ACANFrame::~ACANFrame" name="CAN::ACANFrame::~ACANFrame">
+<area shape="rect" id="node2" href="$class_c_a_n_1_1_a_c_a_n_frame.html#ac485081d84285179eea7a3fe805b5561" title="CAN::ACANFrame::GetAddress" alt="" coords="272,5,479,32"/>
+<area shape="rect" id="node3" href="$class_c_a_n_1_1_a_c_a_n_frame.html#aed835e04aed49bd73c8529d670c14702" title="CAN::ACANFrame::GetData" alt="" coords="282,56,469,83"/>
+<area shape="rect" id="node4" href="$class_c_a_n_1_1_a_c_a_n_frame.html#aa2a79b60ce92cb8b876bea9ef0a6862d" title="CAN::ACANFrame::GetLength" alt="" coords="276,107,475,133"/>
+</map>

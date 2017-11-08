@@ -1,0 +1,5 @@
+<map id="CAN::ICANConnector::~ICANConnector" name="CAN::ICANConnector::~ICANConnector">
+<area shape="rect" id="node2" href="$class_c_a_n_1_1_i_c_a_n_connector.html#ae21d79990eb6c5c5f2dc6b0b12185ccc" title="CAN::ICANConnector\l::Initialize" alt="" coords="200,5,347,47"/>
+<area shape="rect" id="node3" href="$class_c_a_n_1_1_i_c_a_n_connector.html#ab0fee60e8c2da5e4ed2ceed5aa21ab67" title="CAN::ICANConnector\l::SetFilter" alt="" coords="200,71,347,112"/>
+<area shape="rect" id="node4" href="$class_c_a_n_1_1_i_c_a_n_connector.html#a8ec0a1820c7d5a6ca6faf03229b795c8" title="CAN::ICANConnector\l::SetMask" alt="" coords="200,136,347,177"/>
+</map>

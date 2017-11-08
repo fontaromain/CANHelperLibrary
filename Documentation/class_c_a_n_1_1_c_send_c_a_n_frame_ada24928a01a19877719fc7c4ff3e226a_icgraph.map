@@ -1,0 +1,4 @@
+<map id="CAN::CSendCANFrame::GetAddress" name="CAN::CSendCANFrame::GetAddress">
+<area shape="rect" id="node2" href="$class_c_a_n_1_1_c_send_c_a_n_frame.html#aa3cbfe064ad3deb736fb0caa3c0de5b1" title="CAN::CSendCANFrame\l::SendTo" alt="" coords="213,5,373,47"/>
+<area shape="rect" id="node3" href="$class_o_b_d_1_1_c_o_b_d_frame.html#a2988c2339acd5f5ae4a981bf8bf47d7c" title="OBD::COBDFrame\&lt; ECombiBtn\lStatus \&gt;::SendAndUpdate" alt="" coords="421,5,632,47"/>
+</map>

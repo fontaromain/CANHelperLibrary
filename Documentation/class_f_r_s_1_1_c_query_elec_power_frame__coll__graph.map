@@ -1,0 +1,6 @@
+<map id="FRS::CQueryElecPowerFrame" name="FRS::CQueryElecPowerFrame">
+<area shape="rect" id="node2" href="$class_o_b_d_1_1_c_o_b_d_frame.html" title="OBD::COBDFrame\&lt; EElecPower\lStatus \&gt;" alt="" coords="5,275,220,316"/>
+<area shape="rect" id="node3" href="$class_c_a_n_1_1_c_send_c_a_n_frame.html" title="CAN::CSendCANFrame" alt="" coords="35,81,195,108"/>
+<area shape="rect" id="node5" href="$class_o_b_d_1_1_c_o_b_d_frame.html" title="OBD::COBDFrame\&lt; TValueType \&gt;" alt="" coords="150,185,374,212"/>
+<area shape="rect" id="node4" href="$class_c_a_n_1_1_a_c_a_n_frame.html" title="CAN::ACANFrame" alt="" coords="50,5,181,32"/>
+</map>

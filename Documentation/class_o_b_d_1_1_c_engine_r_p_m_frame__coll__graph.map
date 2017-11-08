@@ -1,0 +1,6 @@
+<map id="OBD::CEngineRPMFrame" name="OBD::CEngineRPMFrame">
+<area shape="rect" id="node2" href="$class_o_b_d_1_1_c_o_b_d_frame.html" title="OBD::COBDFrame\&lt; unsigned\l int \&gt;" alt="" coords="13,275,209,316"/>
+<area shape="rect" id="node3" href="$class_c_a_n_1_1_c_send_c_a_n_frame.html" title="CAN::CSendCANFrame" alt="" coords="33,81,193,108"/>
+<area shape="rect" id="node5" href="$class_o_b_d_1_1_c_o_b_d_frame.html" title="OBD::COBDFrame\&lt; TValueType \&gt;" alt="" coords="148,185,372,212"/>
+<area shape="rect" id="node4" href="$class_c_a_n_1_1_a_c_a_n_frame.html" title="CAN::ACANFrame" alt="" coords="48,5,179,32"/>
+</map>

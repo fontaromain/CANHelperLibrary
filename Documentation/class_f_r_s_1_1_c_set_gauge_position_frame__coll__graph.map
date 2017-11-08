@@ -1,0 +1,6 @@
+<map id="FRS::CSetGaugePositionFrame" name="FRS::CSetGaugePositionFrame">
+<area shape="rect" id="node2" href="$class_o_b_d_1_1_c_o_b_d_frame.html" title="OBD::COBDFrame\&lt; EGaugePosition \&gt;" alt="" coords="5,275,256,301"/>
+<area shape="rect" id="node3" href="$class_c_a_n_1_1_c_send_c_a_n_frame.html" title="CAN::CSendCANFrame" alt="" coords="53,81,213,108"/>
+<area shape="rect" id="node5" href="$class_o_b_d_1_1_c_o_b_d_frame.html" title="OBD::COBDFrame\&lt; TValueType \&gt;" alt="" coords="168,185,392,212"/>
+<area shape="rect" id="node4" href="$class_c_a_n_1_1_a_c_a_n_frame.html" title="CAN::ACANFrame" alt="" coords="68,5,199,32"/>
+</map>

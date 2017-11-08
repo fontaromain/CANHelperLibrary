@@ -1,0 +1,6 @@
+<map id="CAN::ICANConnector::WaitSend" name="CAN::ICANConnector::WaitSend">
+<area shape="rect" id="node2" href="$class_c_a_n_1_1_i_c_a_n_connector.html#a91574eaf97381d1dbe9e314196467b93" title="CAN::ICANConnector\l::Send" alt="" coords="200,71,347,112"/>
+<area shape="rect" id="node3" href="$class_c_a_n_1_1_i_c_a_n_connector.html#a18c4d5976ee67237fade9c6058e33a0b" title="CAN::ICANConnector\l::Print" alt="" coords="395,5,541,47"/>
+<area shape="rect" id="node4" href="$class_c_a_n_1_1_i_c_a_n_connector.html#ab5eb8b3aa24ac8a6d377b6a526016be3" title="CAN::ICANConnector\l::ReadImpl" alt="" coords="395,71,541,112"/>
+<area shape="rect" id="node5" href="$class_c_a_n_1_1_i_c_a_n_connector.html#a93b126398f559a9c8cd8dd581c52bdbe" title="CAN::ICANConnector\l::SendImpl" alt="" coords="395,136,541,177"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="COilDisplay" name="COilDisplay">
+<area shape="rect" id="node2" href="$class_f_r_s_1_1_c_f_r_s_set_gauge_position_frame.html" title="FRS::CFRSSetGaugePosition\lFrame" alt="" coords="631,5,827,47"/>
+<area shape="rect" id="node3" href="$class_c_send_c_a_n_frame.html" title="CSendCANFrame" alt="" coords="149,71,275,98"/>
+<area shape="rect" id="node6" href="$class_c_o_b_d_frame.html" title="COBDFrame\&lt; char \&gt;" alt="" coords="851,130,996,157"/>
+<area shape="rect" id="node7" href="$class_c_o_b_d_frame.html" title="COBDFrame\&lt; TValueType \&gt;" alt="" coords="419,130,607,157"/>
+<area shape="rect" id="node4" href="$class_a_c_a_n_frame.html" title="ACANFrame" alt="" coords="5,130,100,157"/>
+<area shape="rect" id="node5" href="$class_f_r_s_1_1_c_f_r_s_query_oil_temp_frame.html" title="FRS::CFRSQueryOilTempFrame" alt="" coords="1133,130,1343,157"/>
+<area shape="rect" id="node9" href="$class_o_b_d_1_1_c_vehicle_water_temperature_frame.html" title="OBD::CVehicleWaterTemperature\lFrame" alt="" coords="1129,64,1347,105"/>
+</map>

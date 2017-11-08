@@ -1,0 +1,5 @@
+<map id="ICANConnector::Read" name="ICANConnector::Read">
+<area shape="rect" id="node2" href="$class_c_read_c_a_n_frame.html#a316d8c8906f3bdf61926b95202f450a7" title="CReadCANFrame::ReadFrom" alt="" coords="203,13,396,39"/>
+<area shape="rect" id="node4" href="$class_i_c_a_n_connector.html#a14bf0704b2452d05d6eaa9038d792ac6" title="ICANConnector::WaitRead" alt="" coords="211,63,387,90"/>
+<area shape="rect" id="node3" href="$class_c_o_b_d_frame.html#a80b8891601628711c6e6f377342a48e7" title="COBDFrame\&lt; ECombiBtnStatus\l \&gt;::SendAndUpdate" alt="" coords="444,5,656,47"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="CAN::ICANConnector::Send" name="CAN::ICANConnector::Send">
+<area shape="rect" id="node2" href="$class_c_a_n_1_1_i_c_a_n_connector.html#a18c4d5976ee67237fade9c6058e33a0b" title="CAN::ICANConnector\l::Print" alt="" coords="200,5,347,47"/>
+<area shape="rect" id="node3" href="$class_c_a_n_1_1_i_c_a_n_connector.html#ab5eb8b3aa24ac8a6d377b6a526016be3" title="CAN::ICANConnector\l::ReadImpl" alt="" coords="200,71,347,112"/>
+<area shape="rect" id="node4" href="$class_c_a_n_1_1_i_c_a_n_connector.html#a93b126398f559a9c8cd8dd581c52bdbe" title="CAN::ICANConnector\l::SendImpl" alt="" coords="200,136,347,177"/>
+</map>

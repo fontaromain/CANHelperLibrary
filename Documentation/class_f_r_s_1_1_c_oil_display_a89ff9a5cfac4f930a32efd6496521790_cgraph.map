@@ -1,0 +1,5 @@
+<map id="FRS::COilDisplay::Update" name="FRS::COilDisplay::Update">
+<area shape="rect" id="node2" href="$class_o_b_d_1_1_c_o_b_d_frame.html#aab5041e40d206b6c225c5434abd4db0c" title="OBD::COBDFrame::GetCurrent\lValue" alt="" coords="243,5,445,47"/>
+<area shape="rect" id="node3" href="$class_o_b_d_1_1_c_o_b_d_frame.html#a2988c2339acd5f5ae4a981bf8bf47d7c" title="OBD::COBDFrame::SendAndUpdate" alt="" coords="227,71,461,98"/>
+<area shape="rect" id="node4" href="$class_f_r_s_1_1_c_set_gauge_position_frame.html#a691c369f640debe34cf179a35a71df80" title="FRS::CSetGaugePositionFrame\l::SetPosition" alt="" coords="241,123,447,164"/>
+</map>

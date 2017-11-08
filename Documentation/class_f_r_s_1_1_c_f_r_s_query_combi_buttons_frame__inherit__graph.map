@@ -1,0 +1,6 @@
+<map id="FRS::CFRSQueryCombiButtonsFrame" name="FRS::CFRSQueryCombiButtonsFrame">
+<area shape="rect" id="node2" href="$class_o_b_d_1_1_c_o_b_d_frame.html" title="OBD::COBDFrame\&lt; ECombiBtn\lStatus \&gt;" alt="" coords="12,247,223,288"/>
+<area shape="rect" id="node3" href="$class_c_a_n_1_1_c_send_c_a_n_frame.html" title="CAN::CSendCANFrame" alt="" coords="5,81,165,108"/>
+<area shape="rect" id="node5" href="$class_o_b_d_1_1_c_o_b_d_frame.html" title="OBD::COBDFrame\&lt; TValueType \&gt;" alt="" coords="107,157,331,184"/>
+<area shape="rect" id="node4" href="$class_c_a_n_1_1_a_c_a_n_frame.html" title="CAN::ACANFrame" alt="" coords="20,5,151,32"/>
+</map>
