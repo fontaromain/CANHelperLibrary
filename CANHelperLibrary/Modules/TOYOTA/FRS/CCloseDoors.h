@@ -6,6 +6,9 @@
 
 namespace FRS
 {
+	// Threshold values
+	#define C_CLOSE_SPEED_THRESHOLD	15	/**< Doors close speed threshold in kph */
+
 	/**
 	 *	@class CCloseDoors
 	 *	Manages the doors automatic lock
@@ -21,7 +24,6 @@ namespace FRS
 		CCloseDoors(CAN::ICANConnector& pCAN, CAN::CReadCANFrame& pReadFrame) : IModule(pCAN, pReadFrame, true, 250)
 		{
 			// Init members
-			this->mCloseSpeed   = 15 ;
 			this->mShouldClose  = false ;
 			this->mShouldOpen   = false ;
 		}
@@ -45,7 +47,7 @@ namespace FRS
 				&& this->mVehicleSpeed.SendAndUpdate(this->mCAN, this->mReadFrame))
 			{
 				// Above close speed limit ?
-				if (this->mVehicleSpeed.GetCurrentValue() >= this->mCloseSpeed)
+				if (this->mVehicleSpeed.GetCurrentValue() >= C_CLOSE_SPEED_THRESHOLD)
 				{
 					// We reached close speed limit : we can now open again if needed
 					this->mShouldOpen = true ;
@@ -106,7 +108,6 @@ namespace FRS
 	protected:
 		bool                                mShouldClose ;			/**< Should close status */
 		bool                                mShouldOpen ;			/**< Should open status */
-		unsigned char                       mCloseSpeed ;			/**< Close speed */
 		OBD::CVehicleSpeedFrame             mVehicleSpeed ;			/**< Vehicle speed frame */
 		FRS::CChangeDoorsLockFrame          mDoorsLock ;			/**< Doors lock management frame */
 		FRS::CQueryElecPowerFrame           mElectricalPower ;		/**< Electrical power status frame */

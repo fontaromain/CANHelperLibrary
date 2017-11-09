@@ -180,7 +180,7 @@ namespace CAN
 
 						#ifdef CREADCANFRAME_DEBUG_RECEIVE
 							// Print debug
-							PRINT("Received a specific frame type which is not standard :") ;
+							PRINT_STR("Received a specific frame type which is not standard :") ;
 							PRINTLNHEX(this->mData[0] & 0xF0) ;
 						#endif
 

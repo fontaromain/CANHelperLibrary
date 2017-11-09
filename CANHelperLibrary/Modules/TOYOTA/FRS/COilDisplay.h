@@ -6,6 +6,14 @@
 
 namespace FRS
 {
+	// Threshold values
+	#define C_CRITICAL_WATER_TEMPERATURE_THRESHOLD	120		/**< Critical water temprature after which oil display is disabled (emergency) */
+	#define C_NORMAL_OIL_TEMPERATURE_THRESHOLD 		85		/**< Above this value oil is in normal temperature range (in degrees) */
+	#define C_WARNING_OIL_TEMPERATURE_THRESHOLD 	110		/**< Above this value oil is in warning temperature range (in degrees) */
+	#define C_CRITICAL_OIL_TEMPERATURE_THRESHOLD 	120		/**< Above this value oil is in critical temperature range (in degrees) */
+	#define C_COMBI_DISPLAY_PUSH_DURATION			2000	/**< Duration in ms to press the display combi button to enable / disable the module */
+
+	
 	/**
 	 *	@class COilDisplay
 	 *	Manages the display of the oil temperature
@@ -21,11 +29,7 @@ namespace FRS
 		COilDisplay(CAN::ICANConnector& pCAN, CAN::CReadCANFrame& pReadFrame) : IModule(pCAN, pReadFrame, false, 400)
 		{
 			// Init members
-			this->mCombiDisplayButtonPressStart 		= 0 ;
-			this->mNormalOilTemperatureThreshold 		= 85 ;
-			this->mWarningOilTemperatureThreshold   	= 110 ;
-			this->mCriticalOilTemperatureThreshold  	= 120 ;
-			this->mCriticalWaterTemperatureThreshold 	= 120 ;
+			this->mCombiDisplayButtonPressStart = 0 ;
 		}
 
 	protected:
@@ -76,7 +80,7 @@ namespace FRS
 				if (this->mCombiButtons.GetCurrentValue() == FRS::ECombiBtnStatus::S_DISPLAY_PRESSED)
 				{
 					// Check if elapsed time is enough to activate the display: enough ?
-					if (pTime - this->mCombiDisplayButtonPressStart > 2000)
+					if ((unsigned long)(pTime - this->mCombiDisplayButtonPressStart) > C_COMBI_DISPLAY_PUSH_DURATION)
 					{
 						// Activate or desactivate the module
 						if (this->IsEnabled())
@@ -120,20 +124,20 @@ namespace FRS
 			if (this->mWaterTemperature.SendAndUpdate(this->mCAN, this->mReadFrame) && this->mOilTemperature.SendAndUpdate(this->mCAN, this->mReadFrame))
 			{				
 				// Water temperature is correct ?
-				if (this->mWaterTemperature.GetCurrentValue() < mCriticalWaterTemperatureThreshold)
+				if (this->mWaterTemperature.GetCurrentValue() < C_CRITICAL_WATER_TEMPERATURE_THRESHOLD)
 				{
 					// Oil too hot ?
-					if (this->mOilTemperature.GetCurrentValue() >= this->mCriticalOilTemperatureThreshold)
+					if (this->mOilTemperature.GetCurrentValue() >= C_CRITICAL_OIL_TEMPERATURE_THRESHOLD)
 					{
 						this->mGaugeDriver.SetPosition(FRS::EGaugeType::GT_WATER, FRS::EGaugePosition::GP_POS_8, this->mCAN, this->mReadFrame) ;
 					}
 					// Oil almost too hot ?
-					else if (this->mOilTemperature.GetCurrentValue() >= this->mWarningOilTemperatureThreshold)
+					else if (this->mOilTemperature.GetCurrentValue() >= C_WARNING_OIL_TEMPERATURE_THRESHOLD)
 					{
 						this->mGaugeDriver.SetPosition(FRS::EGaugeType::GT_WATER, FRS::EGaugePosition::GP_POS_7, this->mCAN, this->mReadFrame) ;
 					}
 					// Oil normal ?
-					else if (this->mOilTemperature.GetCurrentValue() >= this->mNormalOilTemperatureThreshold)
+					else if (this->mOilTemperature.GetCurrentValue() >= C_NORMAL_OIL_TEMPERATURE_THRESHOLD)
 					{
 						// Let the water informations take the control of the gauge
 					}
@@ -151,14 +155,10 @@ namespace FRS
 		}
 
 	protected:
-		char								mCriticalWaterTemperatureThreshold ;	/**< Critical water temprature after which oil display is disabled (emergency) */
-		char                                mNormalOilTemperatureThreshold ;		/**< Above this value oil is in normal temperature range (in degrees) */
-		char                                mWarningOilTemperatureThreshold ;		/**< Above this value oil is in warning temperature range (in degrees) */
-		char                                mCriticalOilTemperatureThreshold ;		/**< Above this value oil is in critical temperature range (in degrees) */
-		unsigned long                   	mCombiDisplayButtonPressStart ;			/**< Time when the user started to press the cluster display button */
-		FRS::CSetGaugePositionFrame         mGaugeDriver ;							/**< Frame to drive the cluster gauges */
-		FRS::CQueryOilTempFrame             mOilTemperature ;						/**< Query the current oil temperature */
-		OBD::CVehicleWaterTemperatureFrame  mWaterTemperature ;						/**< Query the current water temperature */
-		FRS::CQueryCombiButtonsFrame		mCombiButtons ;							/**< Frame to query combi buttons status */
+		unsigned long                   	mCombiDisplayButtonPressStart ;	/**< Time when the user started to press the cluster display button */
+		FRS::CSetGaugePositionFrame         mGaugeDriver ;					/**< Frame to drive the cluster gauges */
+		FRS::CQueryOilTempFrame             mOilTemperature ;				/**< Query the current oil temperature */
+		OBD::CVehicleWaterTemperatureFrame  mWaterTemperature ;				/**< Query the current water temperature */
+		FRS::CQueryCombiButtonsFrame		mCombiButtons ;					/**< Frame to query combi buttons status */
 	} ;
 }

@@ -22,14 +22,14 @@ void setup()
 	while (!S_CAN.Initialize())
 	{
 		// Tell user
-		PRINTLN("CAN initialization failed") ;
+		PRINTLN_STR("CAN initialization failed") ;
 
 		// Wait some time before trying again
 		DELAY(100) ;
 	}
 
 	// Ok, everything seems good
-	PRINTLN("CAN initialization OK") ;
+	PRINTLN_STR("CAN initialization OK") ;
 
 	// Define filters we want to use
 	S_CAN.SetFilter(0, 0, 0x07500000) ;
@@ -44,7 +44,7 @@ void setup()
 	S_CAN.SetMask(4, 0, 0x07F00000) ;
 
 	// Filters set !
-	PRINTLN("CAN filters initialization OK") ;
+	PRINTLN_STR("CAN filters initialization OK") ;
 }
 
 /*****************************************************************************/
@@ -53,7 +53,7 @@ void loop()
 	// Setup the watchdog
 	wdt_enable(WDTO_8S) ;
 	
-	// Update close door module (~30ms IGN ON on an Arduino UNO)
+	// Update close door module
 	S_DOORS_LOCK.Update(MILLIS()) ;
 
 	// Reset watchdog

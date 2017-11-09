@@ -107,7 +107,7 @@ namespace CAN
 				{
 					#ifdef ICANCONNECTOR_DEBUG_RECEIVE
 						// Print that we've just failed :(
-						PRINTLN("Receive time out !") ;
+						PRINTLN_STR("Receive time out !") ;
 					#endif
 
 					// Time out !
@@ -136,7 +136,7 @@ namespace CAN
 					PRINT(MILLIS()) ;
 					
 					// Print that we've just received a frame
-					PRINT(" Received: ") ;
+					PRINT_STR(" Received: ") ;
 
 					// Print frame
 					this->Print(pCANId, pLength, pData) ;
@@ -149,7 +149,7 @@ namespace CAN
 			{
 				#ifdef ICANCONNECTOR_DEBUG_RECEIVE
 					// Print error
-					PRINTLN("Receive failed") ;
+					PRINTLN_STR("Receive failed") ;
 				#endif
 
 				// Failed !
@@ -178,7 +178,7 @@ namespace CAN
 				{
 					#ifdef ICANCONNECTOR_DEBUG_SEND
 						// Print that we've just failed :(
-						PRINTLN("Send time out !") ;
+						PRINTLN_STR("Send time out !") ;
 					#endif
 
 					// Time out !
@@ -207,7 +207,7 @@ namespace CAN
 					PRINT(MILLIS()) ;
 					
 					// Print that we've just sent a frame
-					PRINT(" Sent: ") ;
+					PRINT_STR(" Sent: ") ;
 
 					// Print frame
 					this->Print(pCANId, pLength, pData) ;
@@ -223,7 +223,7 @@ namespace CAN
 					PRINT(MILLIS()) ;
 					
 					// Print error
-					PRINT(" Send failed: ") ;
+					PRINT_STR(" Send failed: ") ;
 
 					// Print frame
 					this->Print(pCANId, pLength, pData) ;
@@ -263,9 +263,9 @@ namespace CAN
 		void Print(unsigned long pCANId, unsigned char pLength, const unsigned char* const pData) const
 		{
 			// Print address first
-			PRINT("0x") ;
+			PRINT_STR("0x") ;
 			PRINTHEX(pCANId) ;
-			PRINT("\t") ;
+			PRINT_STR("\t") ;
 
 			// Then each data
 			for (int lDataIndex = 0 ; lDataIndex < pLength ; lDataIndex++)
@@ -275,7 +275,7 @@ namespace CAN
 			}
 
 			// And go next line
-			PRINTLN("") ;
+			PRINTLN_STR("") ;
 		}
 	} ;
 }

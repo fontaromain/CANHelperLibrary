@@ -6,6 +6,8 @@
 #ifdef ARDUINO_AVR_UNO
 	// Use Arduino IDE Serial
 	#define OPEN_LOG() 			Serial.begin(115200)
+	#define PRINT_STR(pArg)     Serial.print(F(pArg))	// Arduino specific optimization for strings
+	#define PRINTLN_STR(pArg)   Serial.println(F(pArg))	// Arduino specific optimization for strings
 	#define PRINT(pArg)         Serial.print(pArg)
 	#define PRINTLN(pArg)       Serial.println(pArg)
 	#define PRINTHEX(pArg)      Serial.print(pArg, HEX)
@@ -18,6 +20,8 @@
 
 	// Define yout specific logging methods
 	#define OPEN_LOG()
+	#define PRINT_STR(pArg)		PRINT(pArg)
+	#define PRINTLN_STR(pArg)	PRINTLN(pArg)
 	#define PRINT(pArg)
 	#define PRINTLN(pArg)
 	#define PRINTHEX(pArg)

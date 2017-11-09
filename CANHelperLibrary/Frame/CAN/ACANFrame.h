@@ -48,9 +48,9 @@ namespace CAN
 		void Print() const
 		{
 			// Print address first
-			PRINT("0x") ;
+			PRINT_STR("0x") ;
 			PRINTHEX(this->GetAddress()) ;
-			PRINT("\t") ;
+			PRINT_STR("\t") ;
 
 			// Then each data
 			for (int lDataIndex = 0 ; lDataIndex < this->GetLength() ; lDataIndex++)
@@ -60,7 +60,7 @@ namespace CAN
 			}
 
 			// And go next line
-			PRINTLN("") ;
+			PRINTLN_STR("") ;
 		}
 	} ;
 }
