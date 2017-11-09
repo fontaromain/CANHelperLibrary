@@ -1,0 +1,5 @@
+<map id="MOD::IModule" name="MOD::IModule">
+<area shape="rect" id="node2" href="$class_c_a_n_1_1_i_c_a_n_connector.html" title="CAN::ICANConnector" alt="" coords="5,81,152,108"/>
+<area shape="rect" id="node3" href="$class_c_a_n_1_1_c_read_c_a_n_frame.html" title="CAN::CReadCANFrame" alt="" coords="176,81,336,108"/>
+<area shape="rect" id="node4" href="$class_c_a_n_1_1_a_c_a_n_frame.html" title="CAN::ACANFrame" alt="" coords="191,5,321,32"/>
+</map>

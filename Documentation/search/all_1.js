@@ -2,7 +2,7 @@ var searchData=
 [
   ['can',['CAN',['../namespace_c_a_n.html',1,'']]],
   ['cchangedoorslockframe',['CChangeDoorsLockFrame',['../class_f_r_s_1_1_c_change_doors_lock_frame.html',1,'FRS::CChangeDoorsLockFrame'],['../class_f_r_s_1_1_c_change_doors_lock_frame.html#a8c233d904f0751a701ebaa16c7e965b5',1,'FRS::CChangeDoorsLockFrame::CChangeDoorsLockFrame()']]],
-  ['cclosedoors',['CCloseDoors',['../class_f_r_s_1_1_c_close_doors.html',1,'FRS::CCloseDoors'],['../class_f_r_s_1_1_c_close_doors.html#a8ad5e2ac4ed0eedf3c8fa46c322a54e8',1,'FRS::CCloseDoors::CCloseDoors()']]],
+  ['cclosedoors',['CCloseDoors',['../class_f_r_s_1_1_c_close_doors.html',1,'FRS::CCloseDoors'],['../class_f_r_s_1_1_c_close_doors.html#a68cd2d951ea7133e83a584a0088a62c0',1,'FRS::CCloseDoors::CCloseDoors()']]],
   ['cdebugconnector',['CDebugConnector',['../class_d_e_b_u_g_1_1_c_debug_connector.html',1,'DEBUG::CDebugConnector'],['../class_d_e_b_u_g_1_1_c_debug_connector.html#ab88622b48a331767a5ed18e35b0d8dc5',1,'DEBUG::CDebugConnector::CDebugConnector()']]],
   ['cenginerpmframe',['CEngineRPMFrame',['../class_o_b_d_1_1_c_engine_r_p_m_frame.html',1,'OBD::CEngineRPMFrame'],['../class_o_b_d_1_1_c_engine_r_p_m_frame.html#a5fe3c66df3ad9ce18d4d2a886ee51764',1,'OBD::CEngineRPMFrame::CEngineRPMFrame()']]],
   ['clean',['Clean',['../class_c_a_n_1_1_c_read_c_a_n_frame.html#aa9f16b97a0b674b9302eda2152520007',1,'CAN::CReadCANFrame']]],
@@ -16,7 +16,7 @@ var searchData=
   ['cobdframe_3c_20egaugeposition_20_3e',['COBDFrame&lt; EGaugePosition &gt;',['../class_o_b_d_1_1_c_o_b_d_frame.html',1,'OBD']]],
   ['cobdframe_3c_20unsigned_20char_20_3e',['COBDFrame&lt; unsigned char &gt;',['../class_o_b_d_1_1_c_o_b_d_frame.html',1,'OBD']]],
   ['cobdframe_3c_20unsigned_20int_20_3e',['COBDFrame&lt; unsigned int &gt;',['../class_o_b_d_1_1_c_o_b_d_frame.html',1,'OBD']]],
-  ['coildisplay',['COilDisplay',['../class_f_r_s_1_1_c_oil_display.html',1,'FRS::COilDisplay'],['../class_f_r_s_1_1_c_oil_display.html#a9cef8d854d071a38ac7b1e3f52c5e75d',1,'FRS::COilDisplay::COilDisplay()']]],
+  ['coildisplay',['COilDisplay',['../class_f_r_s_1_1_c_oil_display.html',1,'FRS::COilDisplay'],['../class_f_r_s_1_1_c_oil_display.html#a0411ff2f29b3cbab5fd5f2d7261ccf37',1,'FRS::COilDisplay::COilDisplay()']]],
   ['cquerycombibuttonsframe',['CQueryCombiButtonsFrame',['../class_f_r_s_1_1_c_query_combi_buttons_frame.html',1,'FRS::CQueryCombiButtonsFrame'],['../class_f_r_s_1_1_c_query_combi_buttons_frame.html#a7b26269cedd7edb271d7c86625b26c6b',1,'FRS::CQueryCombiButtonsFrame::CQueryCombiButtonsFrame()']]],
   ['cquerydriverdoorslockframe',['CQueryDriverDoorsLockFrame',['../class_f_r_s_1_1_c_query_driver_doors_lock_frame.html',1,'FRS::CQueryDriverDoorsLockFrame'],['../class_f_r_s_1_1_c_query_driver_doors_lock_frame.html#aa07e987a098940cca6e1b8e4b699a866',1,'FRS::CQueryDriverDoorsLockFrame::CQueryDriverDoorsLockFrame()']]],
   ['cqueryelecpowerframe',['CQueryElecPowerFrame',['../class_f_r_s_1_1_c_query_elec_power_frame.html',1,'FRS::CQueryElecPowerFrame'],['../class_f_r_s_1_1_c_query_elec_power_frame.html#afdd1ccbe88b3d4efdeb65117f1351828',1,'FRS::CQueryElecPowerFrame::CQueryElecPowerFrame()']]],

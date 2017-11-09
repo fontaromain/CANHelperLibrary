@@ -1,5 +1,0 @@
-<map id="MOD::IModule::Update" name="MOD::IModule::Update">
-<area shape="rect" id="node2" href="$class_m_o_d_1_1_i_module.html#a4d91b5ec2cb89f5c2b2ac8adcc7e2ba9" title="MOD::IModule::GetUpdateRate" alt="" coords="208,5,411,32"/>
-<area shape="rect" id="node3" href="$class_m_o_d_1_1_i_module.html#a4403ea023cd8a38d416b0768502cac28" title="MOD::IModule::IsEnabled" alt="" coords="224,56,395,83"/>
-<area shape="rect" id="node4" href="$class_m_o_d_1_1_i_module.html#ab58d9ab15661daf770493ef7d635b80b" title="MOD::IModule::UpdateImpl" alt="" coords="220,107,399,133"/>
-</map>

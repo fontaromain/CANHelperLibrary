@@ -1,5 +1,5 @@
 <map id="FRS::CSetGaugePositionFrame::SetPosition" name="FRS::CSetGaugePositionFrame::SetPosition">
-<area shape="rect" id="node2" href="$class_f_r_s_1_1_c_oil_display.html#a18c207ad09838087c6634d8d06651928" title="FRS::COilDisplay::OnDisabled" alt="" coords="260,5,459,32"/>
-<area shape="rect" id="node3" href="$class_f_r_s_1_1_c_oil_display.html#a1773db7c7f5973ed0be86dd1e1666b0d" title="FRS::COilDisplay::OnEnabled" alt="" coords="261,56,457,83"/>
-<area shape="rect" id="node4" href="$class_f_r_s_1_1_c_oil_display.html#aaa1219c2a7b3985cbae3f5d1e21b3c2a" title="FRS::COilDisplay::UpdateImpl" alt="" coords="261,107,458,133"/>
+<area shape="rect" id="node2" href="$class_f_r_s_1_1_c_oil_display.html#ac8f2c54d842c2a9c435ae148b8e86698" title="FRS::COilDisplay::OnDisabled" alt="" coords="260,5,459,32"/>
+<area shape="rect" id="node3" href="$class_f_r_s_1_1_c_oil_display.html#a5cc5f0e5205b4e08520eb69247e3cfd6" title="FRS::COilDisplay::OnEnabled" alt="" coords="261,56,457,83"/>
+<area shape="rect" id="node4" href="$class_f_r_s_1_1_c_oil_display.html#a23425a56d3d8861ea17df7db0aaeb6a3" title="FRS::COilDisplay::UpdateImpl" alt="" coords="261,107,458,133"/>
 </map>

@@ -1,6 +1,0 @@
-<map id="ICANConnector::WaitSend" name="ICANConnector::WaitSend">
-<area shape="rect" id="node2" href="$class_i_c_a_n_connector.html#a6673f5ee09682d4b729cc01b1d28962e" title="ICANConnector::Send" alt="" coords="229,56,379,83"/>
-<area shape="rect" id="node3" href="$class_i_c_a_n_connector.html#a6d792d8f455b4f51dce31dd0a27541be" title="ICANConnector::Print" alt="" coords="440,5,587,32"/>
-<area shape="rect" id="node4" href="$class_i_c_a_n_connector.html#acb303e3797b429f01ace8345d60055b5" title="ICANConnector::ReadImpl" alt="" coords="427,56,600,83"/>
-<area shape="rect" id="node5" href="$class_i_c_a_n_connector.html#a477ef2a935472a775fb2a69e1ca8deed" title="ICANConnector::SendImpl" alt="" coords="427,107,600,133"/>
-</map>

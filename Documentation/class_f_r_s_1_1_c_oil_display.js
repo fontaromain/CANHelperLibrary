@@ -1,9 +1,12 @@
 var class_f_r_s_1_1_c_oil_display =
 [
-    [ "COilDisplay", "class_f_r_s_1_1_c_oil_display.html#a9cef8d854d071a38ac7b1e3f52c5e75d", null ],
-    [ "OnDisabled", "class_f_r_s_1_1_c_oil_display.html#a18c207ad09838087c6634d8d06651928", null ],
-    [ "OnEnabled", "class_f_r_s_1_1_c_oil_display.html#a1773db7c7f5973ed0be86dd1e1666b0d", null ],
-    [ "UpdateImpl", "class_f_r_s_1_1_c_oil_display.html#aaa1219c2a7b3985cbae3f5d1e21b3c2a", null ],
+    [ "COilDisplay", "class_f_r_s_1_1_c_oil_display.html#a0411ff2f29b3cbab5fd5f2d7261ccf37", null ],
+    [ "OnDisabled", "class_f_r_s_1_1_c_oil_display.html#ac8f2c54d842c2a9c435ae148b8e86698", null ],
+    [ "OnEnabled", "class_f_r_s_1_1_c_oil_display.html#a5cc5f0e5205b4e08520eb69247e3cfd6", null ],
+    [ "OnPreUpdate", "class_f_r_s_1_1_c_oil_display.html#ad4a07f5972bcd37019f602bcb871ed8e", null ],
+    [ "UpdateImpl", "class_f_r_s_1_1_c_oil_display.html#a23425a56d3d8861ea17df7db0aaeb6a3", null ],
+    [ "mCombiButtons", "class_f_r_s_1_1_c_oil_display.html#a7e44c59886eb46216f1db59a1e4f3797", null ],
+    [ "mCombiDisplayButtonPressStart", "class_f_r_s_1_1_c_oil_display.html#a77d8e33f806e654cdd9c81f5b9aca334", null ],
     [ "mCriticalOilTemperatureThreshold", "class_f_r_s_1_1_c_oil_display.html#a931874f533692f0727c83bb31f2dd86f", null ],
     [ "mCriticalWaterTemperatureThreshold", "class_f_r_s_1_1_c_oil_display.html#ad7ee1929b16cb7971eb797bdd9ac9135", null ],
     [ "mGaugeDriver", "class_f_r_s_1_1_c_oil_display.html#a31e2645dda4e7c4f8872410549942aed", null ],

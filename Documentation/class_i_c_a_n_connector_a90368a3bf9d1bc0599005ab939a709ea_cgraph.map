@@ -1,5 +1,0 @@
-<map id="ICANConnector::~ICANConnector" name="ICANConnector::~ICANConnector">
-<area shape="rect" id="node2" href="$class_i_c_a_n_connector.html#ac24183b7d4386bccc478afd7f3cec4cd" title="ICANConnector::Initialize" alt="" coords="271,5,438,32"/>
-<area shape="rect" id="node3" href="$class_i_c_a_n_connector.html#af3010848b529550debcf29ef31780d88" title="ICANConnector::SetFilter" alt="" coords="271,56,439,83"/>
-<area shape="rect" id="node4" href="$class_i_c_a_n_connector.html#a4038cb37eb87b47204202458d90a9e8d" title="ICANConnector::SetMask" alt="" coords="269,107,440,133"/>
-</map>

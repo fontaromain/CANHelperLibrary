@@ -1,0 +1,9 @@
+<map id="FRS::COilDisplay::OnPreUpdate" name="FRS::COilDisplay::OnPreUpdate">
+<area shape="rect" id="node2" href="$class_m_o_d_1_1_i_module.html#a7dfedff2a6eb0cdeff403f76b85f9998" title="MOD::IModule::Disable" alt="" coords="303,5,459,32"/>
+<area shape="rect" id="node4" href="$class_m_o_d_1_1_i_module.html#a33d8cbce1df58630594f535bbb5185af" title="MOD::IModule::Enable" alt="" coords="305,56,458,83"/>
+<area shape="rect" id="node6" href="$class_o_b_d_1_1_c_o_b_d_frame.html#aab5041e40d206b6c225c5434abd4db0c" title="OBD::COBDFrame::GetCurrent\lValue" alt="" coords="280,107,483,149"/>
+<area shape="rect" id="node7" href="$class_m_o_d_1_1_i_module.html#a4403ea023cd8a38d416b0768502cac28" title="MOD::IModule::IsEnabled" alt="" coords="296,173,467,200"/>
+<area shape="rect" id="node8" href="$class_o_b_d_1_1_c_o_b_d_frame.html#a2988c2339acd5f5ae4a981bf8bf47d7c" title="OBD::COBDFrame::SendAndUpdate" alt="" coords="264,224,499,251"/>
+<area shape="rect" id="node3" href="$class_m_o_d_1_1_i_module.html#a6192e6483f5117ae091425eeb7f939f6" title="MOD::IModule::OnDisabled" alt="" coords="547,5,727,32"/>
+<area shape="rect" id="node5" href="$class_m_o_d_1_1_i_module.html#ae2f3b9ae8ddb630ca0f3dc707d19afeb" title="MOD::IModule::OnEnabled" alt="" coords="548,56,725,83"/>
+</map>
