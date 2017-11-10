@@ -26,11 +26,13 @@ To be able to reuse the code easily, there is some "modules" already existing in
 They are little software pieces that will take care of a specific user need (like driving the automatic doors lock, showing the oil temperature, etc.).
 You could found the existing ones under the _"Modules"_ folder.
 
-The two that originally where developped using the library are:
-- TOYOTA/FRS/CCloseDoors.h: Module that closes / opens the doors on a Scion FRS
-  Video: TODO
-- TOYOTA/FRS/COilDisplay.h: Module that displays the oil temperature in place of the water one on dash
-  Video: https://www.youtube.com/edit?o=U&video_id=xC93xSPRaQE
+Two where originally developped using the library.
+##### TOYOTA/FRS/CCloseDoors.h
+Module that closes / opens the doors on a Scion FRS 
+Video: TODO
+##### TOYOTA/FRS/COilDisplay.h
+Module that displays the oil temperature in place of the water one on dash
+Video: https://www.youtube.com/edit?o=U&video_id=xC93xSPRaQE
 
 Feel free to send your own :)
 
