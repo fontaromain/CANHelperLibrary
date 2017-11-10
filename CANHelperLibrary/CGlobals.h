@@ -1,3 +1,8 @@
+//
+// Copyright (c) FONTA romain. All rights reserved.
+// Licensed under the MIT license. See LICENSE file in the project root for details.
+//
+
 #pragma once
 
 #define DEBUG_CAN 		// Comment to turn off debugging messages for CAN Send / Receive
