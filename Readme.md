@@ -1,4 +1,4 @@
-**CAN Helper Library**
+*CAN Helper Library*
 
 * Main goal *
 This project aims to offer a simple interface through CAN network.
