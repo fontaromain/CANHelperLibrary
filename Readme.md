@@ -27,10 +27,10 @@ They are little software pieces that will take care of a specific user need (lik
 You could found the existing ones under the _"Modules"_ folder.
 
 Two where originally developped using the library.
-##### TOYOTA/FRS/CCloseDoors.h
+#### TOYOTA/FRS/CCloseDoors.h
 Module that closes / opens the doors on a Scion FRS 
 Video: TODO
-##### TOYOTA/FRS/COilDisplay.h
+#### TOYOTA/FRS/COilDisplay.h
 Module that displays the oil temperature in place of the water one on dash
 Video: https://www.youtube.com/edit?o=U&video_id=xC93xSPRaQE
 
