@@ -16,7 +16,7 @@ namespace FRS
 	#define C_NORMAL_OIL_TEMPERATURE_THRESHOLD 		85		/**< Above this value oil is in normal temperature range (in degrees) */
 	#define C_WARNING_OIL_TEMPERATURE_THRESHOLD 	110		/**< Above this value oil is in warning temperature range (in degrees) */
 	#define C_CRITICAL_OIL_TEMPERATURE_THRESHOLD 	120		/**< Above this value oil is in critical temperature range (in degrees) */
-	#define C_COMBI_DISPLAY_PUSH_DURATION			2000	/**< Duration in ms to press the display combi button to enable / disable the module */
+	#define C_COMBI_DISPLAY_PUSH_DURATION			5000	/**< Duration in ms to press the display combi button to enable / disable the module */
 
 	
 	/**
