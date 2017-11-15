@@ -5,6 +5,7 @@ var NAVTREE =
       [ "Introduction", "index.html#intro_sec", null ],
       [ "Misc", "index.html#misc_sec", null ]
     ] ],
+    [ "CAN Helper Library", "md__c_1__users_admin-lcai__desktop__arduino__projet__arduino_c_a_n_helper_library__readme.html", null ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ],
       [ "Namespace Members", "namespacemembers.html", [

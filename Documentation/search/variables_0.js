@@ -2,11 +2,8 @@ var searchData=
 [
   ['maddress',['mAddress',['../class_c_a_n_1_1_c_read_c_a_n_frame.html#af8592227c41b23f0c4a903a033629cfd',1,'CAN::CReadCANFrame::mAddress()'],['../class_c_a_n_1_1_c_send_c_a_n_frame.html#a92584f5628857a2478fc2f9d4a526327',1,'CAN::CSendCANFrame::mAddress()']]],
   ['mcan',['mCAN',['../class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4',1,'CAN::CMCPCANConnector::mCAN()'],['../class_m_o_d_1_1_i_module.html#a1ce03e4eaf443e1e2314e94694c2267f',1,'MOD::IModule::mCAN()']]],
-  ['mclosespeed',['mCloseSpeed',['../class_f_r_s_1_1_c_close_doors.html#a5ec1c2fb01f6f4cb94e9ea9a82e2f45c',1,'FRS::CCloseDoors']]],
   ['mcombibuttons',['mCombiButtons',['../class_f_r_s_1_1_c_oil_display.html#a7e44c59886eb46216f1db59a1e4f3797',1,'FRS::COilDisplay']]],
   ['mcombidisplaybuttonpressstart',['mCombiDisplayButtonPressStart',['../class_f_r_s_1_1_c_oil_display.html#a77d8e33f806e654cdd9c81f5b9aca334',1,'FRS::COilDisplay']]],
-  ['mcriticaloiltemperaturethreshold',['mCriticalOilTemperatureThreshold',['../class_f_r_s_1_1_c_oil_display.html#a931874f533692f0727c83bb31f2dd86f',1,'FRS::COilDisplay']]],
-  ['mcriticalwatertemperaturethreshold',['mCriticalWaterTemperatureThreshold',['../class_f_r_s_1_1_c_oil_display.html#ad7ee1929b16cb7971eb797bdd9ac9135',1,'FRS::COilDisplay']]],
   ['mcurrentvalue',['mCurrentValue',['../class_o_b_d_1_1_c_o_b_d_frame.html#a41e60b82616dd45fddaed98e6d39de3e',1,'OBD::COBDFrame']]],
   ['mdata',['mData',['../class_c_a_n_1_1_c_read_c_a_n_frame.html#a6b83e8c72dbc40ee50a6ff558f65ce5a',1,'CAN::CReadCANFrame::mData()'],['../class_c_a_n_1_1_c_send_c_a_n_frame.html#addf692b50aa44d525e4d53c8f3446f84',1,'CAN::CSendCANFrame::mData()']]],
   ['mdoorslock',['mDoorsLock',['../class_f_r_s_1_1_c_close_doors.html#a350c86d6c9c1f86abdee2b6990fed66b',1,'FRS::CCloseDoors']]],
@@ -18,7 +15,6 @@ var searchData=
   ['mlastupdatetime',['mLastUpdateTime',['../class_m_o_d_1_1_i_module.html#ae14865f7a61ce82ffa04d744cb360600',1,'MOD::IModule']]],
   ['mlength',['mLength',['../class_c_a_n_1_1_c_read_c_a_n_frame.html#a9acb0971f823e73fd2ac08a31e0a6f6c',1,'CAN::CReadCANFrame::mLength()'],['../class_c_a_n_1_1_c_send_c_a_n_frame.html#ac9b4b2ab1ca2eb3aaf5fedc56f2a8780',1,'CAN::CSendCANFrame::mLength()']]],
   ['mmessageindex',['mMessageIndex',['../class_d_e_b_u_g_1_1_c_debug_connector.html#a4aa2eda93247613f7214bea59c4e8e2e',1,'DEBUG::CDebugConnector']]],
-  ['mnormaloiltemperaturethreshold',['mNormalOilTemperatureThreshold',['../class_f_r_s_1_1_c_oil_display.html#ab8bbf59a30b305d6385c2008376ad5c3',1,'FRS::COilDisplay']]],
   ['moiltemperature',['mOilTemperature',['../class_f_r_s_1_1_c_oil_display.html#a7914b4bd787e278dfc66b800e87943f1',1,'FRS::COilDisplay']]],
   ['mpassengerdoorstatus',['mPassengerDoorStatus',['../class_f_r_s_1_1_c_close_doors.html#ac484b2aa7dfa76550f67c0460a1f2a1d',1,'FRS::CCloseDoors']]],
   ['mreadframe',['mReadFrame',['../class_m_o_d_1_1_i_module.html#af2a979e78b108f70440eb62a5d68373b',1,'MOD::IModule']]],
@@ -32,6 +28,5 @@ var searchData=
   ['mupdaterate',['mUpdateRate',['../class_m_o_d_1_1_i_module.html#a4cc96e63251e61e56850be3653a5e876',1,'MOD::IModule']]],
   ['mvalidfunction',['mValidFunction',['../class_o_b_d_1_1_c_o_b_d_frame.html#a930d49513c3fdf58b7e63bd3f96483f2',1,'OBD::COBDFrame']]],
   ['mvehiclespeed',['mVehicleSpeed',['../class_f_r_s_1_1_c_close_doors.html#a84ec14411c3259dcd571c64b687f693a',1,'FRS::CCloseDoors']]],
-  ['mwarningoiltemperaturethreshold',['mWarningOilTemperatureThreshold',['../class_f_r_s_1_1_c_oil_display.html#ae3e04211d04c8e4b1a92011e21844a43',1,'FRS::COilDisplay']]],
   ['mwatertemperature',['mWaterTemperature',['../class_f_r_s_1_1_c_oil_display.html#a30280da7a85b9242d40bc23079e9baec',1,'FRS::COilDisplay']]]
 ];

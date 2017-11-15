@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CANLibrary: C:/Users/admin-lcai/Desktop/Arduino/Projet/ArduinoCANHelperLibrary/CANHelperLibrary/Frame/OBD/TOYOTA Directory Reference</title>
+<title>CANLibrary: CAN Helper Library</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,7 +61,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('dir_d67c6f49c44c15d190e584c271130505.html','');});
+$(document).ready(function(){initNavTree('md__c_1__users_admin-lcai__desktop__arduino__projet__arduino_c_a_n_helper_library__readme.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -80,15 +80,41 @@ $(document).ready(function(){initNavTree('dir_d67c6f49c44c15d190e584c271130505.h
 
 <div class="header">
   <div class="headertitle">
-<div class="title">TOYOTA Directory Reference</div>  </div>
+<div class="title"><a class="el" href="namespace_c_a_n.html">CAN</a> Helper Library </div>  </div>
 </div><!--header-->
 <div class="contents">
-</div><!-- contents -->
+<div class="textblock"><h3>Main goal</h3>
+<p>This project aims to offer a simple interface through <a class="el" href="namespace_c_a_n.html">CAN</a> network. It was written to help adding some new options to a Scion <a class="el" href="namespace_f_r_s.html">FRS</a> / Toyota GT86 / Subaru BRZ car, like showing oil temperature, etc.</p>
+<p>In order to work and be flexible it defines:</p><ul>
+<li>a connector (bridge to a specific <a class="el" href="namespace_c_a_n.html">CAN</a> shield or hardware)</li>
+<li>a basic frame model (Standard <a class="el" href="namespace_c_a_n.html">CAN</a> Frame + ISO 15765-2)</li>
+<li>a basic <a class="el" href="namespace_o_b_d.html">OBD</a> frame (that could send data, wait for a reply and extract the relevant values)</li>
+<li>some utilities methods</li>
+<li>some standard <a class="el" href="namespace_o_b_d.html">OBD</a> frame (query water temperature, etc.) and some Toyota specific ones (lock doors, query oil temperature, etc.)</li>
+</ul>
+<h3>Getting started</h3>
+<p>You could find the doxygen documentation under the _"Documentation"_ folder. Please read it in order to understand how to use the library or ask me and I'll respond as soon as possible. You could also use the _"ArduinoProjects"_ folder as a good start.</p>
+<p>It has been tested on an Arduino UNO using Arduino IDE 1.8.2 and the <a class="el" href="namespace_c_a_n.html">CAN</a> BUS Shield from <a href="http://wiki.seeed.cc/CAN-BUS_Shield_V1.2/">http://wiki.seeed.cc/CAN-BUS_Shield_V1.2/</a> (which is provided in the connectors folders).</p>
+<p>If you need to use a different <a class="el" href="namespace_c_a_n.html">CAN</a> BUS shield than the one I used, simply create your specific connector using the provided ICANConnector interface. You are welcome to send it to me so I can add it to the connectors list ;)</p>
+<h3>Modules</h3>
+<p>To be able to reuse the code easily, there is some "modules" already existing in the library. They are little software pieces that will take care of a specific user need (like driving the automatic doors lock, showing the oil temperature, etc.). You could found the existing ones under the _"Modules"_ folder.</p>
+<p>Two where originally developped using the library. </p><h4><a class="el" href="_c_close_doors_8h_source.html">TOYOTA/FRS/CCloseDoors.h</a></h4>
+<ul>
+<li>Module that locks / unlocks the doors on a Scion <a class="el" href="namespace_f_r_s.html">FRS</a></li>
+<li>Video: <a href="https://youtu.be/yW65quZttV8">https://youtu.be/yW65quZttV8</a></li>
+</ul>
+<h4><a class="el" href="_c_oil_display_8h_source.html">TOYOTA/FRS/COilDisplay.h</a></h4>
+<ul>
+<li>Module that displays the oil temperature in place of the water one on dash</li>
+<li>Video: <a href="https://youtu.be/xC93xSPRaQE">https://youtu.be/xC93xSPRaQE</a></li>
+</ul>
+<p>Feel free to send your own :)</p>
+<p>Have fun ! </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_a5a5e51f6a22cc0419cf5fb74bc184e6.html">CANHelperLibrary</a></li><li class="navelem"><a class="el" href="dir_0f818255192842ce3d8ba02ec8998a89.html">Frame</a></li><li class="navelem"><a class="el" href="dir_6b246a28a5993961121689fd62f7b0fa.html">OBD</a></li><li class="navelem"><a class="el" href="dir_d67c6f49c44c15d190e584c271130505.html">TOYOTA</a></li>
     <li class="footer">Generated on Wed Nov 15 2017 22:19:15 for CANLibrary by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
