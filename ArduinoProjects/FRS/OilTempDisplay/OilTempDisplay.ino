@@ -15,6 +15,9 @@ FRS::COilDisplay S_OIL_DISPLAY(S_CAN, F_READ_DATA) ;
 /*****************************************************************************/
 void setup()
 {
+	// Wait some time for initialization to be always correct (if powered with ACC or IGN only)
+	DELAY(3000) ;
+	
 	// Open log
 	OPEN_LOG() ;
 
