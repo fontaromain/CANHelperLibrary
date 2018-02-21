@@ -43,6 +43,12 @@ namespace CAN
 		virtual bool Initialize() = 0 ;
 
 		/**
+		 *	Closes connector
+		 *	@return True on success, false otherwise
+		 */
+		virtual bool Close() = 0 ;
+		
+		/**
 		 *	Sets a specific mask
 		 *	@param[in]  pId			Mask Id
 		 *	@param[in]	pFrameType	Standard or extended frame

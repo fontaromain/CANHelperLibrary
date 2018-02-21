@@ -48,6 +48,15 @@ namespace DEBUG
 		}
 
 		/**
+		 *	Closes connector
+		 *	@return True on success, false otherwise
+		 */
+		virtual bool Close() override
+		{
+			return true ;
+		}
+		
+		/**
 		 *	Sets a specific mask
 		 *	@param[in]  pId			Mask Id
 		 *	@param[in]	pFrameType	Standard or extended frame

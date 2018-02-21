@@ -28,7 +28,7 @@ namespace CAN
 		CMCPCANConnector()
 		{
 			// Init members
-			this->mCAN = new MCP_CAN(10) ;	// Build a new MCP_CAN using CS pin 10
+			this->mCAN = nullptr ;
 		}
 
 		/**
@@ -36,7 +36,7 @@ namespace CAN
 		 */
 		virtual ~CMCPCANConnector()
 		{
-			// Clean up
+			// Clean up if needed
 			delete this->mCAN ;
 		}
 
@@ -46,6 +46,9 @@ namespace CAN
 		 */
 		virtual bool Initialize() override
 		{
+			// Build a new MCP_CAN using CS pin 10
+			this->mCAN = new MCP_CAN(10) ;
+			
 			// Initialization ok ?
 			if (this->mCAN->begin(MCP_STDEXT, CAN_500KBPS, MCP_16MHZ) == CAN_OK)
 			{
@@ -55,9 +58,26 @@ namespace CAN
 				// Succeeded !
 				return true ;
 			}
+			
+			// Cleanup !
+			this->Close() ;
 
 			// Failed !
 			return false ;
+		}
+		
+		/**
+		 *	Closes connector
+		 *	@return True on success, false otherwise
+		 */
+		virtual bool Close() override
+		{
+			// Clean up
+			delete this->mCAN ;
+			this->mCAN = nullptr ;
+			
+			// Always succeed
+			return true ;
 		}
 
 		/**
@@ -69,7 +89,7 @@ namespace CAN
 		 */
 		virtual bool SetMask(unsigned char pId, unsigned char pFrameType, unsigned long pMask) override
 		{
-			return this->mCAN->init_Mask(pId, pFrameType, pMask) == CAN_OK ;
+			return this->mCAN && this->mCAN->init_Mask(pId, pFrameType, pMask) == CAN_OK ;
 		}
 
 		/**
@@ -81,7 +101,7 @@ namespace CAN
 		 */
 		virtual bool SetFilter(unsigned char pId, unsigned char pFrameType, unsigned long pFilter) override
 		{
-			return this->mCAN->init_Filt(pId, pFrameType, pFilter) == CAN_OK ;
+			return this->mCAN && this->mCAN->init_Filt(pId, pFrameType, pFilter) == CAN_OK ;
 		}
 
 		/**
@@ -103,7 +123,7 @@ namespace CAN
 		 */
 		virtual bool ReadImpl(unsigned long& pCANId, unsigned char& pLength, unsigned char* pReadData) override
 		{
-			return this->mCAN->readMsgBuf(&pCANId, 1, &pLength, pReadData) == CAN_OK ;
+			return this->mCAN && this->mCAN->readMsgBuf(&pCANId, 1, &pLength, pReadData) == CAN_OK ;
 		}
 
 		/**
@@ -115,7 +135,7 @@ namespace CAN
 		 */
 		virtual bool SendImpl(unsigned long pCANId, unsigned char pLength, const unsigned char* const pData) override
 		{
-			return this->mCAN->sendMsgBuf(pCANId, pLength, pData) == CAN_OK ;
+			return this->mCAN && this->mCAN->sendMsgBuf(pCANId, pLength, pData) == CAN_OK ;
 		}
 
 	protected:
