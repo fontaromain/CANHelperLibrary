@@ -22,7 +22,7 @@ void setup()
 	OPEN_LOG() ;
 
 	// While CAN initialization fails
-	while (!S_CAN.Initialize())
+	while (!CAN::InitializeCAN(S_CAN, &FRS::FiltersAndMasksConfiguration))
 	{
 		// Tell user
 		PRINTLN_STR("CAN initialization failed") ;
@@ -30,24 +30,9 @@ void setup()
 		// Wait some time before trying again
 		DELAY(100) ;
 	}
-
+	
 	// Ok, everything seems good
 	PRINTLN_STR("CAN initialization OK") ;
-
-	// Define filters we want to use
-	S_CAN.SetFilter(0, 0, 0x07500000) ;
-	S_CAN.SetFilter(1, 0, 0x07C00000) ;
-	S_CAN.SetFilter(2, 0, 0x07D00000) ;
-	S_CAN.SetFilter(3, 0, 0x07E00000) ;
-	S_CAN.SetFilter(4, 0, 0x07F00000) ;
-	S_CAN.SetMask(0, 0, 0x07F00000) ;
-	S_CAN.SetMask(1, 0, 0x07F00000) ;
-	S_CAN.SetMask(2, 0, 0x07F00000) ;
-	S_CAN.SetMask(3, 0, 0x07F00000) ;
-	S_CAN.SetMask(4, 0, 0x07F00000) ;
-
-	// Filters set !
-	PRINTLN_STR("CAN filters initialization OK") ;
 }
 
 /*****************************************************************************/
@@ -56,9 +41,28 @@ void loop()
 	// Setup the watchdog
 	wdt_enable(WDTO_8S) ;
 	
-	// Update close door module
+	// Update doors lock module
 	S_DOORS_LOCK.Update(MILLIS()) ;
 
-	// Reset watchdog
-	wdt_reset() ;
+	// No errors occured on CAN ?
+	if (!S_CAN.HasError())
+	{
+		// Reset watchdog
+		wdt_reset() ;
+	}
+	else
+	{
+		// Reset watchdog
+		wdt_reset() ;
+		
+		// Tell user which error it is
+		PRINTLN_STR("Error in CAN, restarting the whole thing") ;
+		PRINTLNHEX(S_CAN.GetError()) ;
+		
+		// Restart in 15ms
+		wdt_enable(WDTO_15MS) ;
+		
+		// Wait :(
+		while (true) ;
+	}
 }

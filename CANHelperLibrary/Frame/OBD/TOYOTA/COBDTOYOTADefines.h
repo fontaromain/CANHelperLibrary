@@ -29,6 +29,23 @@
 namespace FRS
 {
 	/**
+	 *	Setups the masks and filters to be able to use the specific frames defined in this namespace
+	 *	@param[in] pCAN Connector to configure
+	 */
+	void FiltersAndMasksConfiguration(CAN::ICANConnector& pCAN) 
+	{
+		pCAN.SetFilter(0, 0, 0x07500000) ;
+		pCAN.SetFilter(1, 0, 0x07C00000) ;
+		pCAN.SetFilter(2, 0, 0x07D00000) ;
+		pCAN.SetFilter(3, 0, 0x07E00000) ;
+		pCAN.SetFilter(4, 0, 0x07F00000) ;
+		pCAN.SetMask(0, 0, 0x07F00000) ;
+		pCAN.SetMask(1, 0, 0x07F00000) ;
+		pCAN.SetMask(2, 0, 0x07F00000) ;
+		pCAN.SetMask(3, 0, 0x07F00000) ;
+		pCAN.SetMask(4, 0, 0x07F00000) ;
+	}
+	/**
 	 *	@enum ECombiBtnStatus
 	 *	Current combi buttons status
 	 */

@@ -42,16 +42,30 @@ namespace CAN
 
 		/**
 		 *	Initialize the CAN bus
+		 *	@param[in] pSetupFunc Setup function to use
 		 *	@return True on success, false otherwise
 		 */
-		virtual bool Initialize() override
+		virtual bool Initialize(SetupFiltersAndMasks pSetupFunc = nullptr) override
 		{
+			// Already a CAN ?
+			if (this->mCAN)
+			{
+				// Cleanup !
+				this->Close() ;
+			}
+			
 			// Build a new MCP_CAN using CS pin 10
 			this->mCAN = new MCP_CAN(10) ;
 			
 			// Initialization ok ?
 			if (this->mCAN->begin(MCP_STDEXT, CAN_500KBPS, MCP_16MHZ) == CAN_OK)
 			{
+				// A valid setup functino to use ?
+				if (pSetupFunc)
+				{
+					pSetupFunc(*this) ;
+				}
+				
 				// Back to normal
 				this->mCAN->setMode(MCP_NORMAL) ;
 
@@ -80,6 +94,25 @@ namespace CAN
 			return true ;
 		}
 
+		/**
+		 *	Tests whether there is some errors on the connector or not (configuration, etc.)
+		 *	@return True if some errors, false otherwise
+		 */
+		virtual bool HasError() override
+		{
+			// Error if no CAN available OR if check error invalid
+			return !this->mCAN || this->mCAN->checkError() == CAN_CTRLERROR ;
+		}
+		
+		/**
+		 *	Gets the current error code if any
+		 *	@return Current error code
+		 */
+		virtual char GetError() override
+		{
+			return this->mCAN ? this->mCAN->getError() : 0 ;
+		}
+		
 		/**
 		 *	Sets a specific mask
 		 *	@param[in]  pId			Mask Id

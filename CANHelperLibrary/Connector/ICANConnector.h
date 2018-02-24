@@ -21,6 +21,15 @@
  */
 namespace CAN
 {
+	// Forward declaration
+	class ICANConnector ;
+	
+	/**
+	 *	Function pointer to use to define startup masks and filters
+	 *	@param[in] pConnector Connector to work on
+	 */
+	typedef void (*SetupFiltersAndMasks)(ICANConnector& pConnector) ;
+	
 	/**
 	 *	@class ICANConnector
 	 *	Interface through CAN library
@@ -38,15 +47,28 @@ namespace CAN
 	public:
 		/**
 		 *	Initialize the CAN bus
+		 *	@param[in] pSetupFunc Setup function to use
 		 *	@return True on success, false otherwise
 		 */
-		virtual bool Initialize() = 0 ;
+		virtual bool Initialize(SetupFiltersAndMasks pSetupFunc = nullptr) = 0 ;
 
 		/**
 		 *	Closes connector
 		 *	@return True on success, false otherwise
 		 */
 		virtual bool Close() = 0 ;
+		
+		/**
+		 *	Tests whether there is some errors on the connector or not (configuration, etc.)
+		 *	@return True if some errors, false otherwise
+		 */
+		virtual bool HasError() = 0 ;
+		
+		/**
+		 *	Gets the current error code if any
+		 *	@return Current error code
+		 */
+		virtual char GetError() = 0 ;
 		
 		/**
 		 *	Sets a specific mask
@@ -289,4 +311,42 @@ namespace CAN
 			PRINTLN_STR("") ;
 		}
 	} ;
+	
+	/**
+	 *	Initialize the CAN bus
+	 *	@param[in] pCAN			CAN connector to initialize
+	 *	@param[in] pSetupFunc	Setup function to use
+	 *	@return True on success, false otherwise
+	 */
+	static bool InitializeCAN(ICANConnector& pCAN, SetupFiltersAndMasks pSetupFunc = nullptr)
+	{
+		// Declare everything we need
+		char 			lTestCounter 	= 0 ;
+		unsigned long	lCANId			= 0 ;
+		unsigned char	lLength			= 0 ;
+		unsigned char 	lData[8]		= { 0, 0, 0, 0, 0, 0, 0, 0 } ;
+		
+		// While CAN initialization fails
+		while (!pCAN.Initialize(pSetupFunc))
+		{
+			// More than 20 tries ?
+			if (lTestCounter++ > 20)
+			{
+				// Failed !
+				return false ;
+			}
+			
+			// Wait some time before trying again
+			DELAY(100) ;
+		}
+		
+		// Unstack all possible message we might have received even if filters have been set accordingly
+		while (pCAN.HasMessages())
+		{
+			pCAN.Read(lCANId, lLength, lData) ;
+		}
+		
+		// Valid if no errors so far !
+		return !pCAN.HasError() ;
+	}
 }

@@ -37,12 +37,13 @@ namespace DEBUG
 		virtual ~CDebugConnector()
 		{
 		}
-
+		
 		/**
 		 *	Initialize the CAN bus
+		 *	@param[in] pSetupFunc Setup function to use
 		 *	@return True on success, false otherwise
 		 */
-		virtual bool Initialize() override
+		virtual bool Initialize(SetupFiltersAndMasks pSetupFunc = nullptr) override
 		{
 			return true ;
 		}
@@ -54,6 +55,24 @@ namespace DEBUG
 		virtual bool Close() override
 		{
 			return true ;
+		}
+
+		/**
+		 *	Tests whether there is some errors on the connector or not (configuration, etc.)
+		 *	@return True if some errors, false otherwise
+		 */
+		virtual bool HasError() override
+		{
+			return false ;
+		}
+		
+		/**
+		 *	Gets the current error code if any
+		 *	@return Current error code
+		 */
+		virtual char GetError() override
+		{
+			return 0 ;
 		}
 		
 		/**
