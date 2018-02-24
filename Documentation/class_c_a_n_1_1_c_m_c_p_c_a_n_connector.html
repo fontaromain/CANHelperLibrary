@@ -117,8 +117,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a4a0029b8120751704414643273cbf489"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4c3d1c5bb0ca122220723f46fa41914"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#ad4c3d1c5bb0ca122220723f46fa41914">~CMCPCANConnector</a> ()</td></tr>
 <tr class="separator:ad4c3d1c5bb0ca122220723f46fa41914"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a0522ec61144df11ee8252e9278690d"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a2a0522ec61144df11ee8252e9278690d">Initialize</a> () override</td></tr>
-<tr class="separator:a2a0522ec61144df11ee8252e9278690d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bf4266330a9eafd9ee03a9d2c38bc2e"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a6bf4266330a9eafd9ee03a9d2c38bc2e">Initialize</a> (<a class="el" href="namespace_c_a_n.html#ae493a41253d2b81b3a15f77958bcbb28">SetupFiltersAndMasks</a> pSetupFunc=nullptr) override</td></tr>
+<tr class="separator:a6bf4266330a9eafd9ee03a9d2c38bc2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a939bcae4f47d805c032a9bd66a74c29d"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a939bcae4f47d805c032a9bd66a74c29d">Close</a> () override</td></tr>
+<tr class="separator:a939bcae4f47d805c032a9bd66a74c29d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08af4b5e5f7b9b7fa617514a86a760fc"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a08af4b5e5f7b9b7fa617514a86a760fc">HasError</a> () override</td></tr>
+<tr class="separator:a08af4b5e5f7b9b7fa617514a86a760fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a390c9de4c319584a3716f97bb7c40cbe"><td class="memItemLeft" align="right" valign="top">virtual char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a390c9de4c319584a3716f97bb7c40cbe">GetError</a> () override</td></tr>
+<tr class="separator:a390c9de4c319584a3716f97bb7c40cbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a389f5917d8881201967673d6135fa1ea"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a389f5917d8881201967673d6135fa1ea">SetMask</a> (unsigned char pId, unsigned char pFrameType, unsigned long pMask) override</td></tr>
 <tr class="separator:a389f5917d8881201967673d6135fa1ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99f179735ca98257c18417ffd7992b53"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a99f179735ca98257c18417ffd7992b53">SetFilter</a> (unsigned char pId, unsigned char pFrameType, unsigned long pFilter) override</td></tr>
@@ -185,8 +191,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00028">28</a> of file <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html">CMCPCANConnector.h</a>.</p>
 
-<p class="reference">References <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00122">mCAN</a>.</p>
-<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="comment">// Init members</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            this-&gt;<a class="code" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">mCAN</a> = <span class="keyword">new</span> MCP_CAN(10) ;  <span class="comment">// Build a new MCP_CAN using CS pin 10</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div><div class="ttc" id="class_c_a_n_1_1_c_m_c_p_c_a_n_connector_html_a5641443137eb6ccf098e0971c3388ac4"><div class="ttname"><a href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">CAN::CMCPCANConnector::mCAN</a></div><div class="ttdeci">MCP_CAN * mCAN</div><div class="ttdef"><b>Definition:</b> <a href="_c_m_c_p_c_a_n_connector_8h_source.html#l00122">CMCPCANConnector.h:122</a></div></div>
+<p class="reference">References <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00175">mCAN</a>.</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="comment">// Init members</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            this-&gt;<a class="code" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">mCAN</a> = nullptr ;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div><div class="ttc" id="class_c_a_n_1_1_c_m_c_p_c_a_n_connector_html_a5641443137eb6ccf098e0971c3388ac4"><div class="ttname"><a href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">CAN::CMCPCANConnector::mCAN</a></div><div class="ttdeci">MCP_CAN * mCAN</div><div class="ttdef"><b>Definition:</b> <a href="_c_m_c_p_c_a_n_connector_8h_source.html#l00175">CMCPCANConnector.h:175</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -216,12 +222,123 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00037">37</a> of file <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html">CMCPCANConnector.h</a>.</p>
 
-<p class="reference">References <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00122">mCAN</a>.</p>
-<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="comment">// Clean up</span></div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keyword">delete</span> this-&gt;<a class="code" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">mCAN</a> ;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div><div class="ttc" id="class_c_a_n_1_1_c_m_c_p_c_a_n_connector_html_a5641443137eb6ccf098e0971c3388ac4"><div class="ttname"><a href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">CAN::CMCPCANConnector::mCAN</a></div><div class="ttdeci">MCP_CAN * mCAN</div><div class="ttdef"><b>Definition:</b> <a href="_c_m_c_p_c_a_n_connector_8h_source.html#l00122">CMCPCANConnector.h:122</a></div></div>
+<p class="reference">References <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00175">mCAN</a>.</p>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="comment">// Clean up if needed</span></div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keyword">delete</span> this-&gt;<a class="code" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">mCAN</a> ;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div><div class="ttc" id="class_c_a_n_1_1_c_m_c_p_c_a_n_connector_html_a5641443137eb6ccf098e0971c3388ac4"><div class="ttname"><a href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">CAN::CMCPCANConnector::mCAN</a></div><div class="ttdeci">MCP_CAN * mCAN</div><div class="ttdef"><b>Definition:</b> <a href="_c_m_c_p_c_a_n_connector_8h_source.html#l00175">CMCPCANConnector.h:175</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a939bcae4f47d805c032a9bd66a74c29d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a939bcae4f47d805c032a9bd66a74c29d">&#9670;&nbsp;</a></span>Close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool CAN::CMCPCANConnector::Close </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Closes connector </p><dl class="section return"><dt>Returns</dt><dd>True on success, false otherwise </dd></dl>
+
+<p>Implements <a class="el" href="class_c_a_n_1_1_i_c_a_n_connector.html#a78c6cd1fff38cced4fdcda094289ef2c">CAN::ICANConnector</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00087">87</a> of file <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html">CMCPCANConnector.h</a>.</p>
+
+<p class="reference">References <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00175">mCAN</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00048">Initialize()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        {</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="comment">// Clean up</span></div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keyword">delete</span> this-&gt;<a class="code" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">mCAN</a> ;</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            this-&gt;<a class="code" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">mCAN</a> = nullptr ;</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            </div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="comment">// Always succeed</span></div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keywordflow">return</span> true ;</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        }</div><div class="ttc" id="class_c_a_n_1_1_c_m_c_p_c_a_n_connector_html_a5641443137eb6ccf098e0971c3388ac4"><div class="ttname"><a href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">CAN::CMCPCANConnector::mCAN</a></div><div class="ttdeci">MCP_CAN * mCAN</div><div class="ttdef"><b>Definition:</b> <a href="_c_m_c_p_c_a_n_connector_8h_source.html#l00175">CMCPCANConnector.h:175</a></div></div>
+</div><!-- fragment --><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_c_a_n_1_1_c_m_c_p_c_a_n_connector_a939bcae4f47d805c032a9bd66a74c29d_icgraph.png" border="0" usemap="#class_c_a_n_1_1_c_m_c_p_c_a_n_connector_a939bcae4f47d805c032a9bd66a74c29d_icgraph" alt=""/></div>
+<map name="class_c_a_n_1_1_c_m_c_p_c_a_n_connector_a939bcae4f47d805c032a9bd66a74c29d_icgraph" id="class_c_a_n_1_1_c_m_c_p_c_a_n_connector_a939bcae4f47d805c032a9bd66a74c29d_icgraph">
+<area shape="rect" id="node2" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a6bf4266330a9eafd9ee03a9d2c38bc2e" title="CAN::CMCPCANConnector\l::Initialize" alt="" coords="235,5,416,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a390c9de4c319584a3716f97bb7c40cbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a390c9de4c319584a3716f97bb7c40cbe">&#9670;&nbsp;</a></span>GetError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual char CAN::CMCPCANConnector::GetError </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Gets the current error code if any </p><dl class="section return"><dt>Returns</dt><dd>Current error code </dd></dl>
+
+<p>Implements <a class="el" href="class_c_a_n_1_1_i_c_a_n_connector.html#ab2c30b8ebd50f3f202678273d80a3729">CAN::ICANConnector</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00111">111</a> of file <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html">CMCPCANConnector.h</a>.</p>
+
+<p class="reference">References <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00175">mCAN</a>.</p>
+<div class="fragment"><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        {</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">mCAN</a> ? this-&gt;<a class="code" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">mCAN</a>-&gt;getError() : 0 ;</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        }</div><div class="ttc" id="class_c_a_n_1_1_c_m_c_p_c_a_n_connector_html_a5641443137eb6ccf098e0971c3388ac4"><div class="ttname"><a href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">CAN::CMCPCANConnector::mCAN</a></div><div class="ttdeci">MCP_CAN * mCAN</div><div class="ttdef"><b>Definition:</b> <a href="_c_m_c_p_c_a_n_connector_8h_source.html#l00175">CMCPCANConnector.h:175</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a08af4b5e5f7b9b7fa617514a86a760fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08af4b5e5f7b9b7fa617514a86a760fc">&#9670;&nbsp;</a></span>HasError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool CAN::CMCPCANConnector::HasError </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Tests whether there is some errors on the connector or not (configuration, etc.) </p><dl class="section return"><dt>Returns</dt><dd>True if some errors, false otherwise </dd></dl>
+
+<p>Implements <a class="el" href="class_c_a_n_1_1_i_c_a_n_connector.html#adf41d619a728f9371769b4d8a247ba49">CAN::ICANConnector</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00101">101</a> of file <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html">CMCPCANConnector.h</a>.</p>
+
+<p class="reference">References <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00175">mCAN</a>.</p>
+<div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        {</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="comment">// Error if no CAN available OR if check error invalid</span></div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="keywordflow">return</span> !this-&gt;<a class="code" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">mCAN</a> || this-&gt;<a class="code" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">mCAN</a>-&gt;checkError() == CAN_CTRLERROR ;</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        }</div><div class="ttc" id="class_c_a_n_1_1_c_m_c_p_c_a_n_connector_html_a5641443137eb6ccf098e0971c3388ac4"><div class="ttname"><a href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">CAN::CMCPCANConnector::mCAN</a></div><div class="ttdeci">MCP_CAN * mCAN</div><div class="ttdef"><b>Definition:</b> <a href="_c_m_c_p_c_a_n_connector_8h_source.html#l00175">CMCPCANConnector.h:175</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a3ffb3caa59fd8b9aa5c917fa6f0807e6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3ffb3caa59fd8b9aa5c917fa6f0807e6">&#9670;&nbsp;</a></span>HasMessages()</h2>
 
@@ -248,15 +365,15 @@ Protected Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="class_c_a_n_1_1_i_c_a_n_connector.html#a058664bcead662753c50ef00e8d014a5">CAN::ICANConnector</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00091">91</a> of file <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html">CMCPCANConnector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00144">144</a> of file <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html">CMCPCANConnector.h</a>.</p>
 
-<p class="reference">References <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00122">mCAN</a>.</p>
-<div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        {</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">mCAN</a>-&gt;checkReceive() == CAN_MSGAVAIL ;</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        }</div><div class="ttc" id="class_c_a_n_1_1_c_m_c_p_c_a_n_connector_html_a5641443137eb6ccf098e0971c3388ac4"><div class="ttname"><a href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">CAN::CMCPCANConnector::mCAN</a></div><div class="ttdeci">MCP_CAN * mCAN</div><div class="ttdef"><b>Definition:</b> <a href="_c_m_c_p_c_a_n_connector_8h_source.html#l00122">CMCPCANConnector.h:122</a></div></div>
+<p class="reference">References <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00175">mCAN</a>.</p>
+<div class="fragment"><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        {</div><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">mCAN</a>-&gt;checkReceive() == CAN_MSGAVAIL ;</div><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        }</div><div class="ttc" id="class_c_a_n_1_1_c_m_c_p_c_a_n_connector_html_a5641443137eb6ccf098e0971c3388ac4"><div class="ttname"><a href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">CAN::CMCPCANConnector::mCAN</a></div><div class="ttdeci">MCP_CAN * mCAN</div><div class="ttdef"><b>Definition:</b> <a href="_c_m_c_p_c_a_n_connector_8h_source.html#l00175">CMCPCANConnector.h:175</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a2a0522ec61144df11ee8252e9278690d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a0522ec61144df11ee8252e9278690d">&#9670;&nbsp;</a></span>Initialize()</h2>
+<a id="a6bf4266330a9eafd9ee03a9d2c38bc2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bf4266330a9eafd9ee03a9d2c38bc2e">&#9670;&nbsp;</a></span>Initialize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -267,7 +384,8 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">virtual bool CAN::CMCPCANConnector::Initialize </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="namespace_c_a_n.html#ae493a41253d2b81b3a15f77958bcbb28">SetupFiltersAndMasks</a>&#160;</td>
+          <td class="paramname"><em>pSetupFunc</em> = <code>nullptr</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -277,15 +395,32 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Initialize the <a class="el" href="namespace_c_a_n.html">CAN</a> bus </p><dl class="section return"><dt>Returns</dt><dd>True on success, false otherwise </dd></dl>
+<p>Initialize the <a class="el" href="namespace_c_a_n.html">CAN</a> bus </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pSetupFunc</td><td>Setup function to use </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True on success, false otherwise </dd></dl>
 
-<p>Implements <a class="el" href="class_c_a_n_1_1_i_c_a_n_connector.html#ae21d79990eb6c5c5f2dc6b0b12185ccc">CAN::ICANConnector</a>.</p>
+<p>Implements <a class="el" href="class_c_a_n_1_1_i_c_a_n_connector.html#ace436eee9d3fda78e90709b5f78eeb70">CAN::ICANConnector</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00047">47</a> of file <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html">CMCPCANConnector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00048">48</a> of file <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html">CMCPCANConnector.h</a>.</p>
 
-<p class="reference">References <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00122">mCAN</a>.</p>
-<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        {</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="comment">// Initialization ok ?</span></div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">if</span> (this-&gt;<a class="code" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">mCAN</a>-&gt;begin(MCP_STDEXT, CAN_500KBPS, MCP_16MHZ) == CAN_OK)</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            {</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="comment">// Back to normal</span></div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                this-&gt;<a class="code" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">mCAN</a>-&gt;setMode(MCP_NORMAL) ;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <span class="comment">// Succeeded !</span></div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="keywordflow">return</span> true ;</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            }</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="comment">// Failed !</span></div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordflow">return</span> false ;</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div><div class="ttc" id="class_c_a_n_1_1_c_m_c_p_c_a_n_connector_html_a5641443137eb6ccf098e0971c3388ac4"><div class="ttname"><a href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">CAN::CMCPCANConnector::mCAN</a></div><div class="ttdeci">MCP_CAN * mCAN</div><div class="ttdef"><b>Definition:</b> <a href="_c_m_c_p_c_a_n_connector_8h_source.html#l00122">CMCPCANConnector.h:122</a></div></div>
-</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00087">Close()</a>, and <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00175">mCAN</a>.</p>
+<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        {</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="comment">// Already a CAN ?</span></div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">if</span> (this-&gt;<a class="code" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">mCAN</a>)</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            {</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <span class="comment">// Cleanup !</span></div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                this-&gt;<a class="code" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a939bcae4f47d805c032a9bd66a74c29d">Close</a>() ;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            }</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            </div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="comment">// Build a new MCP_CAN using CS pin 10</span></div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            this-&gt;<a class="code" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">mCAN</a> = <span class="keyword">new</span> MCP_CAN(10) ;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            </div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="comment">// Initialization ok ?</span></div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">if</span> (this-&gt;<a class="code" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">mCAN</a>-&gt;begin(MCP_STDEXT, CAN_500KBPS, MCP_16MHZ) == CAN_OK)</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            {</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="comment">// A valid setup functino to use ?</span></div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="keywordflow">if</span> (pSetupFunc)</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                {</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                    pSetupFunc(*<span class="keyword">this</span>) ;</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                }</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                </div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <span class="comment">// Back to normal</span></div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                this-&gt;<a class="code" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">mCAN</a>-&gt;setMode(MCP_NORMAL) ;</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <span class="comment">// Succeeded !</span></div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="keywordflow">return</span> true ;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            }</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            </div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="comment">// Cleanup !</span></div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            this-&gt;<a class="code" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a939bcae4f47d805c032a9bd66a74c29d">Close</a>() ;</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="comment">// Failed !</span></div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keywordflow">return</span> false ;</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div><div class="ttc" id="class_c_a_n_1_1_c_m_c_p_c_a_n_connector_html_a939bcae4f47d805c032a9bd66a74c29d"><div class="ttname"><a href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a939bcae4f47d805c032a9bd66a74c29d">CAN::CMCPCANConnector::Close</a></div><div class="ttdeci">virtual bool Close() override</div><div class="ttdef"><b>Definition:</b> <a href="_c_m_c_p_c_a_n_connector_8h_source.html#l00087">CMCPCANConnector.h:87</a></div></div>
+<div class="ttc" id="class_c_a_n_1_1_c_m_c_p_c_a_n_connector_html_a5641443137eb6ccf098e0971c3388ac4"><div class="ttname"><a href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">CAN::CMCPCANConnector::mCAN</a></div><div class="ttdeci">MCP_CAN * mCAN</div><div class="ttdef"><b>Definition:</b> <a href="_c_m_c_p_c_a_n_connector_8h_source.html#l00175">CMCPCANConnector.h:175</a></div></div>
+</div><!-- fragment --><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_c_a_n_1_1_c_m_c_p_c_a_n_connector_a6bf4266330a9eafd9ee03a9d2c38bc2e_cgraph.png" border="0" usemap="#class_c_a_n_1_1_c_m_c_p_c_a_n_connector_a6bf4266330a9eafd9ee03a9d2c38bc2e_cgraph" alt=""/></div>
+<map name="class_c_a_n_1_1_c_m_c_p_c_a_n_connector_a6bf4266330a9eafd9ee03a9d2c38bc2e_cgraph" id="class_c_a_n_1_1_c_m_c_p_c_a_n_connector_a6bf4266330a9eafd9ee03a9d2c38bc2e_cgraph">
+<area shape="rect" id="node2" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a939bcae4f47d805c032a9bd66a74c29d" title="CAN::CMCPCANConnector\l::Close" alt="" coords="235,5,416,47"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="acd5a8ac2399764ec264eae914522df22"></a>
@@ -339,10 +474,10 @@ Protected Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="class_c_a_n_1_1_i_c_a_n_connector.html#ab5eb8b3aa24ac8a6d377b6a526016be3">CAN::ICANConnector</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00104">104</a> of file <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html">CMCPCANConnector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00157">157</a> of file <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html">CMCPCANConnector.h</a>.</p>
 
-<p class="reference">References <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00122">mCAN</a>.</p>
-<div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        {</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">mCAN</a>-&gt;readMsgBuf(&amp;pCANId, 1, &amp;pLength, pReadData) == CAN_OK ;</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        }</div><div class="ttc" id="class_c_a_n_1_1_c_m_c_p_c_a_n_connector_html_a5641443137eb6ccf098e0971c3388ac4"><div class="ttname"><a href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">CAN::CMCPCANConnector::mCAN</a></div><div class="ttdeci">MCP_CAN * mCAN</div><div class="ttdef"><b>Definition:</b> <a href="_c_m_c_p_c_a_n_connector_8h_source.html#l00122">CMCPCANConnector.h:122</a></div></div>
+<p class="reference">References <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00175">mCAN</a>.</p>
+<div class="fragment"><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        {</div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">mCAN</a> &amp;&amp; this-&gt;<a class="code" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">mCAN</a>-&gt;readMsgBuf(&amp;pCANId, 1, &amp;pLength, pReadData) == CAN_OK ;</div><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        }</div><div class="ttc" id="class_c_a_n_1_1_c_m_c_p_c_a_n_connector_html_a5641443137eb6ccf098e0971c3388ac4"><div class="ttname"><a href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">CAN::CMCPCANConnector::mCAN</a></div><div class="ttdeci">MCP_CAN * mCAN</div><div class="ttdef"><b>Definition:</b> <a href="_c_m_c_p_c_a_n_connector_8h_source.html#l00175">CMCPCANConnector.h:175</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -397,10 +532,10 @@ Protected Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="class_c_a_n_1_1_i_c_a_n_connector.html#a93b126398f559a9c8cd8dd581c52bdbe">CAN::ICANConnector</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00116">116</a> of file <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html">CMCPCANConnector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00169">169</a> of file <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html">CMCPCANConnector.h</a>.</p>
 
-<p class="reference">References <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00122">mCAN</a>.</p>
-<div class="fragment"><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        {</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">mCAN</a>-&gt;sendMsgBuf(pCANId, pLength, pData) == CAN_OK ;</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        }</div><div class="ttc" id="class_c_a_n_1_1_c_m_c_p_c_a_n_connector_html_a5641443137eb6ccf098e0971c3388ac4"><div class="ttname"><a href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">CAN::CMCPCANConnector::mCAN</a></div><div class="ttdeci">MCP_CAN * mCAN</div><div class="ttdef"><b>Definition:</b> <a href="_c_m_c_p_c_a_n_connector_8h_source.html#l00122">CMCPCANConnector.h:122</a></div></div>
+<p class="reference">References <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00175">mCAN</a>.</p>
+<div class="fragment"><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        {</div><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">mCAN</a> &amp;&amp; this-&gt;<a class="code" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">mCAN</a>-&gt;sendMsgBuf(pCANId, pLength, pData) == CAN_OK ;</div><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        }</div><div class="ttc" id="class_c_a_n_1_1_c_m_c_p_c_a_n_connector_html_a5641443137eb6ccf098e0971c3388ac4"><div class="ttname"><a href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">CAN::CMCPCANConnector::mCAN</a></div><div class="ttdeci">MCP_CAN * mCAN</div><div class="ttdef"><b>Definition:</b> <a href="_c_m_c_p_c_a_n_connector_8h_source.html#l00175">CMCPCANConnector.h:175</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -455,10 +590,10 @@ Protected Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="class_c_a_n_1_1_i_c_a_n_connector.html#ab0fee60e8c2da5e4ed2ceed5aa21ab67">CAN::ICANConnector</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00082">82</a> of file <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html">CMCPCANConnector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00135">135</a> of file <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html">CMCPCANConnector.h</a>.</p>
 
-<p class="reference">References <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00122">mCAN</a>.</p>
-<div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        {</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">mCAN</a>-&gt;init_Filt(pId, pFrameType, pFilter) == CAN_OK ;</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div><div class="ttc" id="class_c_a_n_1_1_c_m_c_p_c_a_n_connector_html_a5641443137eb6ccf098e0971c3388ac4"><div class="ttname"><a href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">CAN::CMCPCANConnector::mCAN</a></div><div class="ttdeci">MCP_CAN * mCAN</div><div class="ttdef"><b>Definition:</b> <a href="_c_m_c_p_c_a_n_connector_8h_source.html#l00122">CMCPCANConnector.h:122</a></div></div>
+<p class="reference">References <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00175">mCAN</a>.</p>
+<div class="fragment"><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        {</div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">mCAN</a> &amp;&amp; this-&gt;<a class="code" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">mCAN</a>-&gt;init_Filt(pId, pFrameType, pFilter) == CAN_OK ;</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        }</div><div class="ttc" id="class_c_a_n_1_1_c_m_c_p_c_a_n_connector_html_a5641443137eb6ccf098e0971c3388ac4"><div class="ttname"><a href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">CAN::CMCPCANConnector::mCAN</a></div><div class="ttdeci">MCP_CAN * mCAN</div><div class="ttdef"><b>Definition:</b> <a href="_c_m_c_p_c_a_n_connector_8h_source.html#l00175">CMCPCANConnector.h:175</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -513,10 +648,10 @@ Protected Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="class_c_a_n_1_1_i_c_a_n_connector.html#a8ec0a1820c7d5a6ca6faf03229b795c8">CAN::ICANConnector</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00070">70</a> of file <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html">CMCPCANConnector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00123">123</a> of file <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html">CMCPCANConnector.h</a>.</p>
 
-<p class="reference">References <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00122">mCAN</a>.</p>
-<div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        {</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">mCAN</a>-&gt;init_Mask(pId, pFrameType, pMask) == CAN_OK ;</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div><div class="ttc" id="class_c_a_n_1_1_c_m_c_p_c_a_n_connector_html_a5641443137eb6ccf098e0971c3388ac4"><div class="ttname"><a href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">CAN::CMCPCANConnector::mCAN</a></div><div class="ttdeci">MCP_CAN * mCAN</div><div class="ttdef"><b>Definition:</b> <a href="_c_m_c_p_c_a_n_connector_8h_source.html#l00122">CMCPCANConnector.h:122</a></div></div>
+<p class="reference">References <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00175">mCAN</a>.</p>
+<div class="fragment"><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        {</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">mCAN</a> &amp;&amp; this-&gt;<a class="code" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">mCAN</a>-&gt;init_Mask(pId, pFrameType, pMask) == CAN_OK ;</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        }</div><div class="ttc" id="class_c_a_n_1_1_c_m_c_p_c_a_n_connector_html_a5641443137eb6ccf098e0971c3388ac4"><div class="ttname"><a href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a5641443137eb6ccf098e0971c3388ac4">CAN::CMCPCANConnector::mCAN</a></div><div class="ttdeci">MCP_CAN * mCAN</div><div class="ttdef"><b>Definition:</b> <a href="_c_m_c_p_c_a_n_connector_8h_source.html#l00175">CMCPCANConnector.h:175</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -542,9 +677,9 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p><a class="el" href="namespace_c_a_n.html">CAN</a> library specific object </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00122">122</a> of file <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html">CMCPCANConnector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00175">175</a> of file <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html">CMCPCANConnector.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00028">CMCPCANConnector()</a>, <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00091">HasMessages()</a>, <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00047">Initialize()</a>, <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00104">ReadImpl()</a>, <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00116">SendImpl()</a>, <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00082">SetFilter()</a>, <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00070">SetMask()</a>, and <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00037">~CMCPCANConnector()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00087">Close()</a>, <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00028">CMCPCANConnector()</a>, <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00111">GetError()</a>, <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00101">HasError()</a>, <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00144">HasMessages()</a>, <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00048">Initialize()</a>, <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00157">ReadImpl()</a>, <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00169">SendImpl()</a>, <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00135">SetFilter()</a>, <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00123">SetMask()</a>, and <a class="el" href="_c_m_c_p_c_a_n_connector_8h_source.html#l00037">~CMCPCANConnector()</a>.</p>
 
 </div>
 </div>
@@ -557,7 +692,7 @@ Protected Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_c_a_n.html">CAN</a></li><li class="navelem"><a class="el" href="class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html">CMCPCANConnector</a></li>
-    <li class="footer">Generated on Wed Nov 15 2017 22:19:15 for CANLibrary by
+    <li class="footer">Generated on Sat Feb 24 2018 18:16:21 for CANLibrary by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>

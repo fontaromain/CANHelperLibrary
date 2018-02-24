@@ -1,5 +1,8 @@
 <map id="CAN::ICANConnector::~ICANConnector" name="CAN::ICANConnector::~ICANConnector">
-<area shape="rect" id="node2" href="$class_c_a_n_1_1_i_c_a_n_connector.html#ae21d79990eb6c5c5f2dc6b0b12185ccc" title="CAN::ICANConnector\l::Initialize" alt="" coords="200,5,347,47"/>
-<area shape="rect" id="node3" href="$class_c_a_n_1_1_i_c_a_n_connector.html#ab0fee60e8c2da5e4ed2ceed5aa21ab67" title="CAN::ICANConnector\l::SetFilter" alt="" coords="200,71,347,112"/>
-<area shape="rect" id="node4" href="$class_c_a_n_1_1_i_c_a_n_connector.html#a8ec0a1820c7d5a6ca6faf03229b795c8" title="CAN::ICANConnector\l::SetMask" alt="" coords="200,136,347,177"/>
+<area shape="rect" id="node2" href="$class_c_a_n_1_1_i_c_a_n_connector.html#a78c6cd1fff38cced4fdcda094289ef2c" title="CAN::ICANConnector\l::Close" alt="" coords="200,5,347,47"/>
+<area shape="rect" id="node3" href="$class_c_a_n_1_1_i_c_a_n_connector.html#ab2c30b8ebd50f3f202678273d80a3729" title="CAN::ICANConnector\l::GetError" alt="" coords="200,71,347,112"/>
+<area shape="rect" id="node4" href="$class_c_a_n_1_1_i_c_a_n_connector.html#adf41d619a728f9371769b4d8a247ba49" title="CAN::ICANConnector\l::HasError" alt="" coords="200,136,347,177"/>
+<area shape="rect" id="node5" href="$class_c_a_n_1_1_i_c_a_n_connector.html#ace436eee9d3fda78e90709b5f78eeb70" title="CAN::ICANConnector\l::Initialize" alt="" coords="200,201,347,243"/>
+<area shape="rect" id="node6" href="$class_c_a_n_1_1_i_c_a_n_connector.html#ab0fee60e8c2da5e4ed2ceed5aa21ab67" title="CAN::ICANConnector\l::SetFilter" alt="" coords="200,267,347,308"/>
+<area shape="rect" id="node7" href="$class_c_a_n_1_1_i_c_a_n_connector.html#a8ec0a1820c7d5a6ca6faf03229b795c8" title="CAN::ICANConnector\l::SetMask" alt="" coords="200,332,347,373"/>
 </map>

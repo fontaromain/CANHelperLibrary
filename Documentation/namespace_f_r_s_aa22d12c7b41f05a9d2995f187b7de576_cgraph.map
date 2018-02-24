@@ -1,0 +1,4 @@
+<map id="FRS::FiltersAndMasksConfiguration" name="FRS::FiltersAndMasksConfiguration">
+<area shape="rect" id="node2" href="$class_c_a_n_1_1_i_c_a_n_connector.html#ab0fee60e8c2da5e4ed2ceed5aa21ab67" title="CAN::ICANConnector\l::SetFilter" alt="" coords="283,5,429,47"/>
+<area shape="rect" id="node3" href="$class_c_a_n_1_1_i_c_a_n_connector.html#a8ec0a1820c7d5a6ca6faf03229b795c8" title="CAN::ICANConnector\l::SetMask" alt="" coords="283,71,429,112"/>
+</map>

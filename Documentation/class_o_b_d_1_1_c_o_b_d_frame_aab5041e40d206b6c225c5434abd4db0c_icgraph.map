@@ -1,5 +1,0 @@
-<map id="OBD::COBDFrame::GetCurrentValue" name="OBD::COBDFrame::GetCurrentValue">
-<area shape="rect" id="node2" href="$class_f_r_s_1_1_c_oil_display.html#ad4a07f5972bcd37019f602bcb871ed8e" title="FRS::COilDisplay::OnPreUpdate" alt="" coords="256,5,467,32"/>
-<area shape="rect" id="node3" href="$class_f_r_s_1_1_c_close_doors.html#a98b91d8c94d38009fc8be940a67701a8" title="FRS::CCloseDoors::UpdateImpl" alt="" coords="259,56,464,83"/>
-<area shape="rect" id="node4" href="$class_f_r_s_1_1_c_oil_display.html#a23425a56d3d8861ea17df7db0aaeb6a3" title="FRS::COilDisplay::UpdateImpl" alt="" coords="263,107,460,133"/>
-</map>

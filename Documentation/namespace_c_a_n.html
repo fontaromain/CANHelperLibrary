@@ -80,7 +80,9 @@ $(document).ready(function(){initNavTree('namespace_c_a_n.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">CAN Namespace Reference</div>  </div>
 </div><!--header-->
@@ -98,16 +100,113 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_a_n_1_1_i_c_a_n_connector.html">ICANConnector</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ae493a41253d2b81b3a15f77958bcbb28"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_c_a_n.html#ae493a41253d2b81b3a15f77958bcbb28">SetupFiltersAndMasks</a>) (<a class="el" href="class_c_a_n_1_1_i_c_a_n_connector.html">ICANConnector</a> &amp;pConnector)</td></tr>
+<tr class="separator:ae493a41253d2b81b3a15f77958bcbb28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a3f9106edf4c4b33adfc813201ef2a869"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_c_a_n.html#a3f9106edf4c4b33adfc813201ef2a869">InitializeCAN</a> (<a class="el" href="class_c_a_n_1_1_i_c_a_n_connector.html">ICANConnector</a> &amp;pCAN, <a class="el" href="namespace_c_a_n.html#ae493a41253d2b81b3a15f77958bcbb28">SetupFiltersAndMasks</a> pSetupFunc=nullptr)</td></tr>
+<tr class="separator:a3f9106edf4c4b33adfc813201ef2a869"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Regroup <a class="el" href="namespace_c_a_n.html">CAN</a> objects </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="ae493a41253d2b81b3a15f77958bcbb28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae493a41253d2b81b3a15f77958bcbb28">&#9670;&nbsp;</a></span>SetupFiltersAndMasks</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* CAN::SetupFiltersAndMasks) (<a class="el" href="class_c_a_n_1_1_i_c_a_n_connector.html">ICANConnector</a> &amp;pConnector)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Function pointer to use to define startup masks and filters </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pConnector</td><td>Connector to work on </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_i_c_a_n_connector_8h_source.html#l00031">31</a> of file <a class="el" href="_i_c_a_n_connector_8h_source.html">ICANConnector.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a3f9106edf4c4b33adfc813201ef2a869"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f9106edf4c4b33adfc813201ef2a869">&#9670;&nbsp;</a></span>InitializeCAN()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool CAN::InitializeCAN </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_c_a_n_1_1_i_c_a_n_connector.html">ICANConnector</a> &amp;&#160;</td>
+          <td class="paramname"><em>pCAN</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_c_a_n.html#ae493a41253d2b81b3a15f77958bcbb28">SetupFiltersAndMasks</a>&#160;</td>
+          <td class="paramname"><em>pSetupFunc</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Initialize the <a class="el" href="namespace_c_a_n.html">CAN</a> bus </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pCAN</td><td><a class="el" href="namespace_c_a_n.html">CAN</a> connector to initialize </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pSetupFunc</td><td>Setup function to use </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True on success, false otherwise </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_i_c_a_n_connector_8h_source.html#l00321">321</a> of file <a class="el" href="_i_c_a_n_connector_8h_source.html">ICANConnector.h</a>.</p>
+
+<p class="reference">References <a class="el" href="class_c_a_n_1_1_i_c_a_n_connector.html#adf41d619a728f9371769b4d8a247ba49">CAN::ICANConnector::HasError()</a>, <a class="el" href="class_c_a_n_1_1_i_c_a_n_connector.html#a058664bcead662753c50ef00e8d014a5">CAN::ICANConnector::HasMessages()</a>, <a class="el" href="class_c_a_n_1_1_i_c_a_n_connector.html#ace436eee9d3fda78e90709b5f78eeb70">CAN::ICANConnector::Initialize()</a>, and <a class="el" href="_i_c_a_n_connector_8h_source.html#l00162">CAN::ICANConnector::Read()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    {</div><div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        <span class="comment">// Declare everything we need</span></div><div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <span class="keywordtype">char</span>            lTestCounter    = 0 ;</div><div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>   lCANId          = 0 ;</div><div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>   lLength         = 0 ;</div><div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>   lData[8]        = { 0, 0, 0, 0, 0, 0, 0, 0 } ;</div><div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        </div><div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="comment">// While CAN initialization fails</span></div><div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <span class="keywordflow">while</span> (!pCAN.Initialize(pSetupFunc))</div><div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        {</div><div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;            <span class="comment">// More than 20 tries ?</span></div><div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;            <span class="keywordflow">if</span> (lTestCounter++ &gt; 20)</div><div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;            {</div><div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                <span class="comment">// Failed !</span></div><div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                <span class="keywordflow">return</span> false ;</div><div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            }</div><div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;            </div><div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;            <span class="comment">// Wait some time before trying again</span></div><div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;            DELAY(100) ;</div><div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        }</div><div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        </div><div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        <span class="comment">// Unstack all possible message we might have received even if filters have been set accordingly</span></div><div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        <span class="keywordflow">while</span> (pCAN.HasMessages())</div><div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        {</div><div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;            pCAN.Read(lCANId, lLength, lData) ;</div><div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        }</div><div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        </div><div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        <span class="comment">// Valid if no errors so far !</span></div><div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        <span class="keywordflow">return</span> !pCAN.HasError() ;</div><div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    }</div></div><!-- fragment --><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="namespace_c_a_n_a3f9106edf4c4b33adfc813201ef2a869_cgraph.png" border="0" usemap="#namespace_c_a_n_a3f9106edf4c4b33adfc813201ef2a869_cgraph" alt=""/></div>
+<map name="namespace_c_a_n_a3f9106edf4c4b33adfc813201ef2a869_cgraph" id="namespace_c_a_n_a3f9106edf4c4b33adfc813201ef2a869_cgraph">
+<area shape="rect" id="node2" href="class_c_a_n_1_1_i_c_a_n_connector.html#adf41d619a728f9371769b4d8a247ba49" title="CAN::ICANConnector\l::HasError" alt="" coords="184,5,331,47"/>
+<area shape="rect" id="node3" href="class_c_a_n_1_1_i_c_a_n_connector.html#a058664bcead662753c50ef00e8d014a5" title="CAN::ICANConnector\l::HasMessages" alt="" coords="184,71,331,112"/>
+<area shape="rect" id="node4" href="class_c_a_n_1_1_i_c_a_n_connector.html#ace436eee9d3fda78e90709b5f78eeb70" title="CAN::ICANConnector\l::Initialize" alt="" coords="184,136,331,177"/>
+<area shape="rect" id="node5" href="class_c_a_n_1_1_i_c_a_n_connector.html#a3f2c2e96a2bbc7bbae31c9cd71a1dedc" title="CAN::ICANConnector\l::Read" alt="" coords="184,201,331,243"/>
+<area shape="rect" id="node6" href="class_c_a_n_1_1_i_c_a_n_connector.html#ab5eb8b3aa24ac8a6d377b6a526016be3" title="CAN::ICANConnector\l::ReadImpl" alt="" coords="379,168,525,209"/>
+<area shape="rect" id="node7" href="class_c_a_n_1_1_i_c_a_n_connector.html#a18c4d5976ee67237fade9c6058e33a0b" title="CAN::ICANConnector\l::Print" alt="" coords="379,233,525,275"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_c_a_n.html">CAN</a></li>
-    <li class="footer">Generated on Wed Nov 15 2017 22:19:15 for CANLibrary by
+    <li class="footer">Generated on Sat Feb 24 2018 18:16:21 for CANLibrary by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>

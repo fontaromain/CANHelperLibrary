@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['validationfunction',['ValidationFunction',['../class_o_b_d_1_1_c_o_b_d_frame.html#a37d5c7ec2bbb8c0874cd8252a1d02520',1,'OBD::COBDFrame']]]
+  ['setupfiltersandmasks',['SetupFiltersAndMasks',['../namespace_c_a_n.html#ae493a41253d2b81b3a15f77958bcbb28',1,'CAN']]]
 ];

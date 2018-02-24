@@ -10,5 +10,6 @@ var searchData=
   ['sendto',['SendTo',['../class_c_a_n_1_1_c_send_c_a_n_frame.html#aa3cbfe064ad3deb736fb0caa3c0de5b1',1,'CAN::CSendCANFrame']]],
   ['setfilter',['SetFilter',['../class_d_e_b_u_g_1_1_c_debug_connector.html#acea5bc26694ffff0a591de98511d0218',1,'DEBUG::CDebugConnector::SetFilter()'],['../class_c_a_n_1_1_i_c_a_n_connector.html#ab0fee60e8c2da5e4ed2ceed5aa21ab67',1,'CAN::ICANConnector::SetFilter()'],['../class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a99f179735ca98257c18417ffd7992b53',1,'CAN::CMCPCANConnector::SetFilter()']]],
   ['setmask',['SetMask',['../class_d_e_b_u_g_1_1_c_debug_connector.html#acdc8d94e22f0157558852be959cc77f0',1,'DEBUG::CDebugConnector::SetMask()'],['../class_c_a_n_1_1_i_c_a_n_connector.html#a8ec0a1820c7d5a6ca6faf03229b795c8',1,'CAN::ICANConnector::SetMask()'],['../class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a389f5917d8881201967673d6135fa1ea',1,'CAN::CMCPCANConnector::SetMask()']]],
-  ['setposition',['SetPosition',['../class_f_r_s_1_1_c_set_gauge_position_frame.html#a98779653c8b7f7f04c7553ee1b40240e',1,'FRS::CSetGaugePositionFrame']]]
+  ['setposition',['SetPosition',['../class_f_r_s_1_1_c_set_gauge_position_frame.html#a98779653c8b7f7f04c7553ee1b40240e',1,'FRS::CSetGaugePositionFrame']]],
+  ['setupfiltersandmasks',['SetupFiltersAndMasks',['../namespace_c_a_n.html#ae493a41253d2b81b3a15f77958bcbb28',1,'CAN']]]
 ];

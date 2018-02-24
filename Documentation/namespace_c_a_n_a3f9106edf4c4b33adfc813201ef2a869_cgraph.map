@@ -1,0 +1,8 @@
+<map id="CAN::InitializeCAN" name="CAN::InitializeCAN">
+<area shape="rect" id="node2" href="$class_c_a_n_1_1_i_c_a_n_connector.html#adf41d619a728f9371769b4d8a247ba49" title="CAN::ICANConnector\l::HasError" alt="" coords="184,5,331,47"/>
+<area shape="rect" id="node3" href="$class_c_a_n_1_1_i_c_a_n_connector.html#a058664bcead662753c50ef00e8d014a5" title="CAN::ICANConnector\l::HasMessages" alt="" coords="184,71,331,112"/>
+<area shape="rect" id="node4" href="$class_c_a_n_1_1_i_c_a_n_connector.html#ace436eee9d3fda78e90709b5f78eeb70" title="CAN::ICANConnector\l::Initialize" alt="" coords="184,136,331,177"/>
+<area shape="rect" id="node5" href="$class_c_a_n_1_1_i_c_a_n_connector.html#a3f2c2e96a2bbc7bbae31c9cd71a1dedc" title="CAN::ICANConnector\l::Read" alt="" coords="184,201,331,243"/>
+<area shape="rect" id="node6" href="$class_c_a_n_1_1_i_c_a_n_connector.html#ab5eb8b3aa24ac8a6d377b6a526016be3" title="CAN::ICANConnector\l::ReadImpl" alt="" coords="379,168,525,209"/>
+<area shape="rect" id="node7" href="$class_c_a_n_1_1_i_c_a_n_connector.html#a18c4d5976ee67237fade9c6058e33a0b" title="CAN::ICANConnector\l::Print" alt="" coords="379,233,525,275"/>
+</map>

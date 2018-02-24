@@ -1,10 +1,11 @@
 <map id="CAN::ICANConnector::Print" name="CAN::ICANConnector::Print">
-<area shape="rect" id="node2" href="$class_c_a_n_1_1_i_c_a_n_connector.html#a3f2c2e96a2bbc7bbae31c9cd71a1dedc" title="CAN::ICANConnector\l::Read" alt="" coords="200,64,347,105"/>
-<area shape="rect" id="node6" href="$class_c_a_n_1_1_i_c_a_n_connector.html#a91574eaf97381d1dbe9e314196467b93" title="CAN::ICANConnector\l::Send" alt="" coords="200,129,347,171"/>
+<area shape="rect" id="node2" href="$class_c_a_n_1_1_i_c_a_n_connector.html#a3f2c2e96a2bbc7bbae31c9cd71a1dedc" title="CAN::ICANConnector\l::Read" alt="" coords="200,89,347,131"/>
+<area shape="rect" id="node7" href="$class_c_a_n_1_1_i_c_a_n_connector.html#a91574eaf97381d1dbe9e314196467b93" title="CAN::ICANConnector\l::Send" alt="" coords="200,155,347,196"/>
 <area shape="rect" id="node3" href="$class_c_a_n_1_1_i_c_a_n_connector.html#a81260bd0af63722074b3c7bdbb12334d" title="CAN::ICANConnector\l::WaitRead" alt="" coords="395,5,541,47"/>
-<area shape="rect" id="node4" href="$class_c_a_n_1_1_c_read_c_a_n_frame.html#a949145b443d90851c82a68962c8343a7" title="CAN::CReadCANFrame\l::ReadFrom" alt="" coords="852,129,1012,171"/>
-<area shape="rect" id="node5" href="$class_o_b_d_1_1_c_o_b_d_frame.html#a2988c2339acd5f5ae4a981bf8bf47d7c" title="OBD::COBDFrame\&lt; ECombiBtn\lStatus \&gt;::SendAndUpdate" alt="" coords="1060,163,1271,204"/>
-<area shape="rect" id="node7" href="$class_c_a_n_1_1_i_c_a_n_connector.html#adc8f0179749c20b67d4300bebaa33bcb" title="CAN::ICANConnector\l::WaitSend" alt="" coords="395,129,541,171"/>
-<area shape="rect" id="node8" href="$class_c_a_n_1_1_c_read_c_a_n_frame.html#a4129982e038d26c96661bb1edae60c6a" title="CAN::CReadCANFrame\l::MakeAndSendFlowControlTemp\lFrame" alt="" coords="589,122,804,178"/>
-<area shape="rect" id="node9" href="$class_c_a_n_1_1_c_send_c_a_n_frame.html#aa3cbfe064ad3deb736fb0caa3c0de5b1" title="CAN::CSendCANFrame\l::SendTo" alt="" coords="852,195,1012,236"/>
+<area shape="rect" id="node4" href="$namespace_c_a_n.html#a3f9106edf4c4b33adfc813201ef2a869" title="CAN::InitializeCAN" alt="" coords="403,71,533,98"/>
+<area shape="rect" id="node5" href="$class_c_a_n_1_1_c_read_c_a_n_frame.html#a949145b443d90851c82a68962c8343a7" title="CAN::CReadCANFrame\l::ReadFrom" alt="" coords="852,180,1012,221"/>
+<area shape="rect" id="node6" href="$class_o_b_d_1_1_c_o_b_d_frame.html#a2988c2339acd5f5ae4a981bf8bf47d7c" title="OBD::COBDFrame\&lt; ECombiBtn\lStatus \&gt;::SendAndUpdate" alt="" coords="1060,213,1271,255"/>
+<area shape="rect" id="node8" href="$class_c_a_n_1_1_i_c_a_n_connector.html#adc8f0179749c20b67d4300bebaa33bcb" title="CAN::ICANConnector\l::WaitSend" alt="" coords="395,180,541,221"/>
+<area shape="rect" id="node9" href="$class_c_a_n_1_1_c_read_c_a_n_frame.html#a4129982e038d26c96661bb1edae60c6a" title="CAN::CReadCANFrame\l::MakeAndSendFlowControlTemp\lFrame" alt="" coords="589,173,804,229"/>
+<area shape="rect" id="node10" href="$class_c_a_n_1_1_c_send_c_a_n_frame.html#aa3cbfe064ad3deb736fb0caa3c0de5b1" title="CAN::CSendCANFrame\l::SendTo" alt="" coords="852,245,1012,287"/>
 </map>

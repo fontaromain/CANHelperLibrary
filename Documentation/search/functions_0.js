@@ -5,6 +5,7 @@ var searchData=
   ['cdebugconnector',['CDebugConnector',['../class_d_e_b_u_g_1_1_c_debug_connector.html#ab88622b48a331767a5ed18e35b0d8dc5',1,'DEBUG::CDebugConnector']]],
   ['cenginerpmframe',['CEngineRPMFrame',['../class_o_b_d_1_1_c_engine_r_p_m_frame.html#a5fe3c66df3ad9ce18d4d2a886ee51764',1,'OBD::CEngineRPMFrame']]],
   ['clean',['Clean',['../class_c_a_n_1_1_c_read_c_a_n_frame.html#aa9f16b97a0b674b9302eda2152520007',1,'CAN::CReadCANFrame']]],
+  ['close',['Close',['../class_d_e_b_u_g_1_1_c_debug_connector.html#ae920b554d174f7412f5ac41393430198',1,'DEBUG::CDebugConnector::Close()'],['../class_c_a_n_1_1_i_c_a_n_connector.html#a78c6cd1fff38cced4fdcda094289ef2c',1,'CAN::ICANConnector::Close()'],['../class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a939bcae4f47d805c032a9bd66a74c29d',1,'CAN::CMCPCANConnector::Close()']]],
   ['closedoors',['CloseDoors',['../class_f_r_s_1_1_c_change_doors_lock_frame.html#ae6437c2573a2695d51682b79aec751f2',1,'FRS::CChangeDoorsLockFrame']]],
   ['cmcpcanconnector',['CMCPCANConnector',['../class_c_a_n_1_1_c_m_c_p_c_a_n_connector.html#a4a0029b8120751704414643273cbf489',1,'CAN::CMCPCANConnector']]],
   ['cobdframe',['COBDFrame',['../class_o_b_d_1_1_c_o_b_d_frame.html#a3db3af152b50149e5f44382d3da78943',1,'OBD::COBDFrame']]],
