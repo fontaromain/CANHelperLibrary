@@ -26,7 +26,7 @@ namespace FRS
 		 *	@param[in] pCAN			CAN connector to use
 		 *	@param[in] pReadFrame	Read frame to use
 		 */
-		CCloseDoors(CAN::ICANConnector& pCAN, CAN::CReadCANFrame& pReadFrame) : IModule(pCAN, pReadFrame, true, 250)
+		CCloseDoors(CAN::ICANConnector& pCAN, CAN::CReadCANFrame& pReadFrame) : IModule(pCAN, pReadFrame, true, 190)
 		{
 			// Init members
 			this->mShouldClose  = false ;
