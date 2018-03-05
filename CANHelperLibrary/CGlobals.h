@@ -5,8 +5,8 @@
 
 #pragma once
 
-#define DEBUG_CAN 		// Comment to turn off debugging messages for CAN Send / Receive
-#define DEBUG_MODULES	// Comment to turn off debugging messages for modules
+//#define DEBUG_CAN 		// Comment to turn off debugging messages for CAN Send / Receive
+//#define DEBUG_MODULES	// Comment to turn off debugging messages for modules
 
 #ifdef ARDUINO_AVR_UNO
 	// Use Arduino IDE Serial
