@@ -198,7 +198,7 @@ namespace CAN
 		 *	@param[in] pTimeout	Time out to use in milliseconds
 		 *	@return True on success, false otherwise
 		 */
-		bool WaitSend(unsigned long pCANId, unsigned char pLength, const unsigned char* const pData, unsigned long pTimeout = CAN_TIMEOUT)
+		bool WaitSend(unsigned long pCANId, unsigned char pLength, const unsigned char* pData, unsigned long pTimeout = CAN_TIMEOUT)
 		{
 			// Get current time
 			unsigned long lWaitStartTime = MILLIS() ;
@@ -230,7 +230,7 @@ namespace CAN
 		 *	@param[in] pData	Data to send
 		 *	@return True on success, false otherwise
 		 */
-		bool Send(unsigned long pCANId, unsigned char pLength, const unsigned char* const pData)
+		bool Send(unsigned long pCANId, unsigned char pLength, const unsigned char* pData)
 		{
 			// Send worked ?
 			if (this->SendImpl(pCANId, pLength, pData))
@@ -284,7 +284,7 @@ namespace CAN
 		 *	@param[in] pData	Data to send
 		 *	@return True on success, false otherwise
 		 */
-		virtual bool SendImpl(unsigned long pCANId, unsigned char pLength, const unsigned char* const pData) = 0 ;
+		virtual bool SendImpl(unsigned long pCANId, unsigned char pLength, const unsigned char* pData) = 0 ;
 
 	protected:
 		/**
@@ -293,7 +293,7 @@ namespace CAN
 		 *	@param[in] pLength	Data length
 		 *	@param[in] pData	Data to send
 		 */
-		void Print(unsigned long pCANId, unsigned char pLength, const unsigned char* const pData) const
+		void Print(unsigned long pCANId, unsigned char pLength, const unsigned char* pData) const
 		{
 			// Print address first
 			PRINT_STR("0x") ;

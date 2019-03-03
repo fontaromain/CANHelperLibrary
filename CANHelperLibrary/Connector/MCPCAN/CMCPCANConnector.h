@@ -148,7 +148,7 @@ namespace CAN
 
 	protected:
 		/**
-		 *	Reads a message. Should be called after HasMesasge to be sure there is something to read
+		 *	Reads a message. Should be called after HasMessage to be sure there is something to read
 		 *	@param[out] pCANId      Message CAN Id
 		 *	@param[out] pLength		Read data length
 		 *	@param[out] pReadData	Read data
@@ -156,7 +156,8 @@ namespace CAN
 		 */
 		virtual bool ReadImpl(unsigned long& pCANId, unsigned char& pLength, unsigned char* pReadData) override
 		{
-			return this->mCAN && this->mCAN->readMsgBuf(&pCANId, 1, &pLength, pReadData) == CAN_OK ;
+			INT8U lExtendedFlag = 1 ;
+			return this->mCAN && this->mCAN->readMsgBuf(&pCANId, &lExtendedFlag, &pLength, pReadData) == CAN_OK ;
 		}
 
 		/**
@@ -166,9 +167,9 @@ namespace CAN
 		 *	@param[in] pData	Data to send
 		 *	@return True on success, false otherwise
 		 */
-		virtual bool SendImpl(unsigned long pCANId, unsigned char pLength, const unsigned char* const pData) override
+		virtual bool SendImpl(unsigned long pCANId, unsigned char pLength, const unsigned char* pData) override
 		{
-			return this->mCAN && this->mCAN->sendMsgBuf(pCANId, pLength, pData) == CAN_OK ;
+			return this->mCAN && this->mCAN->sendMsgBuf(pCANId, pLength, const_cast<unsigned char*>(pData)) == CAN_OK ;
 		}
 
 	protected:

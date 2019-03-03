@@ -217,7 +217,7 @@ namespace DEBUG
 		 *	@param[in] pData	Data to send
 		 *	@return True on success, false otherwise
 		 */
-		virtual bool SendImpl(unsigned long pCANId, unsigned char pLength, const unsigned char* const pData) override
+		virtual bool SendImpl(unsigned long pCANId, unsigned char pLength, const unsigned char* pData) override
 		{
 			// New messages following this send
 			this->mHasMessages = true ;
